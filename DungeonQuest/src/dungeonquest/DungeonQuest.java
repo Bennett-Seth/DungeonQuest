@@ -6,6 +6,8 @@
 package dungeonquest;
 
 import byui.cit260.DungeonQuest.model.Actor;
+import byui.cit260.DungeonQuest.model.Game;
+import byui.cit260.DungeonQuest.model.Inventory;
 import byui.cit260.DungeonQuest.model.Player;
 import byui.cit260.DungeonQuest.model.Map;
 import byui.cit260.DungeonQuest.model.Location;
@@ -25,7 +27,9 @@ public class DungeonQuest {
         Actor actorOne = new Actor();
         Map mapOne = new Map();
         Location locationOne = new Location();
-    
+        Inventory sword = new Inventory();
+        Game newGame = new Game();
+        
         playerOne.setName("Seth");
         playerOne.setStrength(0);
         actorOne.setName("Gordon");
@@ -42,7 +46,13 @@ public class DungeonQuest {
         locationOne.setColumn(0);
         locationOne.setRow(0);
         locationOne.setVisited("visited");
-    
+        sword.setInventoryItem("Sword");
+        sword.setAmount(1);
+        sword.setItemDescription("The point end goes into the other man.");
+        sword.setItemLevel(5);
+        sword.setQualityInStock(1);
+        newGame.setNoPlayer(1);
+
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);      
         String actorInfo = actorOne.toString();
@@ -51,6 +61,10 @@ public class DungeonQuest {
         System.out.println(mapInfo);
         String locationInfo = locationOne.toString();
         System.out.println(locationInfo);
+        String swordInfo = sword.toString();
+        System.out.println(swordInfo);
+        String newGameInfo = newGame.toString();
+        System.out.println(newGameInfo);
     }
  
 }
