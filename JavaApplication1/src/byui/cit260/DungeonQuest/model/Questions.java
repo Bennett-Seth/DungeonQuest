@@ -1,19 +1,19 @@
-
-import java.io.Serializable;
-import java.util.Objects;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package byui.cit260.DungeonQuest.model;
+
+import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
  * @author ZiksMS
  */
 public class Questions implements Serializable{
-    // class instance variables
+    ////class instance variables
     private String question;
     private String answer;
     private String answer1;
@@ -21,6 +21,9 @@ public class Questions implements Serializable{
     private String answer3;
     private String answer4;
     private String correctAnswerNumber;
+
+    public Questions() {
+    }
 
     public String getQuestion() {
         return question;
@@ -78,19 +81,16 @@ public class Questions implements Serializable{
         this.correctAnswerNumber = correctAnswerNumber;
     }
 
-    public Questions() {
-    }
-
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 43 * hash + Objects.hashCode(this.question);
-        hash = 43 * hash + Objects.hashCode(this.answer);
-        hash = 43 * hash + Objects.hashCode(this.answer1);
-        hash = 43 * hash + Objects.hashCode(this.answer2);
-        hash = 43 * hash + Objects.hashCode(this.answer3);
-        hash = 43 * hash + Objects.hashCode(this.answer4);
-        hash = 43 * hash + Objects.hashCode(this.correctAnswerNumber);
+        int hash = 7;
+        hash = 23 * hash + Objects.hashCode(this.question);
+        hash = 23 * hash + Objects.hashCode(this.answer);
+        hash = 23 * hash + Objects.hashCode(this.answer1);
+        hash = 23 * hash + Objects.hashCode(this.answer2);
+        hash = 23 * hash + Objects.hashCode(this.answer3);
+        hash = 23 * hash + Objects.hashCode(this.answer4);
+        hash = 23 * hash + Objects.hashCode(this.correctAnswerNumber);
         return hash;
     }
 
@@ -134,7 +134,6 @@ public class Questions implements Serializable{
     public String toString() {
         return "Questions{" + "question=" + question + ", answer=" + answer + ", answer1=" + answer1 + ", answer2=" + answer2 + ", answer3=" + answer3 + ", answer4=" + answer4 + ", correctAnswerNumber=" + correctAnswerNumber + '}';
     }
-    
     
     
     

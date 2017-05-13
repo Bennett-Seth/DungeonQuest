@@ -1,12 +1,12 @@
-
-import java.io.Serializable;
-import java.util.Objects;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package byui.cit260.DungeonQuest.model;
+
+import java.io.Serializable;
+import java.util.Objects;
 
 /**
  *
@@ -56,11 +56,11 @@ public class Scene implements Serializable{
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 31 * hash + Objects.hashCode(this.description);
-        hash = 31 * hash + Objects.hashCode(this.blocked);
-        hash = 31 * hash + Objects.hashCode(this.symbol);
-        hash = 31 * hash + Objects.hashCode(this.name);
+        int hash = 7;
+        hash = 67 * hash + Objects.hashCode(this.description);
+        hash = 67 * hash + Objects.hashCode(this.blocked);
+        hash = 67 * hash + Objects.hashCode(this.symbol);
+        hash = 67 * hash + Objects.hashCode(this.name);
         return hash;
     }
 
@@ -95,6 +95,5 @@ public class Scene implements Serializable{
     public String toString() {
         return "Scene{" + "description=" + description + ", blocked=" + blocked + ", symbol=" + symbol + ", name=" + name + '}';
     }
-    
     
 }
