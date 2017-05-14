@@ -11,6 +11,8 @@ import byui.cit260.DungeonQuest.model.Inventory;
 import byui.cit260.DungeonQuest.model.Player;
 import byui.cit260.DungeonQuest.model.Map;
 import byui.cit260.DungeonQuest.model.Location;
+import byui.cit260.DungeonQuest.model.Questions;
+import byui.cit260.DungeonQuest.model.Scene;
 
 /**
  *
@@ -65,6 +67,29 @@ public class DungeonQuest {
         System.out.println(swordInfo);
         String newGameInfo = newGame.toString();
         System.out.println(newGameInfo);
+        
+        
+        Questions questionOne = new Questions();
+       
+       questionOne.setQuestion("question");
+       questionOne.setAnswer("answer");
+       questionOne.setAnswer1("answer1");
+       questionOne.setAnswer2("answer2 this is the correct");
+       questionOne.setAnswer3("answer3");
+       questionOne.setAnswer4("answer4");
+       questionOne.setCorrectAnswerNumber(2);
+      
+       String questionInfo = questionOne.toString();
+               System.out.println(questionInfo);
+               
+       Scene sceneOne = new Scene();
+        sceneOne.setName("cell one");
+        sceneOne.setSymbol("c1");
+        sceneOne.setDescription("prision cell");
+        sceneOne.setBlocked(false);
+        
+        String sceneInfo = sceneOne.toString();
+            System.out.println(sceneInfo);
     }
  
 }
