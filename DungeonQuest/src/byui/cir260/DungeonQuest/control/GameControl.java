@@ -7,8 +7,21 @@ package byui.cir260.DungeonQuest.control;
 
 /**
  *
- * @author Seth
+ * @author Sophia
  */
-public class GameControl {
-    
+public class GameControl{
+    public boolean starNewGame(boolean player, boolean newGame, boolean saveFile, boolean starNewGame){
+        if (player == newGame && player ==saveFile){
+            return false;   
+        }
+        if (player == newGame && player != saveFile){
+            return true;
+        }
+        
+        return starNewGame;
+        }
+
+    boolean starNewGame(boolean player, boolean newGame, boolean saveFile) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
