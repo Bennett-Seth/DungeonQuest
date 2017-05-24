@@ -38,9 +38,9 @@ public class QuestionControlTest {
         double result = instance.wizardQuestion(var1, var2, var3);
         
         // compare the result with our expected result
-        assertEquals(expectedResult, result, 0.00);
+        assertEquals(expectedResult, result, 0.01);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        // fail("The test case is a prototype.");
     }
     
 }
