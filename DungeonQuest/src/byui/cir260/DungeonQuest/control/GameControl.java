@@ -22,6 +22,18 @@ public class GameControl{
         }
 
     boolean starNewGame(boolean player, boolean newGame, boolean saveFile) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       return false;
     }
+    static double calcTrap(double radius){
+        if (radius <= 0)
+            return -1;
+        double circumference = radius * Math.PI * 2;
+        if (circumference <=62.82 || circumference >= 94.26)
+            return -2;
+        return circumference;
+        
+    }
+            
 }
+

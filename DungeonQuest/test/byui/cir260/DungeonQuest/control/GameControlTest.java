@@ -32,7 +32,7 @@ public class GameControlTest {
      */
     @Test
     public void testStarNewGame() {
-        System.out.println("starNewGame");
+        System.out.println("start NewGame");
         boolean player = false;
         boolean newGame = false;
         boolean saveFile = false;
@@ -41,7 +41,34 @@ public class GameControlTest {
         boolean result = instance.starNewGame(player, newGame, saveFile);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       // fail("The test case is a prototype.");
     }
- 
+ @Test
+    public void testCalcTrap(){
+    System.out.println("start testCalcTrap");
+    double radius = 10;
+    double expectedResult = 62.83;
+    double result = GameControl.calcTrap(radius);
+    assertEquals(expectedResult, result, 0.01);
+  
+    radius = -1;
+    expectedResult = -1;
+    result = GameControl.calcTrap(radius);
+    assertEquals(expectedResult, result, 0.01);
+    
+    radius = 0;
+    expectedResult = -1;
+    result = GameControl.calcTrap(radius);
+    assertEquals(expectedResult, result, 0.01);
+    
+    radius = 1;
+    expectedResult = -2;
+    result = GameControl.calcTrap(radius);
+    assertEquals(expectedResult, result, 0.01);
+    
+    radius = 100;
+    expectedResult = -2;
+    result = GameControl.calcTrap(radius);
+    assertEquals(expectedResult, result, 0.01);
+}
 }
