@@ -5,11 +5,32 @@
  */
 package byui.cir260.DungeonQuest.control;
 
+import byui.cit260.DungeonQuest.model.Player;
+import dungeonquest.DungeonQuest;
+
 /**
  *
  * @author Sophia
  */
 public class GameControl{
+
+
+    public static Player createPlayer(String name) {
+        if (name == null) {
+            return null;
+        }      
+        
+        Player player = new Player();
+        player.setName(name);
+        
+        DungeonQuest.setPlayer(player);
+        
+        return player;
+    }
+
+    public static void createNewGame(Player player) {
+         System.out.println("*** createNewGame stub function called ***");
+    }
     public boolean starNewGame(boolean player, boolean newGame, boolean saveFile, boolean starNewGame){
         if (player == newGame && player ==saveFile){
             return false;   
