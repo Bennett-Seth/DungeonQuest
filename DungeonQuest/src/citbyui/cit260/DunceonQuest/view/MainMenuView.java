@@ -15,21 +15,27 @@ import java.util.Scanner;
  * @author parrdyl
  */
 public class MainMenuView {
-    private String menu;
+    
     private String promptMessage;
     
     public MainMenuView(){
-        this.menu = "\n"
-                    + "\n--------------------------------"
-                    +"\n| Main Menu"
-                    + ""
-                    + "\n--------------------------------"
-                    + "\nN - Start new game"
-                    + "\nG - Get and start saved game"
-                    + "\nH - Get help on how to play the game"
-                    + "\nS - Save game"
-                    + "\nQ - Quit"
-                    + "\n--------------------------------";
+        this.promptMessage= "\nWhat would you like to do? ";
+        this.displayMain();
+    }
+    
+    private void displayMain() {
+           System.out.println(
+            "\n"
+            + "\n--------------------------------"
+            +"\n| Main Menu"
+            + ""
+            + "\n--------------------------------"
+            + "\nN - Start new game"
+            + "\nG - Get and start saved game"
+            + "\nH - Get help on how to play the game"
+            + "\nS - Save game"
+            + "\nQ - Quit"
+            + "\n--------------------------------");
     }
     public void displayMainMenuView(){
         
