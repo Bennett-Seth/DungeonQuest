@@ -23,7 +23,7 @@ public class GameControl{
 
     boolean starNewGame(boolean player, boolean newGame, boolean saveFile) {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-       return false;
+       return false;  
     }
     static double calcTrap(double radius){
         if (radius <= 0)
