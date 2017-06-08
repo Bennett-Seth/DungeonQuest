@@ -1,4 +1,4 @@
-/*
+ /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -16,28 +16,33 @@ import java.util.Scanner;
  */
 public class HelpMenuView {
     
-    private String help;
     private String promptMessage;
     
     public HelpMenuView(){
-    this.help = "\n"
-        + "\n--------------------------------"
-        +"\n| Help Menu"
-        + ""
-        + "\n--------------------------------"
-        + "\nG - What is the goal of the game?"
-        + "\nM - How to move to a new room"
-        + "\nE - Hot to explore a room"
-        + "\nV - How to view gear in inventory"
-        + "\nA - How to add gear to inventory"
-        + "\nF - Fighting enemies"
-        + "\nI - Game interactions"
-        + "\nQ - Quit Help Menu"
+        this.promptMessage= "\nWhat do you need help with?";
+        this.displayHelp();
+    }  
+    
+    void displayHelp() {
+            System.out.println(
+            "\n"
+            + "\n--------------------------------"
+            +"\n| Help Menu"
+            + ""
+            + "\n--------------------------------"
+            + "\nG - What is the goal of the game?"
+            + "\nM - How to move to a new room"
+            + "\nE - Hot to explore a room"
+            + "\nV - How to view gear in inventory"
+            + "\nA - How to add gear to inventory"
+            + "\nF - Fighting enemies"
+            + "\nI - Game interactions"
+            + "\nP - Map Menu"        
+            + "\nQ - Quit Help Menu"
 
-        + "\n--------------------------------";
+            + "\n--------------------------------");
     }
     public void displayHelpMenuView(){
-        
         boolean done = false;
         do {
             String helpOption = this.getMenuOption();
@@ -99,6 +104,9 @@ public class HelpMenuView {
             case "Q":
                 this.openQuit();
                 break;
+            case "P":
+                this.openMap();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;                
@@ -137,7 +145,10 @@ public class HelpMenuView {
         private void openQuit() {
             System.out.println("*** openQuit function called ***");
         }
-
+        private void openMap() {
+                   MapMenuView mapMenuView = new MapMenuView();
+                   mapMenuView.displayMapMenuView();
+                }
 
 } 
 
