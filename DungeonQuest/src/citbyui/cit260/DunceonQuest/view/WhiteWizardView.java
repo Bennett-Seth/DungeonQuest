@@ -14,16 +14,14 @@ import java.util.Scanner;
  * @author parrdyl
  */
 public class WhiteWizardView {
-     private String promptMessage;
+   
     
     public WhiteWizardView() {
         
-        this.promptMessage= "\nPlease enter your name: ";
-        this.displayBanner();
+        this.displayWizardIntro();
         
     }
-
-    private void displayBanner() {
+    private void displayWizardIntro() {
        
         System.out.println(
                 "\n*******************************************"
@@ -40,10 +38,8 @@ public class WhiteWizardView {
                 +"\nToday I will aid your quest by giving you the great" 
                 + "\narmor of Ephysiyies if you are smart enough to solve"
                 + "\nmy riddle. The riddle is: what 3 positive numbers"
-                + "\ngive the same result when multiplied and added together?”"
+                + "\ngive the same result when multiplied and added together?"
                 + "\n--------------------------------"
         );
-    }
-}
-
+     }
 
