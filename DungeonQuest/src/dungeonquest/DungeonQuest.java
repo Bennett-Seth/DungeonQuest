@@ -13,7 +13,7 @@ import byui.cit260.DungeonQuest.model.Map;
 import byui.cit260.DungeonQuest.model.Location;
 import byui.cit260.DungeonQuest.model.Questions;
 import byui.cit260.DungeonQuest.model.Scene;
-import citbyui.cit260.DunceonQuest.view.StartProgramView;
+import byui.cit260.DungeonQuest.view.StartProgramView;
 
 /**
  *
@@ -49,6 +49,10 @@ public class DungeonQuest {
        StartProgramView startProgramView = new StartProgramView();
        startProgramView.displayStartProgramView();
        
+    }
+
+    public static double getCircumference() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
  
 }

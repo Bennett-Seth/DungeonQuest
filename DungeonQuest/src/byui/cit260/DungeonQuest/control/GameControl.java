@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cir260.DungeonQuest.control;
+package byui.cit260.DungeonQuest.control;
 
 import byui.cit260.DungeonQuest.model.Player;
 import dungeonquest.DungeonQuest;
@@ -46,7 +46,13 @@ public class GameControl{
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
        return false;  
     }
-    static double calcTrap(double radius){
+
+    /**
+     *
+     * @param radius
+     * @return
+     */
+    public static double calcTrap(double radius){
         if (radius <= 0)
             return -1;
         double circumference = radius * Math.PI * 2;

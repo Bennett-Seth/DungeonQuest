@@ -5,6 +5,7 @@
  */
 package byui.cir260.DungeonQuest.control;
 
+import byui.cit260.DungeonQuest.control.QuestionControl;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;

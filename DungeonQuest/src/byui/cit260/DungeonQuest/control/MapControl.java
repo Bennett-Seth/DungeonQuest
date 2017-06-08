@@ -3,16 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package byui.cit260.DungeonQuest.model;
+package byui.cit260.DungeonQuest.control;
 
 /**
  *
- * @author parrdyl
+ * @author Seth
  */
-public class GameMenuView {
-
-    public void displayMenu() {
-         System.out.println("*** displayMenu stub function called ***");
-    }
+public class MapControl {
     
 }

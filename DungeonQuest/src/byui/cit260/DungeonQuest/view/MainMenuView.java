@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citbyui.cit260.DunceonQuest.view;
+package byui.cit260.DungeonQuest.view;
 
-import byui.cir260.DungeonQuest.control.GameControl;
-import byui.cit260.DungeonQuest.model.GameMenuView;
+import byui.cit260.DungeonQuest.control.GameControl;
+//import byui.cit260.DungeonQuest.model.GameMenuView;
 import dungeonquest.DungeonQuest;
 import java.util.Scanner;
 
