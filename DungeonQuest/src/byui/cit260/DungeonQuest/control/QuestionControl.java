@@ -25,13 +25,21 @@ public class QuestionControl {
         double result = (answerAddition / answerMultiplication);
             return result;
     }
-    public double fairyQuestion(double exploredRooms) {
-        if (exploredRooms < 0) {
-            return -1;
+    public Boolean fairyQuestion(double exploredRooms) {
+        if ((exploredRooms / 2) < 0) {
+            return false;
         }
-        double result = exploredRooms/11;
-         return result;
-               
+        
+        else if ((exploredRooms / 2) < 0.5) {
+            return false;
+        }
+        
+        else if ((exploredRooms / 2) >= 0.5) {
+            return true;
+        }
+          
+        else 
+        return true; 
     }
     public double calcTrap(double radius) {
         if (radius <= 0){
