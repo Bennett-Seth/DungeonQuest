@@ -91,7 +91,7 @@ public class InteractWithTheTrapView {
             
         if (circumference > 94.25){
                 System.out.println("\nThe circumference of the hole is too big,"
-                        + " and you feel on it. You've lost the game.");
+                        + " and you fell into it. You've lost the game.");
             return false;
         }
         
@@ -100,7 +100,6 @@ public class InteractWithTheTrapView {
             return false;
         }
     }   
-    
         public void calcTrap(){
             double value = GameControl.calcTrap(DungeonQuest.getCircumference());
             if (value < 0){
