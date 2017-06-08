@@ -14,42 +14,40 @@ import java.util.Scanner;
  *
  * @author parrdyl
  */
-public class MainMenuView {
+public class MapMenuView {
     
     private String promptMessage;
     
-    public MainMenuView(){
-        this.promptMessage= "\nWhat would you like to do? ";
-        this.displayMain();
+    public MapMenuView(){
+        this.promptMessage= "\nPlease select an option ";
+        this.displayMap();
     }
     
-    private void displayMain() {
+    private void displayMap() {
            System.out.println(
             "\n"
             + "\n--------------------------------"
-            +"\n| Main Menu"
+            +"\n| Map Menu"
             + ""
             + "\n--------------------------------"
-            + "\nN - Start new game"
-            + "\nG - Get and start saved game"
-            + "\nH - Get help on how to play the game"
-            + "\nS - Save game"
-            + "\nQ - Quit"
+            + "\nV - View Map"
+            + "\nS - Show my location"
+            + "\nR = Show visited Rooms"
             + "\n--------------------------------");
     }
-    public void displayMainMenuView(){
+    public void displayMapMenuView(){
         
         boolean done = false;
         do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
+            String mapOption = this.getMapOption();
+            if (mapOption.toUpperCase().equals("Q"))
                 return;
             
-            done = this.doAction(menuOption);
+            done = this.doAction(mapOption);
         } while (!done);
     }
 
-    private String getMenuOption() {
+    private String getMapOption() {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
@@ -76,17 +74,14 @@ public class MainMenuView {
         choice = choice.toUpperCase();
         
         switch (choice){
-            case "N":
-                this.startNewGame();
-                break;
-            case "G":
-                this.startExistingGame();
-                break;
-            case "H":
-                this.displayHelpMenu();
+            case "V":
+                this.showMap();
                 break;
             case "S":
-                this.saveGame();
+                this.showMyPosition();
+                break;
+            case "R":
+                this.showVisitedRooms();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -95,24 +90,18 @@ public class MainMenuView {
         return false;
     }
 
-    private void startNewGame() {
-         GameControl.createNewGame(DungeonQuest.getPlayer());
-         
-         GameMenuView gameMenu = new GameMenuView();
-         gameMenu.displayMenu();
+    private void showMap() {
+         System.out.println("*** showMap function called ***");
     }
 
-    private void startExistingGame() {
+    private void showMyPosition() {
          System.out.println("*** startExistingGame function called ***");
     }
 
-    private void displayHelpMenu() {
-            HelpMenuView helpMenuView = new HelpMenuView();
-                   helpMenuView.displayHelpMenuView();
-                }
-
-    private void saveGame() {
-        System.out.println("*** startExistingGame function called ***");
+    private void showVisitedRooms() {
+            System.out.println("*** displayHelpMenu function called ***");
     }
+
 }
     
+
