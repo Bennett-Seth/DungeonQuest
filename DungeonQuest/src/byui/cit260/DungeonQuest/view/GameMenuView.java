@@ -19,6 +19,7 @@ public class GameMenuView {
             + "\n--------------------------------"
             +"\n| Game Menu"
             + "\n--------------------------------"
+            + "\nT - Interact with the trap"
             + "\nM - See the Map of the Dungeon (select a room to explore)"
             + "\nI - Review Your Character’s Inventory and Player Level"
             + "\nH - View the Help Menu"
@@ -61,6 +62,9 @@ public class GameMenuView {
             case "M": //See the Map of the Dungeon(select a room to explore
                 this.displayMap();
                 break;
+            case "T": 
+                this.displayTrapMenu();
+                break;
             case "I": //Review your characters's inventory and player levol
                 this.displayInventory();
                 break;
@@ -76,6 +80,10 @@ public class GameMenuView {
 
     private void displayMap() {
         System.out.println("\n*** displayMap() function called ***");
+    }
+    private void displayTrapMenu() {
+        InteractWithTheTrapView trapView = new InteractWithTheTrapView();
+        trapView.displayInteractWithTheTrapView();
     }
 
     private void displayInventory() {

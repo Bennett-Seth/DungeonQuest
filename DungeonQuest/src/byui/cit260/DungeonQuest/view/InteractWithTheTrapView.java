@@ -40,22 +40,12 @@ public class InteractWithTheTrapView {
         boolean done = false;
  
         do {
-            String trapOption = this.getTrapOption();
+            String trapOption = this.getInput();
             if (trapOption.toUpperCase().equals("Q")) 
                 return; 
-
-            done = this.doAction(trapOption);
+            double radius = Double.parseDouble(trapOption);
+            done = this.doAction(radius);
         } while (!done);
-    }
-
-    private String getTrapOption() {
-        System.out.println("\n*** getTrapOption() function called ***");
-        return "N";
-    }
-
-    private boolean doAction(String trapOption) {
-        System.out.println("\n*** doAction() function called ***)");
-        return true;
     }
     
     public String getInput() {
@@ -83,15 +73,15 @@ public class InteractWithTheTrapView {
             return true;
         }
             
-        if (circumference < 62.83){
+        else if (circumference < 62.83){
             System.out.println("\nThe circumference of the hole is too small. "
                     + "Your foot is stuck. You've lost");
             return false;
         }
             
-        if (circumference > 94.25){
+        else if (circumference > 94.25){
                 System.out.println("\nThe circumference of the hole is too big,"
-                        + " and you fell into it. You've lost the game.");
+                        + " and you feel on it. You've lost the game.");
             return false;
         }
         
@@ -100,11 +90,13 @@ public class InteractWithTheTrapView {
             return false;
         }
     }   
-        public void calcTrap(){
-            double value = GameControl.calcTrap(DungeonQuest.getCircumference());
+    
+        public double calcTrap(double radius){
+            double value = GameControl.calcTrap(radius);
             if (value < 0){
                 System.out.println("Error - Failed interaction");
             }
+            return value;
             //GameMenuView gameMenu = new GameMenuView();
             //gameMenu.displayGameMenuView();
         }     

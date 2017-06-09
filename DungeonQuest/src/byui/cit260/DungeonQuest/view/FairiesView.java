@@ -45,8 +45,8 @@ public class FairiesView {
             String FairiesOption = this.getFairiesOption();
             if (FairiesOption.toUpperCase().equals("Q")) 
                 return; 
-
-            done = this.doAction(FairiesOption);
+            // done = this.doAction(FairiesOption);
+            done = this.doAction();
         } while (!done);
     }
 
@@ -92,12 +92,12 @@ public class FairiesView {
 
     private int fairyQuestion(Double exploredRooms) {
         System.out.println("*** fairyQuestion function called ***");
-        
+     return 0;   
     }
 
-    private boolean doAction(Double fairyQuestion) {
-        System.out.println("*** doAction function called ***");
-    }
+//    private boolean doAction(Double fairyQuestion) {
+//        System.out.println("*** doAction function called ***");
+//    }
       
 }
     
