@@ -30,8 +30,9 @@ public class InteractWithTheTrapView {
                + "\n* on it, and you will be trapped. In both cases,*"
                + "\n* you'll instantly lose the game.               *"
                + "\n* You can save yourself by entering the radius  *"
-               + "\n* of the hole.                                  *"
-               + "\n* Don't make it too big or too small!           *"
+               + "\n* of the hole!                                  *"
+               + "\n* Don't make it too big or too small!"
+               + "\n* You must enter the radius now:                 *"
                );
     }    
         

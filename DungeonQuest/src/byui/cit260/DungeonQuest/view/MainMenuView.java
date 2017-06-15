@@ -14,17 +14,19 @@ import java.util.Scanner;
  *
  * @author parrdyl
  */
-public class MainMenuView {
+public class MainMenuView extends View{
+  
     
-    private String promptMessage;
+//    private String promptMessage;
+//    
+//    public MainMenuView(){
+//        this.promptMessage= "\nWhat would you like to do? ";
+//        this.displayMain();
+//    }
     
-    public MainMenuView(){
-        this.promptMessage= "\nWhat would you like to do? ";
-        this.displayMain();
-    }
     
-    private void displayMain() {
-           System.out.println(
+           public MainMenuView(){
+                   super(
             "\n"
             + "\n--------------------------------"
             +"\n| Main Menu"
@@ -36,46 +38,20 @@ public class MainMenuView {
             + "\nS - Save game"
             + "\nQ - Quit"
             + "\n--------------------------------");
-    }
-    public void displayMainMenuView(){
-        
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-        } while (!done);
-    }
+}
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
+//    @Override
+//    public boolean doAction(String value) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//    }
+   
+    @Override
+    public boolean doAction(String value) {
         
-        while(!valid){
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
- 
-            if (value.length() < 1) { 
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            
-            break;
-        }
- 
-        return value; 
-    }
-
-    private boolean doAction(String choice) {
+        value = value.toUpperCase();
         
-        choice = choice.toUpperCase();
-        
-        switch (choice){
+        switch (value){
             case "N":
                 this.startNewGame();
                 break;
