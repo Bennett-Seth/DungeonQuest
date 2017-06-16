@@ -13,13 +13,13 @@ import java.util.Scanner;
  *
  * @author parrdyl
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
     
-    private String help;
-    private String promptMessage;
-    
+//    private String help;
+//    private String promptMessage;
+//    
     public HelpMenuView(){
-    this.help = "\n"
+    super( "\n"
         + "\n--------------------------------"
         +"\n| Help Menu"
         + ""
@@ -33,47 +33,15 @@ public class HelpMenuView {
         + "\nI - Game interactions"
         + "\nQ - Quit Help Menu"
 
-        + "\n--------------------------------";
+        + "\n--------------------------------");
     }
-    public void displayHelpMenuView(){
+    
+    @Override
+    public boolean doAction(String value) {
         
-        boolean done = false;
-        do {
-            String helpOption = this.getMenuOption();
-            if (helpOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(helpOption);
-        } while (!done);
-    }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
+        value = value.toUpperCase();
         
-        while(!valid){
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
- 
-            if (value.length() < 1) { 
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            
-            break;
-        }
- 
-        return value; 
-    }
-
-    private boolean doAction(String choice) {
-        
-        choice = choice.toUpperCase();
-        
-        switch (choice){
+        switch (value){
             case "G":
                 this.openGoal();
                 break;

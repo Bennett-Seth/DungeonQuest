@@ -26,8 +26,7 @@ public class MainMenuView extends View{
     
     
            public MainMenuView(){
-                   super(
-            "\n"
+              super("\n"
             + "\n--------------------------------"
             +"\n| Main Menu"
             + ""
@@ -75,7 +74,7 @@ public class MainMenuView extends View{
          GameControl.createNewGame(DungeonQuest.getPlayer());
          
          GameMenuView gameMenu = new GameMenuView();
-         gameMenu.displayMenu();
+         gameMenu.display();
     }
 
     private void startExistingGame() {

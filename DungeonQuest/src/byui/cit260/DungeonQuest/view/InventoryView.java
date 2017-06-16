@@ -11,17 +11,17 @@ import java.util.Scanner;
  *
  * @author Seth
  */
-public class InventoryView {
+public class InventoryView extends View{
     
-    private String promptMessage;
+//    private String promptMessage;
+//    
+//    public InventoryView(){
+//        this.promptMessage= "\nWhat would you like to do? ";
+//        this.displayInventory();
+//    }
     
-    public InventoryView(){
-        this.promptMessage= "\nWhat would you like to do? ";
-        this.displayInventory();
-    }
-    
-    private void displayInventory() {
-           System.out.println(
+    public InventoryView() {
+           super(
             "\n"
             + "\n--------------------------------"
             +"\nI - View Your Inventory"
@@ -35,45 +35,13 @@ public class InventoryView {
             + "\nQ - Quit"
             + "\n--------------------------------");
     }
-    public void displayInventoryView(){
-        
-        boolean done = false;
-        do {
-            String InventoryOption = this.getInventoryOption();
-            if (InventoryOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(InventoryOption);
-        } while (!done);
-    }
-
-    private String getInventoryOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        
-        while(!valid){
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
- 
-            if (value.length() < 1) { 
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            
-            break;
-        }
- 
-        return value; 
-    }
     
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String value) {
         
-        choice = choice.toUpperCase();
+        value = value.toUpperCase();
         
-        switch (choice){
+        switch (value){
             case "I":
                 this.viewPlayerInventory();
                 break;

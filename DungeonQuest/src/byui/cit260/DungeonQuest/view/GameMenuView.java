@@ -11,11 +11,13 @@ import java.util.Scanner;
  *
  * @author ZiksMS_Sophia
  */
-public class GameMenuView {
-    private final String menu;
-    private String promptMessage;
+public class GameMenuView extends View{
+//    private final String menu;
+//    private String promptMessage;
+    
+    
     public GameMenuView (){
-        this.menu = "\n"
+        super( "\n"
             + "\n--------------------------------"
             +"\n| Game Menu"
             + "\n--------------------------------"
@@ -25,40 +27,15 @@ public class GameMenuView {
             + "\nH - View the Help Menu"
             + "\nQ - Quit to Main Menu"
                 
-            + "\n--------------------------------";
-    }
-    public void displayMenu(){
-        boolean done = false; //set flag to not done
-        do{
-            String GameOption = this.getInput();
-            if (GameOption.toUpperCase().equals("Q"))
-                return;
-                
-            done = this.doAction(GameOption);
-            
-        }while (!done);
+            + "\n--------------------------------");
     }
     
-    public String getInput(){
-        Scanner keyboard = new Scanner(System.in);
-        boolean valid = false;
-        String selection = null;
+    @Override
+    public boolean doAction(String value){
         
-        while (!valid){
-           System.out.println(this.menu); 
-            selection = keyboard.nextLine();
-            selection = selection.trim();
-            
-            if (selection.length()<1){
-                System.out.println("\n*** Invalid selection *** Try again");
-                continue;
-            }
-            break;
-        }
-        return selection;
-    }
-    public boolean doAction(String choice){
-        switch (choice){
+        value = value.toUpperCase();
+        
+        switch (value){
             case "M": //See the Map of the Dungeon(select a room to explore
                 this.displayMap();
                 break;
@@ -78,19 +55,19 @@ public class GameMenuView {
         return false;
     }
 
-    private void displayMap() {
+    public void displayMap() {
         System.out.println("\n*** displayMap() function called ***");
     }
-    private void displayTrapMenu() {
+    public void displayTrapMenu() {
         InteractWithTheTrapView trapView = new InteractWithTheTrapView();
         trapView.displayInteractWithTheTrapView();
     }
 
-    private void displayInventory() {
+    public void displayInventory() {
         System.out.println("\n*** displayInventory() function called ***");
     }
 
-    private void displayHelpMenu() {
+    public void displayHelpMenu() {
         System.out.println("\n*** displayHelpMenu() function called ***");
     }
 

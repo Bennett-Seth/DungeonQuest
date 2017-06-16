@@ -14,17 +14,17 @@ import java.util.Scanner;
  *
  * @author parrdyl
  */
-public class MapMenuView {
+public class MapMenuView extends View{
     
-    private String promptMessage;
+//    private String promptMessage;
+//    
+//    public MapMenuView(){
+//        this.promptMessage= "\nPlease select an option ";
+//        this.displayMap();
+//    }
     
-    public MapMenuView(){
-        this.promptMessage= "\nPlease select an option ";
-        this.displayMap();
-    }
-    
-    private void displayMap() {
-           System.out.println(
+            public MapMenuView(){
+           super(
             "\n"
             + "\n--------------------------------"
             +"\n| Map Menu"
@@ -35,45 +35,13 @@ public class MapMenuView {
             + "\nR = Show visited Rooms"
             + "\n--------------------------------");
     }
-    public void displayMapMenuView(){
+    
+    @Override
+    public boolean doAction(String value) {
         
-        boolean done = false;
-        do {
-            String mapOption = this.getMapOption();
-            if (mapOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(mapOption);
-        } while (!done);
-    }
-
-    private String getMapOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
+        value = value.toUpperCase();
         
-        while(!valid){
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
- 
-            if (value.length() < 1) { 
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            
-            break;
-        }
- 
-        return value; 
-    }
-
-    private boolean doAction(String choice) {
-        
-        choice = choice.toUpperCase();
-        
-        switch (choice){
+        switch (value){
             case "V":
                 this.showMap();
                 break;
