@@ -7,7 +7,7 @@ package byui.cit260.DungeonQuest.view;
 
 /**
  *
- * @author ZiksMS
+ * @author ZiksMS_Sophia
  */
 public interface ViewInterface {
     public void display();

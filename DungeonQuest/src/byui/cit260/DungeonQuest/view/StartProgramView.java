@@ -23,18 +23,27 @@ public class StartProgramView extends View{
 //        this.displayBanner();
 //        
 //    }
-
-    private void displayBanner() {
-       
-        System.out.println(
-                "\n*******************************************"
-                +"\n*                                        *"
-                +"\n* Welcome! Will you be able to survive   *"
-                +"\n* the dungeon?                           *"
-                +"\n******************************************"
-        );
-        
-    }
+public StartProgramView(){
+    
+    super("\n*******************************************"
+          +"\n*                                        *"
+          +"\n* Welcome! Will you be able to survive   *"
+          +"\n* the dungeon?                           *"
+          +"\n******************************************"
+          + "\n Please, enter your name                 "
+    );
+}
+   // private void displayBanner() {
+//       
+//        System.out.println(
+//                "\n*******************************************"
+//                +"\n*                                        *"
+//                +"\n* Welcome! Will you be able to survive   *"
+//                +"\n* the dungeon?                           *"
+//                +"\n******************************************"
+//        );
+//        
+//    }
 
     @Override
     public boolean doAction(String playersName) {

@@ -22,6 +22,7 @@ public class GameMenuView extends View{
             +"\n| Game Menu"
             + "\n--------------------------------"
             + "\nT - Interact with the trap"
+            + "\nZ - Interact with the zombies"
             + "\nM - See the Map of the Dungeon (select a room to explore)"
             + "\nI - Review Your Character’s Inventory and Player Level"
             + "\nH - View the Help Menu"
@@ -39,8 +40,11 @@ public class GameMenuView extends View{
             case "M": //See the Map of the Dungeon(select a room to explore
                 this.displayMap();
                 break;
-            case "T": 
-                this.displayTrapMenu();
+            case "T": //Display Trap Room
+                this.displayTrap();
+                break;
+            case "Z": //Display Zombies Room
+                this.displayZombies();
                 break;
             case "I": //Review your characters's inventory and player levol
                 this.displayInventory();
@@ -58,9 +62,13 @@ public class GameMenuView extends View{
     public void displayMap() {
         System.out.println("\n*** displayMap() function called ***");
     }
-    public void displayTrapMenu() {
+    public void displayTrap() {
         InteractWithTheTrapView trapView = new InteractWithTheTrapView();
-        trapView.displayInteractWithTheTrapView();
+        trapView.display();
+    }
+    public void displayZombies(){
+        ZombiesRoomView ZombiesView = new ZombiesRoomView();
+        ZombiesView.display();
     }
 
     public void displayInventory() {

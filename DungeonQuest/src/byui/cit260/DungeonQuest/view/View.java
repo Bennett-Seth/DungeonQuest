@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author ZiksMS
+ * @author ZiksMS_Sophia
  */
 public abstract class View implements ViewInterface{
     protected String displayMessage;
