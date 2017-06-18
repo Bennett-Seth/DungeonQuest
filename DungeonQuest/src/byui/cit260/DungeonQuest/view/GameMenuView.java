@@ -76,7 +76,8 @@ public class GameMenuView extends View{
     }
 
     public void displayHelpMenu() {
-        System.out.println("\n*** displayHelpMenu() function called ***");
+        HelpMenuView helpView = new HelpMenuView();
+        helpView.display();
     }
 
 }

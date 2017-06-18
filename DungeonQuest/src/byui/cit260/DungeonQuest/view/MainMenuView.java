@@ -35,6 +35,7 @@ public class MainMenuView extends View{
             + "\nG - Get and start saved game"
             + "\nH - Get help on how to play the game"
             + "\nS - Save game"
+            + "\nT - Test Vampire View"
             + "\nQ - Quit"
             + "\n--------------------------------");
 }
@@ -63,6 +64,9 @@ public class MainMenuView extends View{
             case "S":
                 this.saveGame();
                 break;
+            case "T":
+                this.testVampire();
+                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;                
@@ -82,13 +86,18 @@ public class MainMenuView extends View{
     }
 
     private void displayHelpMenu() {
-            System.out.println("*** displayHelpMenu function called ***");
+        HelpMenuView helpView = new HelpMenuView();
+        helpView.display();
     }
 
     private void saveGame() {
          System.out.println("*** startExistingGame function called ***");
     }
-
+    
+    private void testVampire() {
+        VampireView vampireTest = new VampireView();
+        vampireTest.display();
+    }
     
 }
 
