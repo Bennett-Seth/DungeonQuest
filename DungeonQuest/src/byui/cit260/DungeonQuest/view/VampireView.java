@@ -7,8 +7,9 @@ package byui.cit260.DungeonQuest.view;
 
 /**
  *
- * @author Seth
+ * @author parrdyl
  */
+
 public class VampireView extends View{
     
     
