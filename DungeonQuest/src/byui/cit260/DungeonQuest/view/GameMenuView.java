@@ -23,8 +23,9 @@ public class GameMenuView extends View{
             + "\n--------------------------------"
             + "\nT - Interact with the trap"
             + "\nZ - Interact with the zombies"
+            + "\nE - Find the Enemy with the maximum strength."
             + "\nM - See the Map of the Dungeon (select a room to explore)"
-            + "\nI - Review Your Character’s Inventory and Player Level"
+            + "\nI - Review Your Character’s Inventory and Player Level" 
             + "\nH - View the Help Menu"
             + "\nQ - Quit to Main Menu"
                 
@@ -46,6 +47,9 @@ public class GameMenuView extends View{
             case "Z": //Display Zombies Room
                 this.displayZombies();
                 break;
+            case "E": //Displey the character with the maximum strength
+                this.displayStrength();
+                break;
             case "I": //Review your characters's inventory and player levol
                 this.displayInventory();
                 break;
@@ -62,15 +66,22 @@ public class GameMenuView extends View{
     public void displayMap() {
         System.out.println("\n*** displayMap() function called ***");
     }
+    
     public void displayTrap() {
         InteractWithTheTrapView trapView = new InteractWithTheTrapView();
         trapView.display();
     }
+    
     public void displayZombies(){
         ZombiesRoomView ZombiesView = new ZombiesRoomView();
         ZombiesView.display();
     }
-
+    
+    public void displayStrength(){
+        EnemiesStrengthView StrengthView = new EnemiesStrengthView();
+        StrengthView.display();
+    }
+    
     public void displayInventory() {
         System.out.println("\n*** displayInventory() function called ***");
     }

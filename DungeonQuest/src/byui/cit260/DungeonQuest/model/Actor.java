@@ -19,10 +19,19 @@ public class Actor implements Serializable{
     private double coordinants; 
     private String status;
     private double strength;
-
+    private boolean enemy;
+    
     public Actor() {
     }
 
+    public boolean isEnemy() {
+        return enemy;
+    }
+
+    public void setEnemy(boolean enemy) {
+        this.enemy = enemy;
+    }
+    
     public String getName() {
         return name;
     }

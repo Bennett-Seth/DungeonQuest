@@ -5,6 +5,8 @@
  */
 package byui.cit260.DungeonQuest.control;
 
+import byui.cit260.DungeonQuest.model.Actor;
+import byui.cit260.DungeonQuest.model.Game;
 import byui.cit260.DungeonQuest.model.Player;
 import dungeonquest.DungeonQuest;
 
@@ -27,9 +29,12 @@ public class GameControl{
         
         return player;
     }
-
+    
     public static void createNewGame(Player player) {
-         System.out.println("*** createNewGame stub function called ***");
+      Game game = new Game();
+      game.setActors(createActorList());
+      game.setPlayer(player);
+      DungeonQuest.setCurrentGame(game);
     }
     public boolean starNewGame(boolean player, boolean newGame, boolean saveFile, boolean starNewGame){
         if (player == newGame && player ==saveFile){
@@ -41,7 +46,47 @@ public class GameControl{
         
         return starNewGame;
         }
-
+    public static Actor[] createActorList(){
+       Actor[] actors = new Actor[5]; 
+        
+        Actor newActor = new Actor();
+        
+        newActor.setName("Fairie");
+        newActor.setDescription("bright");
+        newActor.setStrength(50.0);
+        newActor.setEnemy(false);
+        actors[0] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Vanpire");
+        newActor.setDescription("Dark");
+        newActor.setStrength(30.0);
+        newActor.setEnemy(true);
+        actors[1] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Zombie");
+        newActor.setDescription("Ugly Guy");
+        newActor.setStrength(10.0);
+        newActor.setEnemy(true);
+        actors[2] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Blue Wizard");
+        newActor.setDescription("Old");
+        newActor.setStrength(100.0);
+        newActor.setEnemy(false);
+        actors[3] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Globin");
+        newActor.setDescription("Nasty");
+        newActor.setStrength(20.0);
+        newActor.setEnemy(true);
+        actors[4] = newActor;
+        return actors;
+        
+    }
     boolean starNewGame(boolean player, boolean newGame, boolean saveFile) {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
        return false;  
