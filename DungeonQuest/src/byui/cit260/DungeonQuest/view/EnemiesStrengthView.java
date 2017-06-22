@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author ZiksMS
+ * @author ZiksMS_sophia
  */
 class EnemiesStrengthView extends View{
 
