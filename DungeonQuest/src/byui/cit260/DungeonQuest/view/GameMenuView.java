@@ -7,6 +7,7 @@ package byui.cit260.DungeonQuest.view;
 
 import byui.cit260.DungeonQuest.control.MapControl;
 import byui.cit260.DungeonQuest.model.Game;
+import byui.cit260.DungeonQuest.model.Inventory;
 import byui.cit260.DungeonQuest.model.Location;
 import byui.cit260.DungeonQuest.model.Map;
 import dungeonquest.DungeonQuest;
@@ -135,7 +136,19 @@ public class GameMenuView extends View{
     }
     
     public void displayInventory() {
-        System.out.println("\n*** displayInventory() function called ***");
+
+        Game game = DungeonQuest.getCurrentGame();
+        Inventory[] inventory = game.getInventory();
+        
+        System.out.println("\n      LIST OF INVENTORY ITEMS");
+
+        for (int i = 0; i < inventory.length; i++){
+            if (inventory[i].getAmount() != 0) {
+            System.out.println(inventory[i]);    
+            }    
+        }
+        
+        System.out.println("Your pack is empty, time to go hunting!");
     }
 
     public void displayHelpMenu() {

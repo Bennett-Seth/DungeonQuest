@@ -16,9 +16,9 @@ public class Inventory implements Serializable{
     
     private String inventoryItem;
     private String itemDescription;
-    private double itemLevel;
-    private double amount;
-    private double qualityInStock;
+    private int itemLevel;
+    private int amount;
+    private int qualityInStock;
 
     public Inventory() {
     }
@@ -40,27 +40,27 @@ public class Inventory implements Serializable{
         this.itemDescription = itemDescription;
     }
 
-    public double getItemLevel() {
+    public int getItemLevel() {
         return itemLevel;
     }
 
-    public void setItemLevel(double itemLevel) {
+    public void setItemLevel(int itemLevel) {
         this.itemLevel = itemLevel;
     }
 
-    public double getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
-    public double getQualityInStock() {
+    public int getQualityInStock() {
         return qualityInStock;
     }
 
-    public void setQualityInStock(double qualityInStock) {
+    public void setQualityInStock(int qualityInStock) {
         this.qualityInStock = qualityInStock;
     }
 

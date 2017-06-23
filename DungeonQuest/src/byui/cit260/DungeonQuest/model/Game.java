@@ -19,6 +19,8 @@ public class Game implements Serializable{
     private Actor[] actors;
     private Player player;
     private Map map;
+    private Inventory[] inventory;
+    
 
     public Map getMap() {
         return map;
@@ -71,6 +73,14 @@ public class Game implements Serializable{
         this.noPlayer = noPlayer;
     }
 
+    public Inventory[] getInventory() {
+        return inventory;
+    }
+    
+    public void setInventory(Inventory[] inventory){
+        this.inventory = inventory;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 5;

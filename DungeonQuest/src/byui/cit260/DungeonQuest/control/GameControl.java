@@ -7,6 +7,7 @@ package byui.cit260.DungeonQuest.control;
 
 import byui.cit260.DungeonQuest.model.Actor;
 import byui.cit260.DungeonQuest.model.Game;
+import byui.cit260.DungeonQuest.model.Inventory;
 import byui.cit260.DungeonQuest.model.Location;
 import byui.cit260.DungeonQuest.model.Map;
 import byui.cit260.DungeonQuest.model.Player;
@@ -38,10 +39,15 @@ public class GameControl{
       game.setActors(createActorList());
       game.setPlayer(player);
       DungeonQuest.setCurrentGame(game);
+      
+      Inventory[] inventoryList = InventoryControl.createInventoryList();
+      game.setInventory(inventoryList);
+      
       Map map = MapControl.createMap();
       game.setMap(map);
       MapControl.movePlayerToStartingLocation(map);
     }
+
     public boolean starNewGame(boolean player, boolean newGame, boolean saveFile, boolean starNewGame){
         if (player == newGame && player ==saveFile){
             return false;   
@@ -146,6 +152,6 @@ public class GameControl{
         return circumference;
         
     }
-            
+    
 }
 
