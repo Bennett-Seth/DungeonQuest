@@ -16,11 +16,20 @@ public class Location implements Serializable {
     //class instance variables
     private double row;
     private double column;
-    private String visited;
+    private Boolean visited;
+    private Scene scene;
 
     public Location() {
     }
 
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+    
     public double getRow() {
         return row;
     }
@@ -37,11 +46,11 @@ public class Location implements Serializable {
         this.column = column;
     }
 
-    public String getVisited() {
-        return visited;
+    public boolean getVisited() {
+        return true;
     }
 
-    public void setVisited(String visited) {
+    public void setVisited(boolean visited) {
         this.visited = visited;
     }
 
