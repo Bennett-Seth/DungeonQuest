@@ -18,6 +18,15 @@ public class Game implements Serializable{
     private double noPlayer;
     private Actor[] actors;
     private Player player;
+    private Map map;
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
 
     public Game() {
     }

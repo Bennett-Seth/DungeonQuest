@@ -97,35 +97,35 @@ public class GameControl{
         Location[] [] locations = map.getLocations();
         
         //start point
-        locations[0][0].setScene(scenes[Map.SceneType.start.ordinal()]);
-        locations[0][1].setScene(scenes[Map.SceneType.instructions.ordinal()]);
-        locations[0][2].setScene(scenes[Map.SceneType.goblin.ordinal()]);
-        locations[0][3].setScene(scenes[Map.SceneType.empty.ordinal()]);
-        locations[0][4].setScene(scenes[Map.SceneType.vampire.ordinal()]);
+        locations[0][0].setScene(scenes[MapControl.SceneType.start.ordinal()]);
+        locations[0][1].setScene(scenes[MapControl.SceneType.instructions.ordinal()]);
+        locations[0][2].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[0][3].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[0][4].setScene(scenes[MapControl.SceneType.vampire.ordinal()]);
         
-        locations[1][0].setScene(scenes[Map.SceneType.zombie.ordinal()]);
-        locations[1][1].setScene(scenes[Map.SceneType.vampire.ordinal()]);
-        locations[1][2].setScene(scenes[Map.SceneType.empty.ordinal()]);
-        locations[1][3].setScene(scenes[Map.SceneType.goblin.ordinal()]);
-        locations[1][4].setScene(scenes[Map.SceneType.trap.ordinal()]);
+        locations[1][0].setScene(scenes[MapControl.SceneType.zombie.ordinal()]);
+        locations[1][1].setScene(scenes[MapControl.SceneType.vampire.ordinal()]);
+        locations[1][2].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[1][3].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[1][4].setScene(scenes[MapControl.SceneType.trap.ordinal()]);
         
-        locations[2][0].setScene(scenes[Map.SceneType.empty.ordinal()]);
-        locations[2][1].setScene(scenes[Map.SceneType.wizard.ordinal()]);
-        locations[2][2].setScene(scenes[Map.SceneType.goblin.ordinal()]);
-        locations[2][3].setScene(scenes[Map.SceneType.empty.ordinal()]);
-        locations[2][4].setScene(scenes[Map.SceneType.vampire.ordinal()]);
+        locations[2][0].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[2][1].setScene(scenes[MapControl.SceneType.wizard.ordinal()]);
+        locations[2][2].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[2][3].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[2][4].setScene(scenes[MapControl.SceneType.vampire.ordinal()]);
         
-        locations[3][0].setScene(scenes[Map.SceneType.goblin.ordinal()]);
-        locations[3][1].setScene(scenes[Map.SceneType.empty.ordinal()]);
-        locations[3][2].setScene(scenes[Map.SceneType.zombie.ordinal()]);
-        locations[3][3].setScene(scenes[Map.SceneType.fairies.ordinal()]);
-        locations[3][4].setScene(scenes[Map.SceneType.empty.ordinal()]);
+        locations[3][0].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[3][1].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[3][2].setScene(scenes[MapControl.SceneType.zombie.ordinal()]);
+        locations[3][3].setScene(scenes[MapControl.SceneType.fairies.ordinal()]);
+        locations[3][4].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
         
-        locations[4][0].setScene(scenes[Map.SceneType.vampire.ordinal()]);
-        locations[4][1].setScene(scenes[Map.SceneType.empty.ordinal()]);
-        locations[4][2].setScene(scenes[Map.SceneType.goblin.ordinal()]);
-        locations[4][3].setScene(scenes[Map.SceneType.empty.ordinal()]);
-        locations[4][4].setScene(scenes[Map.SceneType.finish.ordinal()]);               
+        locations[4][0].setScene(scenes[MapControl.SceneType.vampire.ordinal()]);
+        locations[4][1].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[4][2].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[4][3].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[4][4].setScene(scenes[MapControl.SceneType.finish.ordinal()]);               
     }
     boolean starNewGame(boolean player, boolean newGame, boolean saveFile) {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

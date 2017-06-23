@@ -53,4 +53,20 @@ public abstract class View implements ViewInterface{
  
         return value; 
     }
+     public int getIntInput(String prompt, int min, int max) {
+         Scanner keyboard = new Scanner(System.in);
+         int returnValue = -1;
+         while(returnValue == -1){
+            System.out.println(prompt + "(-999 to cancel)");
+            returnValue = keyboard.nextInt();
+            
+            if (returnValue == -999) 
+                return returnValue;
+            if (returnValue < min || returnValue> max){
+                System.out.println("You are out of the boundaries. Try Again!");
+                returnValue = -1;
+            }
+         }
+        return returnValue;
+     }
 }

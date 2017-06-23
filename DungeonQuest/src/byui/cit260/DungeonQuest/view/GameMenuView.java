@@ -5,6 +5,7 @@
  */
 package byui.cit260.DungeonQuest.view;
 
+import byui.cit260.DungeonQuest.control.MapControl;
 import byui.cit260.DungeonQuest.model.Game;
 import byui.cit260.DungeonQuest.model.Location;
 import byui.cit260.DungeonQuest.model.Map;
@@ -29,6 +30,7 @@ public class GameMenuView extends View{
             + "\nZ - Interact with the zombies"
             + "\nE - Find the Enemy with the maximum strength."
             + "\nM - See the Map of the Dungeon (select a room to explore)"
+            + "\nG - Go to new location"
             + "\nI - Review Your Character’s Inventory and Player Level" 
             + "\nH - View the Help Menu"
             + "\nQ - Quit to Main Menu"
@@ -59,6 +61,9 @@ public class GameMenuView extends View{
                 break;
             case "H": //View the Help Menu
                 this.displayHelpMenu();
+                break;
+            case "G": 
+                this.goToNewLocation();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -111,6 +116,7 @@ public class GameMenuView extends View{
             }
            System.out.println("|");
           }
+        System.out.println("You are currently in " + map.getCurrentLocation().getScene().getDescription());
        }
 
     public void displayTrap() {
@@ -136,5 +142,18 @@ public class GameMenuView extends View{
         HelpMenuView helpView = new HelpMenuView();
         helpView.display();
     }
-
+    public void goToNewLocation() {
+        displayMap();
+        int row = getIntInput("Please enter what row you would like to go to: ", 0, 4);
+        if (row == -999)
+            return;
+        int column = getIntInput("Please enter what column you would like to go to: ", 0, 4);
+        if (column == -999)
+            return;
+        Game game = DungeonQuest.getCurrentGame(); // retreive the game
+        Map map = game.getMap(); // retreive the map from game
+        MapControl.movePlayer(map, row, column);
+        //This is where we should call a scene view associated with the new scene
+        displayMap();
+    }
 }

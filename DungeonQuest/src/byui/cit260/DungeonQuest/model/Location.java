@@ -46,13 +46,14 @@ public class Location implements Serializable {
         this.column = column;
     }
 
-    public boolean getVisited() {
-        return true;
+    public boolean isVisited() {
+        return visited;
     }
 
     public void setVisited(boolean visited) {
         this.visited = visited;
     }
+    
 
     @Override
     public int hashCode() {
