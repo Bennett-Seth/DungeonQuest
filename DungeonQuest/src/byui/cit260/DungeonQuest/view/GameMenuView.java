@@ -142,6 +142,9 @@ public class GameMenuView extends View{
         
         System.out.println("\n      LIST OF INVENTORY ITEMS");
 
+        /* Note - removing the .getAmount != 0 limit results in everything
+        getting published to the viewer. A chunk of ugly details*/
+        
         for (int i = 0; i < inventory.length; i++){
             if (inventory[i].getAmount() != 0) {
             System.out.println(inventory[i]);    
@@ -149,6 +152,51 @@ public class GameMenuView extends View{
         }
         
         System.out.println("Your pack is empty, time to go hunting!");
+        
+        /* Don't forget to calculate the player's strength
+            
+            int playerWEP
+            int playerARM
+            int playerSTR
+        
+            for (int i = 0; i <= 9; i++){
+                if (inventory[i].getAmount() != 0) {
+                    int playerWEP = (inventory[i].getItemLevel();
+                } 
+        
+                    if (int playerWEP < inventory[i].getItemLevel()) {
+                        int playerWEP = (inventory[i].getItemLevel();
+                    }
+        
+                    if (int playerWEP > inventory[i].getItemLevel()) {
+                        int playerWEP = int playerWEP;
+                    }
+        
+                else {
+                    playerWep = 0;
+                }
+                
+            for (int i = 10; i < inventory.length; i++){
+                if (inventory[i].getAmount() != 0) {
+                    int playerARM = (inventory[i].getItemLevel();
+                }
+        
+                    if (int playerARM < inventory[i].getItemLevel()) {
+                        int playerARM = (inventory[i].getItemLevel();
+                    }
+        
+                    if (int playerARM > inventory[i].getItemLevel()) {
+                        int playerARM = int playerWEP;
+                    }
+                else {
+                    playerARM = 0;
+                }
+        
+            playerSTR = playerWEP + playerARM
+
+        System.out.println("\nYour Player Strength is " + playerSTR);
+        */
+        
     }
 
     public void displayHelpMenu() {
