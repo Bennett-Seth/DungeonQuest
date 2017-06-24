@@ -30,6 +30,7 @@ public class GameMenuView extends View{
             + "\nT - Interact with the trap"
             + "\nZ - Interact with the zombies"
             + "\nE - Find the Enemy with the maximum strength."
+            + "\nS = Find the Item with the greatest strength"
             + "\nM - See the Map of the Dungeon (select a room to explore)"
             + "\nG - Go to new location"
             + "\nI - Review Your Character’s Inventory and Player Level" 
@@ -56,6 +57,9 @@ public class GameMenuView extends View{
                 break;
             case "E": //Displey the character with the maximum strength
                 this.displayStrength();
+                break;
+            case "S"://Display the inventory item with the greatest strength
+                this.displayInventoryStrength();
                 break;
             case "I": //Review your characters's inventory and player levol
                 this.displayInventory();
@@ -216,5 +220,10 @@ public class GameMenuView extends View{
         MapControl.movePlayer(map, row, column);
         //This is where we should call a scene view associated with the new scene
         displayMap();
+    }
+
+    private void displayInventoryStrength() {
+       InventoryStrengthView StrengthView = new InventoryStrengthView();
+       StrengthView.display();
     }
 }

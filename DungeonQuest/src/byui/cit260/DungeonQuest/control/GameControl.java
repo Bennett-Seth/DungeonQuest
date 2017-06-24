@@ -99,6 +99,7 @@ public class GameControl{
         return actors;
         
     }
+
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[] [] locations = map.getLocations();
         
