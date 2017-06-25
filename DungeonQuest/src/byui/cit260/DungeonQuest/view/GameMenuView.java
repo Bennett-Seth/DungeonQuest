@@ -157,50 +157,52 @@ public class GameMenuView extends View{
         
         System.out.println("Your pack is empty, time to go hunting!");
         
-        /* Don't forget to calculate the player's strength
+        /* Don't forget to calculate the player's strength */
             
-            int playerWEP
-            int playerARM
-            int playerSTR
+            int playerWEP = 0;
+            int playerARM = 0;
+            int playerSTR = 0;
         
             for (int i = 0; i <= 9; i++){
                 if (inventory[i].getAmount() != 0) {
-                    int playerWEP = (inventory[i].getItemLevel();
+                    playerWEP = inventory[i].getItemLevel();
                 } 
         
-                    if (int playerWEP < inventory[i].getItemLevel()) {
-                        int playerWEP = (inventory[i].getItemLevel();
+                    if (playerWEP < inventory[i].getItemLevel()) {
+                        playerWEP = inventory[i].getItemLevel();
                     }
         
-                    if (int playerWEP > inventory[i].getItemLevel()) {
-                        int playerWEP = int playerWEP;
+                    if (playerWEP > inventory[i].getItemLevel()) {
+                        playerWEP = playerWEP;
                     }
         
                 else {
-                    playerWep = 0;
+                    playerWEP = 0;
                 }
                 
-            for (int i = 10; i < inventory.length; i++){
+            for (i = 10; i < inventory.length; i++){
                 if (inventory[i].getAmount() != 0) {
-                    int playerARM = (inventory[i].getItemLevel();
+                    playerARM = inventory[i].getItemLevel();
                 }
         
-                    if (int playerARM < inventory[i].getItemLevel()) {
-                        int playerARM = (inventory[i].getItemLevel();
+                    if (playerARM < inventory[i].getItemLevel()) {
+                        playerARM = inventory[i].getItemLevel();
                     }
         
-                    if (int playerARM > inventory[i].getItemLevel()) {
-                        int playerARM = int playerWEP;
+                    if (playerARM > inventory[i].getItemLevel()) {
+                        playerARM = playerWEP;
                     }
                 else {
                     playerARM = 0;
                 }
         
-            playerSTR = playerWEP + playerARM
+            playerSTR = playerWEP + playerARM;
 
         System.out.println("\nYour Player Strength is " + playerSTR);
-        */
+  
         
+    }
+    }
     }
 
     public void displayHelpMenu() {
