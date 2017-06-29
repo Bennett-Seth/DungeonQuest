@@ -15,15 +15,49 @@ public class Map implements Serializable {
     
     // class instance variables
     private String description;
-    private double rowCount;
-    private double columnCount;
-    private double currentRow;
-    private double currentColumn;
+    private int noOfRows;
+    private int noOfColumns;
+    private int currentRow;
+    private int currentColumn;
     private String currentScene;
+    private Location[][] locations;
     
-     public Map() {
+    public Map() {
+    }
+    public Map(int noOfRows, int noOfColumns) {
+        if (noOfRows < 1 || noOfColumns < 1) {
+            System.out.println("The number of rows and columns must be > zero");
+            return;
+        }
+        
+        this.noOfRows = noOfRows;
+        this.noOfColumns = noOfColumns;
+        
+        this.locations = new Location[noOfRows][noOfColumns];
+        
+        for (int row = 0; row < noOfRows; row++) {
+            for (int column = 0; column < noOfColumns; column++) {
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                
+                locations[row][column] = location;
+            }
+        }         
     }
 
+    public Location getCurrentLocation() {
+        return locations[currentRow][currentColumn];
+    }
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+    
     public String getDescription() {
         return description;
     }
@@ -32,35 +66,35 @@ public class Map implements Serializable {
         this.description = description;
     }
 
-    public double getRowCount() {
-        return rowCount;
+    public int getRowCount() {
+        return noOfRows;
     }
 
-    public void setRowCount(double rowCount) {
-        this.rowCount = rowCount;
+    public void setRowCount(int rowCount) {
+        this.noOfRows = rowCount;
     }
 
-    public double getColumnCount() {
-        return columnCount;
+    public int getColumnCount() {
+        return noOfColumns;
     }
 
-    public void setColumnCount(double columnCount) {
-        this.columnCount = columnCount;
+    public void setColumnCount(int columnCount) {
+        this.noOfColumns = columnCount;
     }
 
-    public double getCurrentRow() {
+    public int getCurrentRow() {
         return currentRow;
     }
 
-    public void setCurrentRow(double currentRow) {
+    public void setCurrentRow(int currentRow) {
         this.currentRow = currentRow;
     }
 
-    public double getCurrentColumn() {
+    public int getCurrentColumn() {
         return currentColumn;
     }
 
-    public void setCurrentColumn(double currentColumn) {
+    public void setCurrentColumn(int currentColumn) {
         this.currentColumn = currentColumn;
     }
 
@@ -74,15 +108,15 @@ public class Map implements Serializable {
 
     @Override
     public String toString() {
-        return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", columnCount=" + columnCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", currentScene=" + currentScene + '}';
+        return "Map{" + "description=" + description + ", rowCount=" + noOfRows + ", columnCount=" + noOfColumns + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + ", currentScene=" + currentScene + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 97 * hash + Objects.hashCode(this.description);
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.rowCount) ^ (Double.doubleToLongBits(this.rowCount) >>> 32));
-        hash = 97 * hash + (int) (Double.doubleToLongBits(this.columnCount) ^ (Double.doubleToLongBits(this.columnCount) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.noOfRows) ^ (Double.doubleToLongBits(this.noOfRows) >>> 32));
+        hash = 97 * hash + (int) (Double.doubleToLongBits(this.noOfColumns) ^ (Double.doubleToLongBits(this.noOfColumns) >>> 32));
         hash = 97 * hash + (int) (Double.doubleToLongBits(this.currentRow) ^ (Double.doubleToLongBits(this.currentRow) >>> 32));
         hash = 97 * hash + (int) (Double.doubleToLongBits(this.currentColumn) ^ (Double.doubleToLongBits(this.currentColumn) >>> 32));
         hash = 97 * hash + Objects.hashCode(this.currentScene);
@@ -101,10 +135,10 @@ public class Map implements Serializable {
             return false;
         }
         final Map other = (Map) obj;
-        if (Double.doubleToLongBits(this.rowCount) != Double.doubleToLongBits(other.rowCount)) {
+        if (Double.doubleToLongBits(this.noOfRows) != Double.doubleToLongBits(other.noOfRows)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.columnCount) != Double.doubleToLongBits(other.columnCount)) {
+        if (Double.doubleToLongBits(this.noOfColumns) != Double.doubleToLongBits(other.noOfColumns)) {
             return false;
         }
         if (Double.doubleToLongBits(this.currentRow) != Double.doubleToLongBits(other.currentRow)) {

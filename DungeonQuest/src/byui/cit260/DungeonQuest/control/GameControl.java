@@ -7,7 +7,11 @@ package byui.cit260.DungeonQuest.control;
 
 import byui.cit260.DungeonQuest.model.Actor;
 import byui.cit260.DungeonQuest.model.Game;
+import byui.cit260.DungeonQuest.model.Inventory;
+import byui.cit260.DungeonQuest.model.Location;
+import byui.cit260.DungeonQuest.model.Map;
 import byui.cit260.DungeonQuest.model.Player;
+import byui.cit260.DungeonQuest.model.Scene;
 import dungeonquest.DungeonQuest;
 
 /**
@@ -35,7 +39,15 @@ public class GameControl{
       game.setActors(createActorList());
       game.setPlayer(player);
       DungeonQuest.setCurrentGame(game);
+      
+      Inventory[] inventoryList = InventoryControl.createInventoryList();
+      game.setInventory(inventoryList);
+      
+      Map map = MapControl.createMap();
+      game.setMap(map);
+      MapControl.movePlayerToStartingLocation(map);
     }
+
     public boolean starNewGame(boolean player, boolean newGame, boolean saveFile, boolean starNewGame){
         if (player == newGame && player ==saveFile){
             return false;   
@@ -87,6 +99,41 @@ public class GameControl{
         return actors;
         
     }
+
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
+        Location[] [] locations = map.getLocations();
+        
+        //start point
+        locations[0][0].setScene(scenes[MapControl.SceneType.start.ordinal()]);
+        locations[0][1].setScene(scenes[MapControl.SceneType.instructions.ordinal()]);
+        locations[0][2].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[0][3].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[0][4].setScene(scenes[MapControl.SceneType.vampire.ordinal()]);
+        
+        locations[1][0].setScene(scenes[MapControl.SceneType.zombie.ordinal()]);
+        locations[1][1].setScene(scenes[MapControl.SceneType.vampire.ordinal()]);
+        locations[1][2].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[1][3].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[1][4].setScene(scenes[MapControl.SceneType.trap.ordinal()]);
+        
+        locations[2][0].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[2][1].setScene(scenes[MapControl.SceneType.wizard.ordinal()]);
+        locations[2][2].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[2][3].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[2][4].setScene(scenes[MapControl.SceneType.vampire.ordinal()]);
+        
+        locations[3][0].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[3][1].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[3][2].setScene(scenes[MapControl.SceneType.zombie.ordinal()]);
+        locations[3][3].setScene(scenes[MapControl.SceneType.fairies.ordinal()]);
+        locations[3][4].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        
+        locations[4][0].setScene(scenes[MapControl.SceneType.vampire.ordinal()]);
+        locations[4][1].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[4][2].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[4][3].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
+        locations[4][4].setScene(scenes[MapControl.SceneType.finish.ordinal()]);               
+    }
     boolean starNewGame(boolean player, boolean newGame, boolean saveFile) {
        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
        return false;  
@@ -106,6 +153,6 @@ public class GameControl{
         return circumference;
         
     }
-            
+    
 }
 
