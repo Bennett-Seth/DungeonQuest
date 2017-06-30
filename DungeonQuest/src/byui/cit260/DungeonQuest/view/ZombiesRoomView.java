@@ -44,12 +44,15 @@ public class ZombiesRoomView extends View {
         }
  //Individual Assignment L:11, by Sophia.
          try {
-            GameControl.zombiesRoom(steps);
+        GameControl.zombiesRoom(steps);
+          System.out.println("Invalid value. Try again!");
+          return true;
+          
         } catch (ZombiesControlException te) {
             System.out.println(te.getMessage());
         }
         return false;
-        }
+    }
  }
 
        

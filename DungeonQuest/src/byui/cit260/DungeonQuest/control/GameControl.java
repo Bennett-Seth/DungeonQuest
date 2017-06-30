@@ -54,6 +54,10 @@ public class GameControl{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
+    public static String zombiesRoom(String steps) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public boolean starNewGame(boolean player, boolean newGame, boolean saveFile, boolean starNewGame){
         if (player == newGame && player ==saveFile){
             return false;   
@@ -162,7 +166,7 @@ public class GameControl{
         return circumference;
     }
     
-    public static Boolean zombiesRoom (int steps)
+    public static boolean zombiesRoom (int steps)
                         throws ZombiesControlException {
         if(steps >= 1 && steps <= 19)
             throw new ZombiesControlException("Your steps are to short! "
@@ -171,6 +175,7 @@ public class GameControl{
         if(steps >= 31 && steps <=999)
             throw new ZombiesControlException("Your steps are too long! "
                     + "You hit a pile of old cans and woke up the zombies.");
+        
         if(steps >=1000)
              throw new ZombiesControlException("You are way off. "
                      + "Try again");
@@ -178,7 +183,7 @@ public class GameControl{
         if(steps <=0)
              throw new ZombiesControlException("You entered an invalid value. "
                      + "Try again");
-            return false;
+            return true;
     }
         
 }
