@@ -34,7 +34,7 @@ public class InteractWithTheTrapView extends View{
                + "\n of the hole!                                    "
                + "\n Don't make it too big or too small!             "
                + "\n                                                 "
-               + "\n| You must enter the radius now:                 "
+               + "\n You must enter the radius now:                 "
                );
     }    
      

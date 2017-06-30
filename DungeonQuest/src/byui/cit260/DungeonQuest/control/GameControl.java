@@ -6,6 +6,7 @@
 package byui.cit260.DungeonQuest.control;
 
 import byui.cit260.DungeonQuest.Exceptions.TrapControlException;
+import byui.cit260.DungeonQuest.Exceptions.ZombiesControlException;
 import byui.cit260.DungeonQuest.model.Actor;
 import byui.cit260.DungeonQuest.model.Game;
 import byui.cit260.DungeonQuest.model.Inventory;
@@ -47,6 +48,10 @@ public class GameControl{
       Map map = MapControl.createMap();
       game.setMap(map);
       MapControl.movePlayerToStartingLocation(map);
+    }
+
+    public static Boolean zombiesRoom(Boolean steps) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public boolean starNewGame(boolean player, boolean newGame, boolean saveFile, boolean starNewGame){
@@ -157,5 +162,26 @@ public class GameControl{
         return circumference;
     }
     
+    public static Boolean zombiesRoom (int steps)
+                        throws ZombiesControlException {
+        if(steps >= 1 && steps <= 19)
+            throw new ZombiesControlException("Your steps are to short! "
+                    + "You are trapped with the zombies.");
+        
+        if(steps >= 31 && steps <=999)
+            throw new ZombiesControlException("Your steps are too long! "
+                    + "You hit a pile of old cans and woke up the zombies.");
+        if(steps >=1000)
+             throw new ZombiesControlException("You are way off. "
+                     + "Try again");
+        
+        if(steps <=0)
+             throw new ZombiesControlException("You entered an invalid value. "
+                     + "Try again");
+            return false;
+    }
+        
 }
+    
+
 

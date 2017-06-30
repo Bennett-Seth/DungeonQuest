@@ -5,6 +5,7 @@
  */
 package byui.cit260.DungeonQuest.view;
 
+import byui.cit260.DungeonQuest.Exceptions.ZombiesControlException;
 import byui.cit260.DungeonQuest.control.GameControl;
 import dungeonquest.DungeonQuest;
 import java.util.Scanner;
@@ -15,24 +16,20 @@ import java.util.Scanner;
 public class ZombiesRoomView extends View {
     public ZombiesRoomView (){
         super("\n"
-                + "\n--------------------------------------------------- "
-                + "\n|  Zombies Room                                     "
-                + "\n There are hungry Zombies sleeping in this room.    "
-                + "\n They are all over the floor.                       "
-                + "\n You must pass throuth without awake them!          "
-                + "\n Watch your steps! A wrong move and you might become"
-                + "\n one of them.                                       "
-                + "\n To complete this task successfully, you must enter "
-                + "\n the right number of steps needed to pass the       "
-                + "\n zombies in the room.                               "
+                + "\n---------------------------------------------------------------- "
+                + "\n|  Zombies Room                                           "
+                + "\n There are hungry Zombies sleeping in this room.          "
+                + "\n They are all over the floor.                             "
+                + "\n You must pass throuth without awake them!                "
+                + "\n Watch your steps! A wrong move and you might become one of them."
+                + "\n To complete this task successfully, you must enter the right "
+                + "\n number of steps needed to pass the zombies in the room."
                 + "\n You must cross 160ft to be safe from the zombies.  "
-                + "\n Considere your height and estimate your steps to   "
-                + "\n safety.                                            "
+                + "\n Considere your height and estimate your steps to safety."
                 + "\n A step shorter, and you'll be trapped between them."
-                + "\n A step longer, and you'll hit the pile of old can  "
-                + "\n and awake them.                                    "
-                + "\n                                                    "
-                + "\n| Enter the number of steps now:                    "
+                + "\n A step longer, and you'll hit the pile of old can and awake them."
+                + "\n                                                          "
+                + "\n You must enter the number of steps now:                 "
             );
     }
     
@@ -45,22 +42,16 @@ public class ZombiesRoomView extends View {
                     + "You are at a safe zone for now. Keep playing.");
             return true;
         }
-        else if(steps <=19){
-            System.out.println("\n Your steps are to short! "
-                    + "You are trapped with the zombies.");
-            return false;
+ //Individual Assignment L:11, by Sophia.
+         try {
+            GameControl.zombiesRoom(steps);
+        } catch (ZombiesControlException te) {
+            System.out.println(te.getMessage());
         }
-        else if(steps >= 31){
-            System.out.println("\n Your steps are too long! "
-                    + "You hit the pile of old cans and awake the zombies.");
-            return false;
+        return false;
         }
-           else{
-                System.out.println("\n You entered an invalid value. "
-                + "Try again");
-            return false;
-        }
-       
-    }
+ }
 
-}
+       
+    
+
