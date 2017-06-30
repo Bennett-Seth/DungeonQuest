@@ -7,8 +7,7 @@ package byui.cit260.DungeonQuest.view;
 
 import byui.cit260.DungeonQuest.Exceptions.TrapControlException;
 import byui.cit260.DungeonQuest.control.GameControl;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 
 /**
  *
