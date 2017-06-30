@@ -35,13 +35,18 @@ public class ZombiesRoomView extends View {
     
     @Override
     public boolean doAction(String value){
- 
-        int steps = Integer.parseInt(value);
-        if(steps >= 20 && steps <= 30){
-            System.out.println("\n Congratulations! "
-                    + "You are at a safe zone for now. Keep playing.");
-            return true;
+        int steps = 0;
+        try{
+            steps = Integer.parseInt(value);
+        } catch (NumberFormatException nf) {
+            System.out.println("\nYou must enter a valid number.");
+          return false;
         }
+//        if(steps >= 20 && steps <= 30){
+//            System.out.println("\n Congratulations! "
+//                    + "You are at a safe zone for now. Keep playing.");
+//            return true;
+//        }
  //Individual Assignment L:11, by Sophia.
          try {
         GameControl.zombiesRoom(steps);

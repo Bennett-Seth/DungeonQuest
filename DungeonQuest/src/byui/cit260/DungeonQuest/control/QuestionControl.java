@@ -6,6 +6,7 @@
 package byui.cit260.DungeonQuest.control;
 
 import byui.cit260.DungeonQuest.Exceptions.TrapControlException;
+import byui.cit260.DungeonQuest.Exceptions.WizardControlException;
 
 
 /**
@@ -14,19 +15,19 @@ import byui.cit260.DungeonQuest.Exceptions.TrapControlException;
  */
 public class QuestionControl {
     
-    public double wizardQuestion(double var1, double var2, double var3){
+    public static double wizardQuestion(double var1, double var2, double var3)
+                            throws WizardControlException{
 
-        if (var1 < 0 && var2 < 0 && var3 < 0){
-            return -1;
-        }
-        if (var1 == 0 && var2 == 0 && var3 == 0){
-            return 0;
-        }
+        if (var1 < 0 && var2 < 0 && var3 < 0)
+            throw new WizardControlException("The numbers you entered are invalid ");
+        if (var1 == 0 && var2 == 0 && var3 == 0)
+            throw new WizardControlException("The numbers you enter must be more than zero ");
         double answerAddition = (var1 + var2 + var3);
-        double answerMultiplication = (var1 * var2 * var3);
-        
+        double answerMultiplication = (var1 * var2 * var3);  
         double result = (answerAddition / answerMultiplication);
-            return result;
+        if (result != 1)
+            throw new WizardControlException("The numbers you entered do not equal 1. Try Again!");
+        return result;
     }
     public Boolean fairyQuestion(double exploredRooms) {
         if ((exploredRooms / 2) < 0) {

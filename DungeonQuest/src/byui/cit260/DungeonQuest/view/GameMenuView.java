@@ -29,6 +29,7 @@ public class GameMenuView extends View{
             + "\n--------------------------------"
             + "\nT - Interact with the trap"
             + "\nZ - Interact with the zombies"
+            + "\nW - Interact with the Wizard"
             + "\nE - Find the Enemy with the maximum strength."
             + "\nS = Find the Item with the greatest strength"
             + "\nM - See the Map of the Dungeon (select a room to explore)"
@@ -69,6 +70,9 @@ public class GameMenuView extends View{
                 break;
             case "G": 
                 this.goToNewLocation();
+                break;
+            case "W":
+                this.displayWizard();
                 break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -227,5 +231,10 @@ public class GameMenuView extends View{
     private void displayInventoryStrength() {
        InventoryStrengthView StrengthView = new InventoryStrengthView();
        StrengthView.display();
+    }
+
+    private void displayWizard() {
+        WhiteWizardView whiteWizardView = new WhiteWizardView();
+        whiteWizardView.display();
     }
 }
