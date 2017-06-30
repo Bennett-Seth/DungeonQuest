@@ -5,6 +5,9 @@
  */
 package byui.cit260.DungeonQuest.control;
 
+import byui.cit260.DungeonQuest.Exceptions.TrapControlException;
+
+
 /**
  *
  * @author Seth
@@ -41,19 +44,6 @@ public class QuestionControl {
         else 
         return true; 
     }
-    public double calcTrap(double radius) {
-        if (radius <= 0){
-            return -1;
-        }
-        double circumference = radius * 3.14 * 2;
 
-        if (circumference < 62.8 || circumference > 94.26){
-            return -1;         
-        } 
-        else {
-            return circumference;
-        }
-    }
-    
-}
+  }
 
