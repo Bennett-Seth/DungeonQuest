@@ -47,7 +47,14 @@ public class DungeonQuest {
     public static void main(String[] args) {
        
        StartProgramView startProgramView = new StartProgramView();
+       try{
+           // create StartProgramView and start the program
        startProgramView.display();
+       } catch (Throwable te) {
+           System.out.println(te.getMessage());
+           te.printStackTrace();
+           startProgramView.display();
+       }
        
     }
 

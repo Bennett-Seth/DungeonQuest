@@ -5,9 +5,10 @@
  */
 package byui.cit260.DungeonQuest.view;
 
+import byui.cit260.DungeonQuest.Exceptions.TrapControlException;
 import byui.cit260.DungeonQuest.control.GameControl;
-import dungeonquest.DungeonQuest;
-import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -39,38 +40,57 @@ public class InteractWithTheTrapView extends View{
      
     @Override  
     public boolean doAction(String value){
-        double circumference = Integer.parseInt(value);
-        if (circumference >= 62.83 && circumference <= 94.25){
-            System.out.println("\n The circumference of the hole is not "
-                    + "dangerous at all. Keep playing");
+        double radius = 0;
+        try{
+          radius = Double.parseDouble(value);
+        } catch (NumberFormatException nf) {
+            System.out.println("\nYou must enter a valid number.");
+          return false;
+        }
+
+        try{
+            double circumference = GameControl.calcTrap(radius);
+            System.out.println("You fit through the hole with a circumference of: " + circumference);
             return true;
+        } catch (TrapControlException te) {
+            System.out.println(te.getMessage());
         }
-            
-        else if (circumference < 62.83){
-            System.out.println("\nThe circumference of the hole is too small. "
-                    + "Your foot is stuck. You've lost");
-            return false;
-        }
-            
-        else if (circumference > 94.25){
-                System.out.println("\nThe circumference of the hole is too big,"
-                        + " and you feel on it. You've lost the game.");
-            return false;
-        }
+        return false;
         
-        else{
-                System.out.println("\nYou entered an invalid radius. Try again");
-            return false;
-        }
-    }   
-    
-        public double calcTrap(double radius){
-            double value = GameControl.calcTrap(radius);
-            if (value < 0){
-                System.out.println("Error - Failed interaction");
-            }
-            return value;
-            //GameMenuView gameMenu = new GameMenuView();
-            //gameMenu.displayGameMenuView();
-        }     
+//        if (circumference >= 62.83 && circumference <= 94.25){
+//            System.out.println("\n The circumference of the hole is not "
+//                    + "dangerous at all. Keep playing");
+//            return true;
+//        }
+//            
+//        else if (circumference < 62.83){
+//            System.out.println("\nThe circumference of the hole is too small. "
+//                    + "Your foot is stuck. You've lost");
+//            return false;
+//        }
+//            
+//        else if (circumference > 94.25){
+//                System.out.println("\nThe circumference of the hole is too big,"
+//                        + " and you feel on it. You've lost the game.");
+//            return false;
+//        }
+        
+//        else{
+//                System.out.println("\nYou entered an invalid radius. Try again");
+//            return false;
+//        }
+
     }
+}
+    
+//        public double calcTrap(double radius){
+//           try{
+//               GameControl.calcTrap(radius);
+//           } catch (TrapControlException ex) {
+//               System.out.println(ex.getMessage());
+//           }
+//        }
+//            Logger.getLogger(InteractWithTheTrapView.class.getName()).log(Level.SEVERE, null, ex);
+
+            //GameMenuView gameMenu = new GameMenuView();
+            //gameMenu.displayGameMenuView();    

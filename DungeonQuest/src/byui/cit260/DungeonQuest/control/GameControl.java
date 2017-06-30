@@ -5,6 +5,7 @@
  */
 package byui.cit260.DungeonQuest.control;
 
+import byui.cit260.DungeonQuest.Exceptions.TrapControlException;
 import byui.cit260.DungeonQuest.model.Actor;
 import byui.cit260.DungeonQuest.model.Game;
 import byui.cit260.DungeonQuest.model.Inventory;
@@ -144,14 +145,16 @@ public class GameControl{
      * @param radius
      * @return
      */
-    public static double calcTrap(double radius){
+    public static double calcTrap(double radius)
+                            throws TrapControlException{
         if (radius <= 0)
-            return -1;
+            throw new TrapControlException("This radius is an invalid number");
         double circumference = radius * Math.PI * 2;
-        if (circumference <=62.82 || circumference >= 94.26)
-            return -2;
+        if (circumference <=62.82)
+            throw new TrapControlException("This radius is too small");
+        if (circumference >= 94.25)
+            throw new TrapControlException("This radius is too big");
         return circumference;
-        
     }
     
 }
