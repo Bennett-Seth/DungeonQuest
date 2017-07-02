@@ -5,6 +5,7 @@
  */
 package byui.cit260.DungeonQuest.control;
 
+import byui.cit260.DungeonQuest.Exceptions.FairiesControlException;
 import byui.cit260.DungeonQuest.Exceptions.TrapControlException;
 import byui.cit260.DungeonQuest.Exceptions.ZombiesControlException;
 import byui.cit260.DungeonQuest.model.Actor;
@@ -164,6 +165,26 @@ public class GameControl{
         if (circumference >= 94.25)
             throw new TrapControlException("This radius is too big");
         return circumference;
+    }
+    
+    public static Double fairyQuestion(double exploredRooms) throws FairiesControlException {
+        
+        double result = (exploredRooms / 2);
+        
+        if (result < 0) {
+            throw new FairiesControlException ("Must submit a 1 or larger");
+        }
+        if (result < 0.5) {
+            throw new FairiesControlException ("You have not explored enough" + 
+                    " rooms. The fairies claim you as their own. You can never leave.");
+        }
+        else{
+            return result;
+        }
+          
+        
+        
+        
     }
     
     public static boolean zombiesRoom (int steps)

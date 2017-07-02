@@ -5,95 +5,114 @@
  */
 package byui.cit260.DungeonQuest.view;
 
+import byui.cit260.DungeonQuest.Exceptions.FairiesControlException;
+import byui.cit260.DungeonQuest.control.GameControl;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
  *
  * @author Seth
  */
-public class FairiesView {
+public class FairiesView extends View{
     
-    private String promptMessage;
+//    private String promptMessage;
+//    
+//    public FairiesView(){
+//        this.promptMessage= "\n You have entered the den of the fairies. ";
+//        this.faceTheFairies();
+//    }
     
-    public FairiesView(){
-        this.promptMessage= "\n You have entered the den of the fairies. ";
-        this.faceTheFairies();
-    }
-    
-    private void faceTheFairies() {
-        System.out.println(
+    public FairiesView() {
+        super(
             "\n"
             + "\n--------------------------------"
-            +"\nIf you wish to earn our favor"
-            +"\nand our wrath avoid,"
-            +"\nthen you must tell us now"
-            + "\nwith how many rooms"
-            + "\nyou have already toyed."
+            +"\n If you wish to earn our favor"
+            +"\n and our wrath avoid,"
+            +"\n then you must tell us now"
+            + "\n with how many rooms"
+            + "\n you have already toyed."
             + "\n"
             + "\n--------------------------------"
-            + "\n Input your answer below, or: "
-            + "\nR - Retreat to the Map Menu"
-            + "\nQ - Quit the game");
+            + "\n How many rooms have you explored?"
+            );
     
     }
+//    
+//    public void fairiesView() {
+//        
+//        boolean done = false;
+// 
+//        do {
+//            String FairiesOption = this.getFairiesOption();
+//            if (FairiesOption.toUpperCase().equals("Q")) 
+//                return; 
+//            // done = this.doAction(FairiesOption);
+//            done = this.doAction();
+//        } while (!done);
+//    }
+//
+//    private String getFairiesOption() {
+//        Scanner keyboard = new Scanner(System.in);
+//        String value = "";
+//        boolean valid = false;
+//        
+//        while(!valid){
+//            System.out.println("You have entered the den of the fairies");
+//            
+//            value = keyboard.nextLine();
+//            value = value.trim();
+// 
+//            if (value.length() < 1) { 
+//                System.out.println("\nInvalid value: value cannot be blank");
+//                continue;
+//            }
+//            break;
+//        }
+//        return value;    
+//    }
     
-    public void fairiesView() {
+    @Override
+    public boolean doAction(String value) {
         
-        boolean done = false;
- 
-        do {
-            String FairiesOption = this.getFairiesOption();
-            if (FairiesOption.toUpperCase().equals("Q")) 
-                return; 
-            // done = this.doAction(FairiesOption);
-            done = this.doAction();
-        } while (!done);
-    }
-
-    private String getFairiesOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
+        double exploredRooms = 0;    
         
-        while(!valid){
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine();
-            value = value.trim();
- 
-            if (value.length() < 1) { 
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break;
+//        Scanner keyboard = new Scanner(System.in);
+//            System.out.println("Enter below how many rooms you have survived:");
+//            Double exploredRooms = keyboard.nextDouble();
+//        
+        try {
+            exploredRooms = Double.parseDouble(value);
+        }catch (NumberFormatException nf) { 
+            System.out.println("\nYou must enter a valid number.");
+          return false;
         }
-        return value;    
-    }
-    
-        private boolean doAction() {
         
-        Scanner keyboard = new Scanner(System.in);
-            System.out.println("Enter how many rooms, below:");
-            Double exploredRooms = keyboard.nextDouble();
- 
-            if ((fairyQuestion(exploredRooms)) < 0.5){
-                    System.out.println("You are not worthy of our aid");
-                    return false;
-            }
+//        double radius = 0;
+//        try{
+//          radius = Double.parseDouble(value);
+//        } catch (NumberFormatException nf) {
+//            System.out.println("\nYou must enter a valid number.");
+//          return false;
+//        }
             
-            else if ((fairyQuestion(exploredRooms)) >= 0.5){
-                    System.out.println("You are worthy of our aid!");
-                        return true;           
-            }
-            else 
-                System.out.println("Invalid entry!");
-                return false;
+        try {
+            GameControl.fairyQuestion(exploredRooms);
+            System.out.println("You are worthy of our aid!");
+                return true; 
+        } catch (FairiesControlException fce) {
+            System.out.println(fce.getMessage());
         }
+            return true;
+  
+}
 
-    private int fairyQuestion(Double exploredRooms) {
-        System.out.println("*** fairyQuestion function called ***");
-     return 0;   
-    }
+    
+    
+//    private int fairyQuestion(Double exploredRooms) {
+//        System.out.println("*** fairyQuestion function called ***");
+//     return 0;   
+//    }
 
 //    private boolean doAction(Double fairyQuestion) {
 //        System.out.println("*** doAction function called ***");

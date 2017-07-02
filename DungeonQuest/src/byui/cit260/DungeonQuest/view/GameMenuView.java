@@ -29,6 +29,7 @@ public class GameMenuView extends View{
             + "\n--------------------------------"
             + "\nT - Interact with the trap"
             + "\nZ - Interact with the zombies"
+            + "\nF - Interact with the fairies"
             + "\nW - Interact with the Wizard"
             + "\nE - Find the Enemy with the maximum strength."
             + "\nS = Find the Item with the greatest strength"
@@ -56,6 +57,9 @@ public class GameMenuView extends View{
             case "Z": //Display Zombies Room
                 this.displayZombies();
                 break;
+            case "F": //Display Fairies Room
+                this.displayFairies();
+                break;   
             case "E": //Displey the character with the maximum strength
                 this.displayStrength();
                 break;
@@ -136,6 +140,11 @@ public class GameMenuView extends View{
     public void displayZombies(){
         ZombiesRoomView ZombiesView = new ZombiesRoomView();
         ZombiesView.display();
+    }
+    
+    public void displayFairies(){
+        FairiesView fairiesView = new FairiesView();
+        fairiesView.display();
     }
     
     public void displayStrength(){
@@ -237,4 +246,6 @@ public class GameMenuView extends View{
         WhiteWizardView whiteWizardView = new WhiteWizardView();
         whiteWizardView.display();
     }
+
+    
 }

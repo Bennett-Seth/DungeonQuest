@@ -29,22 +29,7 @@ public class QuestionControl {
             throw new WizardControlException("The numbers you entered do not equal 1. Try Again!");
         return result;
     }
-    public Boolean fairyQuestion(double exploredRooms) {
-        if ((exploredRooms / 2) < 0) {
-            return false;
-        }
-        
-        else if ((exploredRooms / 2) < 0.5) {
-            return false;
-        }
-        
-        else if ((exploredRooms / 2) >= 0.5) {
-            return true;
-        }
-          
-        else 
-        return true; 
-    }
+    
 
   }
 
