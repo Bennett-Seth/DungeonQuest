@@ -72,17 +72,21 @@ public abstract class View implements ViewInterface{
      public int getIntInput(String prompt, int min, int max) {
          
          int returnValue = -1;
-         while(returnValue == -1){
-            this.console.println(prompt + "(-999 to cancel)");
-            returnValue = this.keyboard.readLine();
-            
-            if (returnValue == -999) 
-                return returnValue;
-            if (returnValue < min || returnValue> max){
-                ErrorView.display(this.getClass().getName(),
-                        "You are out of the boundaries. Try Again!");
-                returnValue = -1;
+         try {
+            while(returnValue == -1){
+               this.console.println(prompt + "(-999 to cancel)");
+               returnValue = Integer.parseInt(keyboard.readLine());
+
+               if (returnValue == -999) 
+                   return returnValue;
+               if (returnValue < min || returnValue> max){
+                   ErrorView.display(this.getClass().getName(),
+                           "You are out of the boundaries. Try Again!");
+                   returnValue = -1;
+               }
             }
+         } catch (Exception e) {
+             System.out.println("Error reading input: " + e.getMessage());
          }
         return returnValue;
      }
