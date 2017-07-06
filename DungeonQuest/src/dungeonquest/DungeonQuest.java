@@ -81,15 +81,22 @@ public class DungeonQuest {
     public static void main(String[] args) {
        
        try {
-        DungeonQuest.inFile =
+        
+           // open character stream files for end user input and output
+            DungeonQuest.inFile =
                 new BufferedReader(new InputStreamReader(System.in));
         
-        DungeonQuest.outFile = new PrintWriter(System.out, true);
+            DungeonQuest.outFile = new PrintWriter(System.out, true);
         
-        try{
+            // open log file
             String filePath = "log.txt";
             DungeonQuest.logFile = new PrintWriter(filePath);
-        } catch (Exception e){
+            
+            // create StartProgramView and start the program
+            StartProgramView startProgramView = new StartProgramView();
+            startProgramView.display();
+        
+        } catch (Throwable e){
             System.out.println("Exception: " + e.toString() +
                                 "/nCause: "  + e.getCause() +
                                 "/nMessage: " + e.getMessage());
@@ -106,50 +113,50 @@ public class DungeonQuest {
                 
                 if(DungeonQuest.logFile != null)
                     DungeonQuest.logFile.close();
-            } catch (IOException ex) {
+            
+           } catch (IOException ex) {
                 System.out.println("Error closing files");
                 return;
             }
-        }
-        
-        
-        
-        StartProgramView startProgramView = new StartProgramView();
-        
-        try{
-                // create StartProgramView and start the program
-            startProgramView.display();
-            } catch (Throwable te) {
-                System.out.println(te.getMessage());
-                te.printStackTrace();
-                startProgramView.display();
-            }
-        } catch (Throwable e){
-    
-            System.out.println("Exception " + e.toString() +
-                                "/nCause: " + e.getCause() +
-                                "/nMessage: " + e.getMessage());
-            e.printStackTrace();
-            }
-       
-       finally{
-           try {
-               if (DungeonQuest.inFile != null) 
-                    DungeonQuest.inFile.close();
-               
-               if (DungeonQuest.outFile != null)
-                    DungeonQuest.outFile.close();
-           } catch (IOException ex) {
-               System.out.println("Error closing files");
-               return;
-           }
-              
        }
-       
     }
-
-    public static double getCircumference() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
- 
 }
+
+//        try{
+//                // create StartProgramView and start the program
+//            
+//                StartProgramView startProgramView = new StartProgramView();
+//                startProgramView.display();
+//                
+//            } catch (Throwable te) {
+//                System.out.println(te.getMessage());
+//                te.printStackTrace();
+//                startProgramView.display();
+//            }
+//            } catch (Throwable e){
+//    
+//            System.out.println("Exception " + e.toString() +
+//                                "/nCause: " + e.getCause() +
+//                                "/nMessage: " + e.getMessage());
+//            e.printStackTrace();
+//            }
+//       
+//       finally{
+//           
+//            try {
+//               if (DungeonQuest.inFile != null) 
+//                    DungeonQuest.inFile.close();
+//               
+//               if (DungeonQuest.outFile != null)
+//                    DungeonQuest.outFile.close();
+//           } catch (IOException ex) {
+//               System.out.println("Error closing files");
+//               return;
+//           }
+//              
+//       }
+
+    /**
+     *
+     * @return
+     */
