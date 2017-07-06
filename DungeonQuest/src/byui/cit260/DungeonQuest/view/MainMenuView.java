@@ -114,10 +114,12 @@ public class MainMenuView extends View{
         this.console.println("\n\nEnter the file path for the file where the game "
                             + "is to be saved.");
         String filePath = this.getInput();
-        
+ 
         try{
             // save the game to the specified file
             GameControl.saveGame(DungeonQuest.getCurrentGame(), filePath);
+            this.console.println("Your game was saved successfully.");
+            
         } catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
         }
