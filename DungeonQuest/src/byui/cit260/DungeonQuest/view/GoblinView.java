@@ -50,30 +50,31 @@ public class GoblinView extends View{
                 this.displayHelpMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
     }
     
     public void previousRoom() {
-         System.out.println("\n*** previousRoom() function called ***");
+         this.console.println("\n*** previousRoom() function called ***");
     }
     
     public void fightMoster() {
-        System.out.println("\n*** fightMonster() function called ***");
+        this.console.println("\n*** fightMonster() function called ***");
     }
     
     public void displayMap() {
-        System.out.println("\n*** displayMap() function called ***");
+        this.console.println("\n*** displayMap() function called ***");
     }
 
     public void displayInventory() {
-        System.out.println("\n*** displayInventory() function called ***");
+        this.console.println("\n*** displayInventory() function called ***");
     }
 
     public void displayHelpMenu() {
-        System.out.println("\n*** displayHelpMenu() function called ***");
+        this.console.println("\n*** displayHelpMenu() function called ***");
     }
 
     

@@ -52,22 +52,23 @@ public class MapMenuView extends View{
                 this.showVisitedRooms();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;                
         }
         return false;
     }
 
     private void showMap() {
-         System.out.println("*** showMap function called ***");
+         this.console.println("*** showMap function called ***");
     }
 
     private void showMyPosition() {
-         System.out.println("*** startExistingGame function called ***");
+         this.console.println("*** startExistingGame function called ***");
     }
 
     private void showVisitedRooms() {
-            System.out.println("*** displayHelpMenu function called ***");
+         this.console.println("*** displayHelpMenu function called ***");
     }
 
 }

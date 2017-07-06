@@ -64,38 +64,39 @@ public class HelpMenuView extends View {
                 this.openInteractions();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;                
         }
         return false;
     }
 
         private void openGoal() {
-            System.out.println("*** open Goal function called ***");
+            this.console.println("*** open Goal function called ***");
         }
 
         private void openMove() {
-            System.out.println("*** openMove function called ***");
+            this.console.println("*** openMove function called ***");
         }
 
         private void openExplore() {
-           System.out.println("*** openExplore function called ***");
+           this.console.println("*** openExplore function called ***");
         }
 
         private void openInventory() {
-           System.out.println("*** openInventory function called ***");
+           this.console.println("*** openInventory function called ***");
         }
 
         private void openAddGear() {
-            System.out.println("*** openAddGear function called ***");
+            this.console.println("*** openAddGear function called ***");
         }
 
         private void openFighting() {
-           System.out.println("*** openFighting function called ***");
+           this.console.println("*** openFighting function called ***");
         }
 
         private void openInteractions() {
-            System.out.println("*** openInteraction function called ***");
+            this.console.println("*** openInteraction function called ***");
         }
  }
 

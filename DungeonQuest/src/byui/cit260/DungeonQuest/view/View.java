@@ -5,14 +5,25 @@
  */
 package byui.cit260.DungeonQuest.view;
 
+import dungeonquest.DungeonQuest;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author ZiksMS_Sophia
  */
 public abstract class View implements ViewInterface{
+    
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = DungeonQuest.getInFile();
+    protected final PrintWriter console = DungeonQuest.getOutFile();
+    
     public View(){
     
     }
@@ -33,18 +44,23 @@ public abstract class View implements ViewInterface{
     }
     @Override
      public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
+        
         String value = "";
         boolean valid = false;
         
         while(!valid){
-            System.out.println("\n" + this.displayMessage);
+            this.console.println("\n" + this.displayMessage);
             
-            value = keyboard.nextLine();
+            try {
+                value = this.keyboard.readLine();
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+            }
             value = value.trim();
  
             if (value.length() < 1) { 
-                System.out.println("\nInvalid value: value cannot be blank");
+                ErrorView.display(this.getClass().getName(),
+                        "\nInvalid value: value cannot be blank");
                 continue;
             }
             
@@ -54,16 +70,17 @@ public abstract class View implements ViewInterface{
         return value; 
     }
      public int getIntInput(String prompt, int min, int max) {
-         Scanner keyboard = new Scanner(System.in);
+         
          int returnValue = -1;
          while(returnValue == -1){
-            System.out.println(prompt + "(-999 to cancel)");
-            returnValue = keyboard.nextInt();
+            this.console.println(prompt + "(-999 to cancel)");
+            returnValue = this.keyboard.readLine();
             
             if (returnValue == -999) 
                 return returnValue;
             if (returnValue < min || returnValue> max){
-                System.out.println("You are out of the boundaries. Try Again!");
+                ErrorView.display(this.getClass().getName(),
+                        "You are out of the boundaries. Try Again!");
                 returnValue = -1;
             }
          }

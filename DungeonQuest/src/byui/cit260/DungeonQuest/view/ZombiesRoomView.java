@@ -40,7 +40,8 @@ public class ZombiesRoomView extends View {
         try{
             steps = Integer.parseInt(value);
         } catch (NumberFormatException nf) {
-            System.out.println("\nYou must enter a valid number.");
+            ErrorView.display(this.getClass().getName(),
+                    "\nYou must enter a valid number.");
           return false;
         }
 
@@ -49,7 +50,8 @@ public class ZombiesRoomView extends View {
         GameControl.zombiesRoom(steps);
      
         } catch (ZombiesControlException te) {
-            System.out.println(te.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    te.getMessage());
         }
         return false;
     }

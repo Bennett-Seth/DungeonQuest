@@ -47,22 +47,23 @@ public class VampireView extends View{
                 this.quitGame();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
     }
     
     public void fleeRoom() {
-         System.out.println("\n*** fleeRoom() function called ***");
+         this.console.println("\n*** fleeRoom() function called ***");
     }
     
     public void displayInventory() {
-        System.out.println("\n*** displayInventory() function called ***");
+        this.console.println("\n*** displayInventory() function called ***");
     }
     
     public void displayMap() {
-        System.out.println("\n*** displayMap() function called ***");
+        this.console.println("\n*** displayMap() function called ***");
     }
 
     public void displayHelpMenu() {
@@ -71,6 +72,6 @@ public class VampireView extends View{
     }
 
     public void quitGame() {
-        System.out.println("\n*** quitGame() function called ***");
+        this.console.println("\n*** quitGame() function called ***");
     }
 }

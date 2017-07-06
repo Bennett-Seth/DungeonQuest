@@ -84,7 +84,8 @@ public class FairiesView extends View{
         try {
             exploredRooms = Double.parseDouble(value);
         }catch (NumberFormatException nf) { 
-            System.out.println("\nYou must enter a valid number.");
+            ErrorView.display(this.getClass().getName(),
+                    "\nYou must enter a valid number.");
           return false;
         }
         
@@ -98,10 +99,11 @@ public class FairiesView extends View{
             
         try {
             GameControl.fairyQuestion(exploredRooms);
-            System.out.println("You are worthy of our aid!");
+            this.console.println("You are worthy of our aid!");
                 return true; 
         } catch (FairiesControlException fce) {
-            System.out.println(fce.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    fce.getMessage());
         }
             return true;
   

@@ -43,16 +43,18 @@ public class InteractWithTheTrapView extends View{
         try{
           radius = Double.parseDouble(value);
         } catch (NumberFormatException nf) {
-            System.out.println("\nYou must enter a valid number.");
+            ErrorView.display(this.getClass().getName(),
+                    "\nYou must enter a valid number.");
           return false;
         }
 
         try{
             double circumference = GameControl.calcTrap(radius);
-            System.out.println("You fit through the hole with a circumference of: " + circumference);
+            this.console.println("You fit through the hole with a circumference of: " + circumference);
             return true;
         } catch (TrapControlException te) {
-            System.out.println(te.getMessage());
+            ErrorView.display(this.getClass().getName(),
+                    te.getMessage());
         }
         return false;
         
