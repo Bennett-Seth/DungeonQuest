@@ -83,14 +83,14 @@ public class GameControl{
         newActor = new Actor();
         newActor.setName("Vanpire");
         newActor.setDescription("Dark");
-        newActor.setStrength(40.0);
+        newActor.setStrength(50.0);
         newActor.setEnemy(true);
         actors[1] = newActor;
         
         newActor = new Actor();
         newActor.setName("Zombie");
         newActor.setDescription("Ugly Guy");
-        newActor.setStrength(20.0);
+        newActor.setStrength(25.0);
         newActor.setEnemy(true);
         actors[2] = newActor;
         
@@ -104,7 +104,7 @@ public class GameControl{
         newActor = new Actor();
         newActor.setName("Globin");
         newActor.setDescription("Nasty");
-        newActor.setStrength(20.0);
+        newActor.setStrength(25.0);
         newActor.setEnemy(true);
         actors[4] = newActor;
         return actors;

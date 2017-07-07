@@ -38,6 +38,7 @@ public class GameMenuView extends View{
             + "\nI - Review Your Character’s Inventory and Player Level" 
             + "\nH - View the Help Menu"
             + "\nQ - Quit to Main Menu"
+//            + "\nL - Dispplay List of Actors and Descriptions"
                 
             + "\n--------------------------------");
     }
@@ -78,6 +79,9 @@ public class GameMenuView extends View{
             case "W":
                 this.displayWizard();
                 break;
+//            case "L":
+//                this.displayActorsList();
+//                break;
             default:
                 System.out.println("\n*** Invalid selection *** Try again");
                 break;
@@ -247,5 +251,10 @@ public class GameMenuView extends View{
         whiteWizardView.display();
     }
 
-    
+//    private void displayActorsList() {
+//        ActorsListView actorsView = new ActorsListView();
+//        actorsView.display();
+//    }
+//
+//    
 }

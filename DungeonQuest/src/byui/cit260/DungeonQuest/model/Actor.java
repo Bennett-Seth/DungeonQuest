@@ -117,5 +117,9 @@ public class Actor implements Serializable{
     public String toString() {
         return "Actor{" + "name=" + name + ", description=" + description + ", coordinants=" + coordinants + ", status=" + status + ", strength=" + strength + '}';
     }
+
+    public void setCoordinants() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
