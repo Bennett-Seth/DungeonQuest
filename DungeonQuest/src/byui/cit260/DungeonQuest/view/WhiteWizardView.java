@@ -43,23 +43,30 @@ public class WhiteWizardView extends View {
     
         @Override
         public boolean doAction(String value) { 
-            Scanner scan = new Scanner(System.in);
-            double var1 = scan.nextDouble();
-            double var2 = scan.nextDouble();
-            double var3 = scan.nextDouble();
-            try {
-                var1 = Double.parseDouble(value);
-            } catch (NumberFormatException nf) {
-                System.out.println("\nYou must enter a valid number.");
-              return false;
-            }
             
+            double var1 = 0;
+            double var2 = 0;
+            double var3 = 0;
+            try{
+                try {
+                    var1 = Double.parseDouble(keyboard.readLine());
+                    var2 = Double.parseDouble(keyboard.readLine());
+                    var3 = Double.parseDouble(keyboard.readLine());
+                } catch (NumberFormatException nf) {
+                    ErrorView.display(this.getClass().getName(),
+                            "\nYou must enter a valid number.");
+                return false;
+                }
+            } catch(Exception e) {
+                System.out.println("Error reading input: " + e.getMessage());
+            }
             try{
                 double calculation = QuestionControl.wizardQuestion(var1, var2, var3);
-                System.out.println("The result of the numbers you entered is " + calculation + ". Because they check out here is your hint:");
+                this.console.println("The result of the numbers you entered is " + calculation + ". Because they check out here is your hint:");
                 return true;
             } catch (WizardControlException we) {
-                System.out.println(we.getMessage());
+                ErrorView.display(this.getClass().getName(),
+                        we.getMessage());
             }
             return false;
         }

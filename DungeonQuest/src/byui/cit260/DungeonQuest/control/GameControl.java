@@ -6,6 +6,7 @@
 package byui.cit260.DungeonQuest.control;
 
 import byui.cit260.DungeonQuest.Exceptions.FairiesControlException;
+import byui.cit260.DungeonQuest.Exceptions.GameControlException;
 import byui.cit260.DungeonQuest.Exceptions.TrapControlException;
 import byui.cit260.DungeonQuest.Exceptions.ZombiesControlException;
 import byui.cit260.DungeonQuest.model.Actor;
@@ -16,6 +17,10 @@ import byui.cit260.DungeonQuest.model.Map;
 import byui.cit260.DungeonQuest.model.Player;
 import byui.cit260.DungeonQuest.model.Scene;
 import dungeonquest.DungeonQuest;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -51,6 +56,36 @@ public class GameControl{
       MapControl.movePlayerToStartingLocation(map);
     }
 
+    public static void saveGame(Game game, String filepath)
+            throws GameControlException {
+        
+        try( FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game); // write the game object out to file
+        }
+        catch (Exception e) {
+            throw new GameControlException(e.getMessage()); 
+            }
+        }
+    
+    public static void getSavedGame(String filepath)
+                throws GameControlException {
+        Game game = null;
+        
+        try(FileInputStream fips = new FileInputStream(filepath)){
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject(); // read the game object from file
+        }
+        catch (Exception e){
+            throw new GameControlException(e.getMessage());
+        }
+        
+        // close the output file
+        DungeonQuest.setCurrentGame(game); // Save in DungeonQuest
+    }
+    
     public static Boolean zombiesRoom(Boolean steps) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }

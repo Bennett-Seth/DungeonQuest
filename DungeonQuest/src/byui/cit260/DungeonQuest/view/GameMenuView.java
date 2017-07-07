@@ -83,7 +83,8 @@ public class GameMenuView extends View{
 //                this.displayActorsList();
 //                break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;
         }
         return false;
@@ -97,15 +98,15 @@ public class GameMenuView extends View{
         Map map = game.getMap(); // retreive the map from game
         Location[][] locations = map.getLocations(); // retreive the locations from map
           // Build the heading of the map
-          System.out.print("  |");
+          this.console.print("  |");
           for( int column = 0; column < locations[0].length; column++){
             // print col numbers to side of map
-            System.out.print("  " + column + " |"); 
+            this.console.print("  " + column + " |"); 
           }
           // Now build the map.  For each row, show the column information
-          System.out.println();
+          this.console.println();
           for( int row = 0; row < locations.length; row++){
-           System.out.print(row + " "); // print row numbers to side of map
+           this.console.print(row + " "); // print row numbers to side of map
             for( int column = 0; column < locations[row].length; column++){
               // set default indicators as blanks
               leftIndicator = " ";
@@ -120,20 +121,20 @@ public class GameMenuView extends View{
                  leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
                  rightIndicator = "<"; // same as above
               }
-             System.out.print("|"); // start map with a |
+             this.console.print("|"); // start map with a |
               if(locations[row][column].getScene() == null)
               {
                    // No scene assigned here so use ?? for the symbol
-                   System.out.print(leftIndicator + "??" + rightIndicator);
+                   this.console.print(leftIndicator + "??" + rightIndicator);
               }
               else
-                System.out.print(leftIndicator
+                this.console.print(leftIndicator
                    + locations[row][column].getScene().getSymbol()
                    + rightIndicator);
             }
-           System.out.println("|");
+           this.console.println("|");
           }
-        System.out.println("You are currently in " + map.getCurrentLocation().getScene().getDescription());
+        this.console.println("You are currently in " + map.getCurrentLocation().getScene().getDescription());
        }
 
     public void displayTrap() {
@@ -161,18 +162,18 @@ public class GameMenuView extends View{
         Game game = DungeonQuest.getCurrentGame();
         Inventory[] inventory = game.getInventory();
         
-        System.out.println("\n      LIST OF INVENTORY ITEMS");
+        this.console.println("\n      LIST OF INVENTORY ITEMS");
 
         /* Note - removing the .getAmount != 0 limit results in everything
         getting published to the viewer. A chunk of ugly details*/
         
         for (int i = 0; i < inventory.length; i++){
             if (inventory[i].getAmount() != 0) {
-            System.out.println(inventory[i]);    
+            this.console.println(inventory[i]);    
             }    
         }
         
-        System.out.println("Your pack is empty, time to go hunting!");
+        this.console.println("Your pack is empty, time to go hunting!");
         
         /* Don't forget to calculate the player's strength */
             
@@ -215,7 +216,7 @@ public class GameMenuView extends View{
         
             playerSTR = playerWEP + playerARM;
 
-        System.out.println("\nYour Player Strength is " + playerSTR);
+        this.console.println("\nYour Player Strength is " + playerSTR);
   
         
     }

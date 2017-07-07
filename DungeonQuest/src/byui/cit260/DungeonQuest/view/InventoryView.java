@@ -64,38 +64,39 @@ public class InventoryView extends View{
                 this.saveGame();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;                
         }
         return false;
     }
 
     private void viewPlayerInventory() {
-        System.out.println("*** viewPlayerInventory function called ***");
+        this.console.println("*** viewPlayerInventory function called ***");
     }
     
     private void calcStrength() {
-        System.out.println("*** calcStrength function called ***");
+        this.console.println("*** calcStrength function called ***");
     }
 
     private void dropItem() {
-        System.out.println("*** dropItem function called ***");
+        this.console.println("*** dropItem function called ***");
     }
     
     private void displayMainMenuView() {
-        System.out.println("*** displayMainMenu function called ***");
+        this.console.println("*** displayMainMenu function called ***");
     }
 
     private void mapMenu() {
-        System.out.println("*** mapMenu function called ***");
+        this.console.println("*** mapMenu function called ***");
     }
     
     private void displayHelpMenu() {
-         System.out.println("*** displayHelpMenu function called ***");
+         this.console.println("*** displayHelpMenu function called ***");
     }
 
     private void saveGame() {
-         System.out.println("*** startExistingGame function called ***");
+         this.console.println("*** startExistingGame function called ***");
     }
 
     
