@@ -1,0 +1,11 @@
+
+
+          Actors Location                      
+
+Actors             Description       Strength
+-------             ----------      ---------
+Fairie                  bright        50.00
+Vanpire                   Dark        50.00
+Zombie                Ugly Guy        25.00
+Blue Wizard                Old       100.00
+Globin                   Nasty        25.00

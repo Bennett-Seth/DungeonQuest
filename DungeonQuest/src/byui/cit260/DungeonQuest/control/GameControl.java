@@ -215,10 +215,7 @@ public class GameControl{
         }
         else{
             return result;
-        }
-          
-        
-        
+        }   
         
     }
     
