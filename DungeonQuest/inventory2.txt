@@ -1,0 +1,26 @@
+
+
+              Inventory List                      
+
+Name                     Description                             Item Level
+-------                  ----------                              --------- 
+Bronze Dagger            An antique, but it can still cut        3         
+Steel Dagger             A sturdy blade                          5         
+Mithril Dagger           A real blade for killing real monsters  9         
+Rusty Sword              An old, weathered weapon                5         
+Polished Sword           A weapon for a real adventurer.         9         
+Mitril Sword             A real blade for killing real monsters  13        
+weathered Axe            Good for straw, logs and skulls.        6         
+Sturdy Axe               When it doubt, start chopping.          10        
+Viking Axe               A real axe, for slaying real monsters.  14        
+Holy Spear               God blessed for destroying monsters.    17        
+Tattered Leather Armor   Battered, but still usable.             3         
+Sturdy Leather Armor     Flexible and strong armor.              5         
+Polished Leather Armor   Barely used. Great quality.             9         
+Tattered Scale Mail      Strong but worn.                        6         
+Sturdy Scale Mail        Barely used. Great quality.             10        
+Polished Leather Armor   Barely used. Great quality.             9         
+Tattered Plate Mail      A relic from a powerful hero.           7         
+Sturdy Plate Mail        Covers your whole body in thick metal.  11        
+Polished Plate Mail      Become a living tank of iron and steel. 15        
+Cloak of Light           The best protection comes from the Gods 18        

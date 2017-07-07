@@ -5,7 +5,14 @@
  */
 package byui.cit260.DungeonQuest.view;
 
+import byui.cit260.DungeonQuest.control.InventoryControl;
+import byui.cit260.DungeonQuest.model.Actor;
+import byui.cit260.DungeonQuest.model.Inventory;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -27,11 +34,12 @@ public class InventoryView extends View{
             +"\nI - View Your Inventory"
             +"\nS - Get Your Player Strength"
             +"\nD - Drop an Item"
+            +"\nP- Print The Inventory List"
             + "\n--------------------------------"
             + "\nR - Return to Main Menu"
             + "\nM - Return to Map Menu"
             + "\nH - Get help on how to play the game"
-            + "\nS - Save game"
+            + "\nG - Save game"
             + "\nQ - Quit"
             + "\n--------------------------------");
     }
@@ -45,12 +53,15 @@ public class InventoryView extends View{
             case "I":
                 this.viewPlayerInventory();
                 break;
-            case "P":
+            case "S":
                 this.calcStrength();
                 break;
             case "D":
                 this.dropItem();
                 break;    
+            case "P":
+                this.printInventory(InventoryControl.createInventoryList());
+                break; 
             case "R":
                 this.displayMainMenuView();
                 break;
@@ -60,7 +71,7 @@ public class InventoryView extends View{
             case "H":
                 this.displayHelpMenu();
                 break;
-            case "S":
+            case "G":
                 this.saveGame();
                 break;
             default:
@@ -83,6 +94,38 @@ public class InventoryView extends View{
         this.console.println("*** dropItem function called ***");
     }
     
+    private void printInventory(Inventory[] inventoryList) {
+        this.console.println("\nGive the file a name:");
+            String outputLocation;   
+
+        try {
+            outputLocation = this.keyboard.readLine();
+        
+        //create BufferedReader object for input file
+        try (PrintWriter out = new PrintWriter(outputLocation)) {
+            //print title and column headings
+            out.println("\n\n              Inventory List                      ");
+            out.printf("%n%-25s%-45s%-10s", "Name", "Description", "Item Level");
+            out.printf("%n%-25s%-45s%-10s", "-------", "----------", "---------");
+            
+            //print the description and strength of each item
+            for (Inventory inventory : inventoryList) {
+                out.printf("%n%-25s%-45s%-10d"        , inventory.getInventoryItem()
+                                                  , inventory.getItemDescription()
+                                                  , inventory.getItemLevel());
+            }
+            
+            this.console.println("Your game was saved successfully.");
+            
+        }   catch (IOException ex)  {
+            System.out.println("I/O Error: " + ex.getMessage());
+        }
+        } catch (IOException ex) {
+            this.console.println("Error closing files");
+            return;
+        }
+    }
+          
     private void displayMainMenuView() {
         this.console.println("*** displayMainMenu function called ***");
     }
