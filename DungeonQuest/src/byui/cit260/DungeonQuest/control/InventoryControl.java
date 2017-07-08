@@ -51,7 +51,7 @@ public class InventoryControl {
          
          Inventory polishedSword = new Inventory();
          polishedSword.setInventoryItem("Polished Sword");
-         polishedSword.setItemDescription("A real adventurer must have left this behind. His loss is your gain.");
+         polishedSword.setItemDescription("A weapon for a real adventurer.");
          polishedSword.setItemLevel(9);
          polishedSword.setAmount(0);
          inventory[Item.polishedSword.ordinal()] = polishedSword;
@@ -86,14 +86,14 @@ public class InventoryControl {
          
          Inventory holySpear = new Inventory();
          holySpear.setInventoryItem("Holy Spear");
-         holySpear.setItemDescription("God blessed for destroying monsters of all kinds.");
+         holySpear.setItemDescription("God blessed for destroying monsters.");
          holySpear.setItemLevel(17);
          holySpear.setAmount(0);
          inventory[Item.holySpear.ordinal()] = holySpear;
          
          Inventory tatteredLeatherArmor = new Inventory();
          tatteredLeatherArmor.setInventoryItem("Tattered Leather Armor");
-         tatteredLeatherArmor.setItemDescription("An antique, but it can still cover your vitals.");
+         tatteredLeatherArmor.setItemDescription("Battered, but still usable.");
          tatteredLeatherArmor.setItemLevel(3);
          tatteredLeatherArmor.setAmount(0);
          inventory[Item.tatteredLeatherArmor.ordinal()] = tatteredLeatherArmor;
@@ -128,7 +128,7 @@ public class InventoryControl {
          
          Inventory polishedScaleMail = new Inventory();
          polishedScaleMail.setInventoryItem("Polished Scale Mail");
-         polishedScaleMail.setItemDescription("Quality armor for covering your chest and shoulders.");
+         polishedScaleMail.setItemDescription("Quality armor for your chest.");
          polishedScaleMail.setItemLevel(14);
          polishedScaleMail.setAmount(0);
          inventory[Item.polishedScaleMail.ordinal()] = polishedLeatherArmor;
@@ -141,7 +141,7 @@ public class InventoryControl {
          inventory[Item.tatteredPlateMail.ordinal()] = tatteredPlateMail;
          
          Inventory sturdyPlateMail = new Inventory();
-         sturdyPlateMail.setInventoryItem("Sturdy PLate Mail");
+         sturdyPlateMail.setInventoryItem("Sturdy Plate Mail");
          sturdyPlateMail.setItemDescription("Covers your whole body in thick metal.");
          sturdyPlateMail.setItemLevel(11);
          sturdyPlateMail.setAmount(0);

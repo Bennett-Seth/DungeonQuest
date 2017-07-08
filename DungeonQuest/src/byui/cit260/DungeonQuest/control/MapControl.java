@@ -24,7 +24,7 @@ public class MapControl {
         return map;
     }
 
-    private static Scene[] createScenes() {
+    public static Scene[] createScenes() {
         Scene[] scenes = new Scene[SceneType.values().length];
 
         Scene startingScene = new Scene();

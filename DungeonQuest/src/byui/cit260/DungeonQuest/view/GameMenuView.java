@@ -35,7 +35,8 @@ public class GameMenuView extends View{
             + "\nS = Find the Item with the greatest strength"
             + "\nM - See the Map of the Dungeon (select a room to explore)"
             + "\nG - Go to new location"
-            + "\nI - Review Your Character’s Inventory and Player Level" 
+            + "\nI - Review Your Character’s Inventory and Player Level"
+            + "\nN - View Inventory Menu"
             + "\nH - View the Help Menu"
             + "\nQ - Quit to Main Menu"
             + "\nL - Prompt to Menu with a List of Actors and Descriptions"
@@ -70,6 +71,9 @@ public class GameMenuView extends View{
                 break;
             case "I": //Review your characters's inventory and player levol
                 this.displayInventory();
+                break;
+            case "N": //View the Inventory Menu
+                this.InventoryView();
                 break;
             case "H": //View the Help Menu
                 this.displayHelpMenu();
@@ -261,6 +265,10 @@ public class GameMenuView extends View{
         actorsView.display();
     }
 
+    private void InventoryView() {
+        InventoryView inventoryView = new InventoryView();
+        inventoryView.display();
+    }     
     private void displayMapReport() {
         MapListView mapView = new MapListView();
         mapView.display();

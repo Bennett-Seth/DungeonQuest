@@ -5,6 +5,7 @@
  */
 package byui.cit260.DungeonQuest.view;
 
+import byui.cit260.DungeonQuest.control.MapControl;
 import byui.cit260.DungeonQuest.model.Scene;
 import dungeonquest.DungeonQuest;
 import java.io.IOException;
@@ -30,7 +31,7 @@ public class MapListView extends View {
         value = value.toUpperCase();
             switch (value) {
                 case "P": 
-                this.PrintMapListReport(DungeonQuest.getCurrentGame().getScene());
+                this.printMapList(MapControl.createScenes());
                 return true; 
                 default:
                 System.out.println("\n*** Invalid selection *** Try again");
@@ -40,7 +41,7 @@ public class MapListView extends View {
     }
     
     
-        public void PrintMapListReport(Scene[] mapList){
+        public void printMapList(Scene[] mapList){
  
         this.console.println("\n Enter the name of the File: ");
           String outputLocation;  
@@ -49,12 +50,12 @@ public class MapListView extends View {
             outputLocation = this.keyboard.readLine();
             
             try (PrintWriter out = new PrintWriter(outputLocation)) {
-                this.console.println("\n\n            Map List              ");
-                this.console.printf("%n%-15s%15s", "Room Name", "Description");
-                this.console.printf("%n%-15s%15s", "---------", "-----------");
+                out.println("\n\n            Map List              ");
+                out.printf("%n%-15s%15s", "Room Name", "Description");
+                out.printf("%n%-15s%15s", "---------", "-----------");
 
                 for (Scene map : mapList) {
-                    this.console.printf("%n%-20s%10s.2f"    , map.getName()
+                    out.printf("%n%-20s%10s"                , map.getName()
                                                             , map.getDescription());
                 }  
             }   catch (IOException ex)  {
