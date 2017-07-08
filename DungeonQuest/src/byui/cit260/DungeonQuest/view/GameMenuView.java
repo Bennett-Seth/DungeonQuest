@@ -39,6 +39,7 @@ public class GameMenuView extends View{
             + "\nH - View the Help Menu"
             + "\nQ - Quit to Main Menu"
             + "\nL - Prompt to Menu with a List of Actors and Descriptions"
+            + "\nJ - Map Listings Report"
                 
             + "\n--------------------------------");
     }
@@ -81,6 +82,9 @@ public class GameMenuView extends View{
                 break;
             case "L": //Prompt to Menu with List of Actors and Descriptions
                 this.displayActorsList();
+                break;
+            case "J":
+                this.displayMapReport();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),
@@ -255,6 +259,11 @@ public class GameMenuView extends View{
     private void displayActorsList() {
         ActorsListView actorsView = new ActorsListView();
         actorsView.display();
+    }
+
+    private void displayMapReport() {
+        MapListView mapView = new MapListView();
+        mapView.display();
     }
 
     

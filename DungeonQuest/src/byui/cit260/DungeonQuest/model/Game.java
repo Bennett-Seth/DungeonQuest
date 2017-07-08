@@ -20,6 +20,7 @@ public class Game implements Serializable{
     private Player player;
     private Map map;
     private Inventory[] inventory;
+    private Scene[] scene;
     
 
     public Map getMap() {
@@ -80,6 +81,12 @@ public class Game implements Serializable{
     public void setInventory(Inventory[] inventory){
         this.inventory = inventory;
     }
+    public Scene[] getScene() {
+        return scene;
+    }
+    public void setScene(Scene[] scene){
+        this.scene = scene;
+    }
     
     @Override
     public int hashCode() {
@@ -118,6 +125,7 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "winGame=" + winGame + ", looseGame=" + looseGame + ", noPlayer=" + noPlayer + '}';
     }
+
     
     
     
