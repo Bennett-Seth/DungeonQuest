@@ -47,7 +47,10 @@ public class ZombiesRoomView extends View {
 
  //Individual Assignment L:11, by Sophia.
          try {
-        GameControl.zombiesRoom(steps);
+        if (GameControl.zombiesRoom(steps)){
+            this.console.println("Congratulations, you are at safe zone");
+            return true;
+        }
      
         } catch (ZombiesControlException te) {
             ErrorView.display(this.getClass().getName(),

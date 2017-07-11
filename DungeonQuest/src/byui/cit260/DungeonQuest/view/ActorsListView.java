@@ -67,7 +67,7 @@ public class ActorsListView extends View{
                                                   , actors.getStrength());
             }  
         }   catch (IOException ex)  {
-            System.out.println("I/O Error: " + ex.getMessage());
+            Logger.getLogger("I/O Error: " + ex.getMessage());
         }
         } catch (IOException ex) {
             Logger.getLogger(ActorsListView.class.getName()).log(Level.SEVERE, null, ex);
