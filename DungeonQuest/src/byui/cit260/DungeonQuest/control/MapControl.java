@@ -24,67 +24,67 @@ public class MapControl {
         return map;
     }
 
-    private static Scene[] createScenes() {
+    public static Scene[] createScenes() {
         Scene[] scenes = new Scene[SceneType.values().length];
 
         Scene startingScene = new Scene();
-        startingScene.setDescription("What a joy this in");
+        startingScene.setDescription("Entrance to the Dungeon");
         startingScene.setSymbol("ST");
-        startingScene.setBlocked(false);
+        startingScene.setName("Starting Room");
         scenes[SceneType.start.ordinal()] = startingScene;
 
         Scene finishScene = new Scene();
         finishScene.setDescription("You Won!");
         finishScene.setSymbol("FN");
-        finishScene.setBlocked(false);
+        finishScene.setName("Finished Game");
         scenes[SceneType.finish.ordinal()] = finishScene;
 
         Scene wizardScene = new Scene();
-        wizardScene.setDescription("Wizard Sup!");
+        wizardScene.setDescription("The great white wizard resides in this room");
         wizardScene.setSymbol("WZ");
-        wizardScene.setBlocked(false);
+        wizardScene.setName("Wizard Room");
         scenes[SceneType.wizard.ordinal()] = wizardScene;
 
         Scene zombieScene = new Scene();
-        zombieScene.setDescription("Brains!");
+        zombieScene.setDescription("Home to creatures that only enjoy eating brains");
         zombieScene.setSymbol("ZM");
-        zombieScene.setBlocked(false);
+        zombieScene.setName("Zombie Room");
         scenes[SceneType.zombie.ordinal()] = zombieScene;
 
         Scene goblinScene = new Scene();
-        goblinScene.setDescription("Creepy Dungeon People!");
+        goblinScene.setDescription("Home to creatures of the caves");
         goblinScene.setSymbol("GB");
-        goblinScene.setBlocked(false);
+        goblinScene.setName("Goblin Room");
         scenes[SceneType.goblin.ordinal()] = goblinScene;
 
         Scene trapScene = new Scene();
-        trapScene.setDescription("AHHHHHHHH!");
+        trapScene.setDescription("Watch your step. It's a trap");
         trapScene.setSymbol("TR");
-        trapScene.setBlocked(false);
+        trapScene.setName("Trap Room");
         scenes[SceneType.trap.ordinal()] = trapScene;
 
         Scene vampireScene = new Scene();
-        vampireScene.setDescription("Blood Suckers!");
+        vampireScene.setDescription("This is home to the blood sucking, reflectionless characters");
         vampireScene.setSymbol("VP");
         vampireScene.setName("Vampire Room");
         scenes[SceneType.vampire.ordinal()] = vampireScene;
 
         Scene instructionScene = new Scene();
-        instructionScene.setDescription("Do this blah blah blah");
+        instructionScene.setDescription("This room contains instructions for the game");
         instructionScene.setSymbol("IN");
-        instructionScene.setBlocked(false);
+        instructionScene.setName("Instructions Room");
         scenes[SceneType.instructions.ordinal()] = instructionScene;
 
         Scene fairiesScene = new Scene();
-        fairiesScene.setDescription("Blood blah blah blah");
+        fairiesScene.setDescription("This is home to the Fairies");
         fairiesScene.setSymbol("FS");
-        fairiesScene.setBlocked(false);
+        fairiesScene.setName("Fairy Room");
         scenes[SceneType.fairies.ordinal()] = fairiesScene;
 
         Scene emptyScene = new Scene();
         emptyScene.setDescription("This room is empty");
         emptyScene.setSymbol("FS");
-        emptyScene.setBlocked(false);
+        emptyScene.setName("Empty Room");
         scenes[SceneType.empty.ordinal()] = emptyScene;
 
         return scenes;
