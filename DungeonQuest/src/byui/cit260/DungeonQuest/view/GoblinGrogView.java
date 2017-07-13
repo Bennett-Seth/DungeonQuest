@@ -109,7 +109,7 @@ public class GoblinGrogView extends View{
             else
                 this.console.println("You have lost. Game Over.");
     
-            this.console.println("But wait! Agor has dropped "
+            this.console.println("But wait! Grog has dropped "
                         + "the Polished Sword. Do you want to "
                         + "pick up this weapon?"
                         + "-----------------------------------"

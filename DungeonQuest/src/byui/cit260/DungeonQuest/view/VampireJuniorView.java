@@ -8,6 +8,7 @@ package byui.cit260.DungeonQuest.view;
 import byui.cit260.DungeonQuest.model.Game;
 import byui.cit260.DungeonQuest.model.Inventory;
 import dungeonquest.DungeonQuest;
+import java.io.IOException;
 
 /**
  *
@@ -54,6 +55,8 @@ public class VampireJuniorView extends View {
     }
     
     public void fightMoster() {
+        String result;
+        
         Game game = DungeonQuest.getCurrentGame();
         Inventory[] inventory = game.getInventory();
         
@@ -102,9 +105,38 @@ public class VampireJuniorView extends View {
     }
     }
             if(playerSTR>30) 
-                this.console.println("You have beat Agor!");
+                this.console.println("You have beat Junior!");
             else
                 this.console.println("You have lost. Game Over.");
+    
+            this.console.println("But wait! Junior has dropped "
+                        + "the Weathered Axe. Do you want to "
+                        + "pick up this weapon?"
+                        + "-----------------------------------"
+                        + "Y - Yes "
+                        + "N - No ");
+            
+                try {    
+                    result = keyboard.readLine();
+                
+                    if ("Y" != result) {
+                        this.console.println("You did not pick up the "
+                                + " Weathered Axe. Move on to the "
+                                + "next room.");           
+                    } else {
+                       
+                    inventory[7].setAmount(1);
+                    this.console.println("You have picked up the "
+                            + "Weathered Axe. If it's good enough "
+                            + "for trees, it should work just fine "
+                            + "on Goblin skulls.");
+                    }
+
+                } catch (IOException ex) {
+                    ErrorView.display(this.getClass().getName(),
+                                    "\nYou must enter a 'Y' or an 'N'.");
+                }
+    
     }
 
     public void displayInventory() {

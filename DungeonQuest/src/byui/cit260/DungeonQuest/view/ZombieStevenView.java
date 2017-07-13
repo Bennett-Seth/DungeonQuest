@@ -8,6 +8,7 @@ package byui.cit260.DungeonQuest.view;
 import byui.cit260.DungeonQuest.model.Game;
 import byui.cit260.DungeonQuest.model.Inventory;
 import dungeonquest.DungeonQuest;
+import java.io.IOException;
 
 /**
  *
@@ -54,6 +55,9 @@ public class ZombieStevenView extends View {
     }
     
     public void fightMoster() {
+        
+        String result;
+        
         Game game = DungeonQuest.getCurrentGame();
         Inventory[] inventory = game.getInventory();
         
@@ -105,6 +109,34 @@ public class ZombieStevenView extends View {
                 this.console.println("You have beat Steven!");
             else
                 this.console.println("You have lost. Game Over.");
+    
+            this.console.println("But wait! Steven has dropped "
+                        + "the Mithril Sword. Do you want to "
+                        + "pick up this useful weapon?"
+                        + "-----------------------------------"
+                        + "Y - Yes "
+                        + "N - No ");
+            
+                try {    
+                    result = keyboard.readLine();
+                
+                    if ("Y" != result) {
+                        this.console.println("You did not pick up the "
+                                + "Mithril Sword. Move on to the "
+                                + "next room.");           
+                    } else {
+                       
+                    inventory[5].setAmount(1);
+                    this.console.println("You have picked up the "
+                            + "Mithril Sword. May the Gods bless"
+                            + "your skin with holy strength");
+                    }
+
+                } catch (IOException ex) {
+                    ErrorView.display(this.getClass().getName(),
+                                    "\nYou must enter a 'Y' or an 'N'.");
+                }
+    
     }
 
     public void displayInventory() {

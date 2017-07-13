@@ -8,6 +8,7 @@ package byui.cit260.DungeonQuest.view;
 import byui.cit260.DungeonQuest.model.Game;
 import byui.cit260.DungeonQuest.model.Inventory;
 import dungeonquest.DungeonQuest;
+import java.io.IOException;
 
 /**
  *
@@ -54,6 +55,9 @@ public class GoblinCalgorView extends View {
     }
     
     public void fightMoster() {
+        
+        String result;
+        
         Game game = DungeonQuest.getCurrentGame();
         Inventory[] inventory = game.getInventory();
         
@@ -105,6 +109,35 @@ public class GoblinCalgorView extends View {
                 this.console.println("You have beat Calgor!");
             else
                 this.console.println("You have lost. Game Over.");
+    
+    
+            this.console.println("But wait! Calgor has dropped "
+                        + "the Tattered Scale Mail. Do you want to "
+                        + "pick up this powerful item?"
+                        + "-----------------------------------"
+                        + "Y - Yes "
+                        + "N - No ");
+            
+                try {    
+                    result = keyboard.readLine();
+                
+                    if ("Y" != result) {
+                        this.console.println("You did not pick up the "
+                                + "Tattered Scale Mail. Move on to the "
+                                + "next room.");           
+                    } else {
+                       
+                    inventory[12].setAmount(1);
+                    this.console.println("You have picked up the "
+                            + "Tattered Scale Mail. May the Gods bless"
+                            + "your skin with holy strength");
+                    }
+
+                } catch (IOException ex) {
+                    ErrorView.display(this.getClass().getName(),
+                                    "\nYou must enter a 'Y' or an 'N'.");
+                }
+    
     }
 
     public void displayInventory() {

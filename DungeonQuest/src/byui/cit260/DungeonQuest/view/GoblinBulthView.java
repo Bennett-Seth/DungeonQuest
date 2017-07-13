@@ -8,6 +8,7 @@ package byui.cit260.DungeonQuest.view;
 import byui.cit260.DungeonQuest.model.Game;
 import byui.cit260.DungeonQuest.model.Inventory;
 import dungeonquest.DungeonQuest;
+import java.io.IOException;
 
 /**
  *
@@ -54,6 +55,8 @@ public class GoblinBulthView extends View {
     }
     
     public void fightMoster() {
+        String result;
+        
         Game game = DungeonQuest.getCurrentGame();
         Inventory[] inventory = game.getInventory();
         
@@ -96,15 +99,42 @@ public class GoblinBulthView extends View {
         
             playerSTR = playerWEP + playerARM;
 
-        
-  
-        
     }
     }
             if(playerSTR>28) 
                 this.console.println("You have beat Bulth!");
             else
                 this.console.println("You have lost. Game Over.");
+    
+    
+            this.console.println("But wait! Bluth has dropped "
+                        + "Sturdy Leather Armor. Do you want to "
+                        + "pick up this powerful item?"
+                        + "-----------------------------------"
+                        + "Y - Yes "
+                        + "N - No ");
+            
+                try {    
+                    result = keyboard.readLine();
+                
+                    if ("Y" != result) {
+                        this.console.println("You did not pick up the "
+                                + " Sturdy Leather Armor. Move on to the "
+                                + "next room.");           
+                    } else {
+                       
+                    inventory[11].setAmount(1);
+                    this.console.println("You have picked up the "
+                            + "Sturdy Leather Armor. Good luck!");
+                    }
+
+                } catch (IOException ex) {
+                    ErrorView.display(this.getClass().getName(),
+                                    "\nYou must enter a 'Y' or an 'N'.");
+                }
+    
+    
+    
     }
 
     public void displayInventory() {
