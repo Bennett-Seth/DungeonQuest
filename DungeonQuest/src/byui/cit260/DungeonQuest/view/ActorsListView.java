@@ -65,10 +65,13 @@ public class ActorsListView extends View{
                 out.printf("%n%-20s%10s%13.2f"    , actors.getName()
                                                   , actors.getDescription()
                                                   , actors.getStrength());
-            }  
+            } 
+            this.console.println("Your game was saved successfully.");
+       
         }   catch (IOException ex)  {
             Logger.getLogger("I/O Error: " + ex.getMessage());
         }
+        
         } catch (IOException ex) {
             Logger.getLogger(ActorsListView.class.getName()).log(Level.SEVERE, null, ex);
         }
