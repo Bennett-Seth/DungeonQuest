@@ -23,7 +23,7 @@ public class ZombieDianeView extends View{
             + "\n--------------------------------"
             +"\n| Combat Menu"
             + "\n--------------------------------"
-            + "\nQ - Run away"
+            + "\nR - Run away"
             + "\nF - Fight the Zombie"
             + "\nI - Review Your Character’s Inventory and Player Level"
             + "\nH - View the Help Menu"
@@ -39,13 +39,15 @@ public class ZombieDianeView extends View{
             case "F": //Fight the Goblin
                 this.fightMoster();
                 break;
-
+                    
             case "I": //Review your characters's inventory and player levol
                 this.displayInventory();
                 break;
             case "H": //View the Help Menu
                 this.displayHelpMenu();
                 break;
+            case "R":
+                this.previousMenu();
             default:
                 ErrorView.display(this.getClass().getName(),
                         "\n*** Invalid selection *** Try again");
@@ -142,6 +144,11 @@ public class ZombieDianeView extends View{
     private void loseScreen() {
         LosingView losingView = new LosingView();
         losingView.display();
+    }
+
+    private void previousMenu() {
+        MapMenuView mapMenu = new MapMenuView();
+        mapMenu.display();
     }
 }
 
