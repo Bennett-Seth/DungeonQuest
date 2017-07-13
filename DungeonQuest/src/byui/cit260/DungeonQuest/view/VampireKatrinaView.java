@@ -55,7 +55,6 @@ public class VampireKatrinaView extends View{
     }
     
     public void fightMoster() {
-        
         String result;
         
         Game game = DungeonQuest.getCurrentGame();
@@ -66,79 +65,69 @@ public class VampireKatrinaView extends View{
             int playerSTR = 0;
         
             for (int i = 0; i <= 9; i++){
+                inventory[i].getAmount();
                 if (inventory[i].getAmount() != 0) {
+//                this.console.println(inventory[i].getInventoryItem());    
                     playerWEP = inventory[i].getItemLevel();
                 } 
-        
-                    if (playerWEP < inventory[i].getItemLevel()) {
-                        playerWEP = inventory[i].getItemLevel();
-                    }
-        
-                    if (playerWEP > inventory[i].getItemLevel()) {
-                        playerWEP = playerWEP;
-                    }
-        
-                else {
-                    playerWEP = 0;
+//                    if (playerWEP < inventory[i].getItemLevel()) {
+//                        playerWEP = inventory[i].getItemLevel();
+//                        this.console.println(inventory[i].getItemLevel());
+//                    }
+//                    else {
+//                        playerWEP = playerWEP;
+//                    }
                 }
-                
-            for (i = 10; i < inventory.length; i++){
+ 
+            for (int i = 10; i < inventory.length; i++){
+                inventory[i].getAmount();
                 if (inventory[i].getAmount() != 0) {
+//                    this.console.println(inventory[i].getInventoryItem());
                     playerARM = inventory[i].getItemLevel();
                 }
-        
-                    if (playerARM < inventory[i].getItemLevel()) {
-                        playerARM = inventory[i].getItemLevel();
-                    }
-        
-                    if (playerARM > inventory[i].getItemLevel()) {
-                        playerARM = playerWEP;
-                    }
-                else {
-                    playerARM = 0;
-                }
-        
-            playerSTR = playerWEP + playerARM;
-
-        
-  
-        
-    }
-    }
+//                    if (playerARM < inventory[i].getItemLevel()) {
+//                        playerARM = inventory[i].getItemLevel();
+//                        this.console.println(inventory[i].getItemLevel());
+//                    }
+//                    else {
+//                    playerARM = playerARM;
+//                    }
+            }
+        playerSTR = playerWEP + playerARM;  
             if(playerSTR>35) 
-                this.console.println("You have beat Katrina!");
-            else
-                this.console.println("You have lost. Game Over.");
-    
-            this.console.println("But wait! Katrina has dropped "
-                        + "the Viking Axe. Do you want to "
+                try{
+                    this.console.println("You have beat Katrina!"
+                        + "But wait! Katrina has dropped "
+                        + "a Viking Axe. Do you want to "
                         + "pick up this powerful item?"
                         + "-----------------------------------"
                         + "Y - Yes "
                         + "N - No ");
-            
-                try {    
-                    result = keyboard.readLine();
-                
-                    if ("Y" != result) {
-                        this.console.println("You did not pick up the "
-                                + " Viking Axe. Move on to the "
-                                + "next room.");           
-                    } else {
-                       
-                    inventory[18].setAmount(1);
-                    this.console.println("You have picked up the "
-                            + "Viking Axe. May the Gods bless"
-                            + "your skin with holy strength");
-                    }
+                     try {    
+                        result = keyboard.readLine();
+                        result = result.toUpperCase();
+                        switch(result){
+                            case "Y":
+                                this.console.println("You have picked up the "
+                                    + "Viking Axe. Great job!");  
+                                inventory[18].setAmount(1);
+                            break;
+                            case "N":
+                                this.console.println("You did not pick up the "
+                                    + "Viking Axe. Move on to the "
+                                    + "next room.");
+                        }
 
-                } catch (IOException ex) {
-                    ErrorView.display(this.getClass().getName(),
-                                    "\nYou must enter a 'Y' or an 'N'.");
+                    } catch (IOException ex) {
+                        ErrorView.display(this.getClass().getName(),
+                                        "\nYou must enter a 'Y' or an 'N'.");
+                    }
+                } catch (Exception e){
+                    System.out.println("Error reading input: " + e.getMessage());
                 }
-    
-    
-    }
+            else
+                this.console.println("You have lost! Game over"); 
+    }    
 
     public void displayInventory() {
         InventoryView inventoryView = new InventoryView();

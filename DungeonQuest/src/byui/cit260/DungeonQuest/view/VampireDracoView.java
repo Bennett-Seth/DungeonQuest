@@ -66,79 +66,70 @@ public VampireDracoView (){
             int playerSTR = 0;
         
             for (int i = 0; i <= 9; i++){
+                inventory[i].getAmount();
                 if (inventory[i].getAmount() != 0) {
+//                this.console.println(inventory[i].getInventoryItem());    
                     playerWEP = inventory[i].getItemLevel();
                 } 
-        
-                    if (playerWEP < inventory[i].getItemLevel()) {
-                        playerWEP = inventory[i].getItemLevel();
-                    }
-        
-                    if (playerWEP > inventory[i].getItemLevel()) {
-                        playerWEP = playerWEP;
-                    }
-        
-                else {
-                    playerWEP = 0;
+//                    if (playerWEP < inventory[i].getItemLevel()) {
+//                        playerWEP = inventory[i].getItemLevel();
+//                        this.console.println(inventory[i].getItemLevel());
+//                    }
+//                    else {
+//                        playerWEP = playerWEP;
+//                    }
                 }
-                
-            for (i = 10; i < inventory.length; i++){
+ 
+            for (int i = 10; i < inventory.length; i++){
+                inventory[i].getAmount();
                 if (inventory[i].getAmount() != 0) {
+//                    this.console.println(inventory[i].getInventoryItem());
                     playerARM = inventory[i].getItemLevel();
                 }
-        
-                    if (playerARM < inventory[i].getItemLevel()) {
-                        playerARM = inventory[i].getItemLevel();
-                    }
-        
-                    if (playerARM > inventory[i].getItemLevel()) {
-                        playerARM = playerWEP;
-                    }
-                else {
-                    playerARM = 0;
-                }
-        
-            playerSTR = playerWEP + playerARM;
-
-        
-  
-        
-    }
-    }
+//                    if (playerARM < inventory[i].getItemLevel()) {
+//                        playerARM = inventory[i].getItemLevel();
+//                        this.console.println(inventory[i].getItemLevel());
+//                    }
+//                    else {
+//                    playerARM = playerARM;
+//                    }
+            }
+        playerSTR = playerWEP + playerARM;
             if(playerSTR>45) 
-                this.console.println("You have beat Draco!");
-            else
-                this.console.println("You have lost. Game Over.");
-    
-            this.console.println("But wait! Draco has dropped "
+                try{
+                    this.console.println("You have beat Draco!"
+                        + "But wait! Draco has dropped "
                         + "the Holy Spear. Do you want to "
-                        + "pick up this powerful item?"
+                        + "pick up this powerful weapon?"
                         + "-----------------------------------"
                         + "Y - Yes "
                         + "N - No ");
-            
-                try {    
-                    result = keyboard.readLine();
-                
-                    if ("Y" != result) {
-                        this.console.println("You did not pick up the "
-                                + " Cloak of Light. Move on to the "
-                                + "next room.");           
-                    } else {
-                       
-                    inventory[9].setAmount(1);
-                    this.console.println("You have picked up the "
-                            + "Holy Spear. May the Gods bless"
-                            + "your weapon with holy might!");
-                    }
+                     try {    
+                        result = keyboard.readLine();
+                        result = result.toUpperCase();
+                        switch(result){
+                            case "Y":
+                                this.console.println("You have picked up the "
+                                    + "Holy Spear. May the Gods blesss you "
+                                    + "with all their sacred might.");  
+                                inventory[9].setAmount(1);
+                            break;
+                            case "N":
+                                this.console.println("You did not pick up the "
+                                    + "Holy Spear. Move on to the "
+                                    + "next room.");
+                        }
 
-                } catch (IOException ex) {
-                    ErrorView.display(this.getClass().getName(),
-                                    "\nYou must enter a 'Y' or an 'N'.");
-                }    
-    
-    
-    }
+                    } catch (IOException ex) {
+                        ErrorView.display(this.getClass().getName(),
+                                        "\nYou must enter a 'Y' or an 'N'.");
+                    }
+                } catch (Exception e){
+                    System.out.println("Error reading input: " + e.getMessage());
+                }
+            else
+                this.console.println("You have lost! Game over"); 
+    }    
 
     public void displayInventory() {
         InventoryView inventoryView = new InventoryView();
