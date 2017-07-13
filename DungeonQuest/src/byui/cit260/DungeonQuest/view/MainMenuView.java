@@ -37,7 +37,6 @@ public class MainMenuView extends View{
             + "\nG - Get and start saved game"
             + "\nH - Get help on how to play the game"
             + "\nS - Save game"
-            + "\nT - Test Vampire View"
             + "\nQ - Quit"
             + "\n--------------------------------");
 }
@@ -65,9 +64,6 @@ public class MainMenuView extends View{
                 break;
             case "S":
                 this.saveGame();
-                break;
-            case "T":
-                this.testVampire();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),
@@ -124,11 +120,6 @@ public class MainMenuView extends View{
             ErrorView.display("MainMenuView", ex.getMessage());
         }
         
-    }
-    
-    private void testVampire() {
-        VampireView vampireTest = new VampireView();
-        vampireTest.display();
     }
     
 }

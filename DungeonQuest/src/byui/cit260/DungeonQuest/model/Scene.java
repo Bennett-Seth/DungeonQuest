@@ -18,8 +18,17 @@ public class Scene implements Serializable{
     private boolean blocked;
     private String symbol;
     private String name;
+    private String view;
 
     public Scene() {
+    }
+
+    public String getView() {
+        return view;
+    }
+
+    public void setView(String view) {
+        this.view = view;
     }
 
     public String getDescription() {

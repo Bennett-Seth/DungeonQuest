@@ -7,24 +7,23 @@ package byui.cit260.DungeonQuest.view;
 
 /**
  *
- * @author Seth
+ * @author parrdyl
  */
-public class GoblinView extends View{
+public class GoblinGrogView extends View{
     
     
-    public GoblinView (){
+    public GoblinGrogView (){
         super( "\n"
-            + "\nYou face a creepy Goblin."
-            + "\nWhat do you do?"
+            + "\nAgor: Ahhh! I will destroy you."
+            + "\nAgor has a strength of 20."
+            + "\nWhat would you like to do?"
             + "\n--------------------------------"
             +"\n| Combat Menu"
             + "\n--------------------------------"
-            + "\nR - Run away"
+            + "\nQ - Run away"
             + "\nF - Fight the Goblin"
-            + "\nM - See the Map of the Dungeon (select a room to explore)"
             + "\nI - Review Your Character’s Inventory and Player Level"
             + "\nH - View the Help Menu"
-            + "\nQ - Quit to Main Menu"
             + "\n--------------------------------");
     }
     
@@ -34,15 +33,10 @@ public class GoblinView extends View{
         value = value.toUpperCase();
         
         switch (value){
-            case "R": //Retreat into the previous room
-                this.previousRoom();
-                break;
             case "F": //Fight the Goblin
                 this.fightMoster();
                 break;
-            case "M": //See the Map of the Dungeon(select a room to explore
-                this.displayMap();
-                break;
+
             case "I": //Review your characters's inventory and player levol
                 this.displayInventory();
                 break;
@@ -57,35 +51,18 @@ public class GoblinView extends View{
         return false;
     }
     
-    public void previousRoom() {
-         this.console.println("\n*** previousRoom() function called ***");
-    }
-    
     public void fightMoster() {
         this.console.println("\n*** fightMonster() function called ***");
     }
-    
-    public void displayMap() {
-        this.console.println("\n*** displayMap() function called ***");
-    }
 
     public void displayInventory() {
-        this.console.println("\n*** displayInventory() function called ***");
+        InventoryView inventoryView = new InventoryView();
+        inventoryView.display();
     }
 
     public void displayHelpMenu() {
-        this.console.println("\n*** displayHelpMenu() function called ***");
-    }
-
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
+        HelpMenuView helpMenu = new HelpMenuView();
+        helpMenu.display();
+    }   
     
 }

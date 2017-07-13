@@ -10,6 +10,10 @@ Finished Game         You Won!
 Wizard Room         The great white wizard resides in this room
 Zombie Room         Home to creatures that only enjoy eating brains
 Goblin Room         Home to creatures of the caves
+Goblin Room         Home to creatures of the caves
+Goblin Room         Home to creatures of the caves
+Goblin Room         Home to creatures of the caves
+Goblin Room         Home to creatures of the caves
 Trap Room           Watch your step. It's a trap
 Vampire Room        This is home to the blood sucking, reflectionless characters
 Fairy Room          This is home to the Fairies

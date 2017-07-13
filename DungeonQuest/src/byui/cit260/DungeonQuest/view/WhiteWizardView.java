@@ -36,21 +36,24 @@ public class WhiteWizardView extends View {
                 + "\narmor of Ephysiyies if you are smart enough to solve    "
                 + "\nmy riddle. The riddle is: what 3 positive numbers"
                 + "\ngive the same result when multiplied and added together?"
-                + "\nPlease enter your 3 numbers: "       
+                + "\nTo start please enter 0 and then it will prompt you to"
+                + "\nenter the first number. "       
                 + "\n--------------------------------------------------------"
         );
      }
     
         @Override
         public boolean doAction(String value) { 
-            
             double var1 = 0;
             double var2 = 0;
             double var3 = 0;
             try{
                 try {
+                    System.out.println("Enter 1st Number");
                     var1 = Double.parseDouble(keyboard.readLine());
+                    System.out.println("Enter 2nd Number");
                     var2 = Double.parseDouble(keyboard.readLine());
+                    System.out.println("Enter 3rd Number");
                     var3 = Double.parseDouble(keyboard.readLine());
                 } catch (NumberFormatException nf) {
                     ErrorView.display(this.getClass().getName(),
@@ -62,7 +65,9 @@ public class WhiteWizardView extends View {
             }
             try{
                 double calculation = QuestionControl.wizardQuestion(var1, var2, var3);
-                this.console.println("The result of the numbers you entered is " + calculation + ". Because they check out here is your hint:");
+                this.console.println("The result of the numbers you entered is " + calculation + ". Because they check out here is your hint: "
+                        + "To defeat the dragon you will need to weild the most powerful weapon and armor. You need to find the Holy Spear and"
+                        + " the Cloak of Light. Good luck!");
                 return true;
             } catch (WizardControlException we) {
                 ErrorView.display(this.getClass().getName(),

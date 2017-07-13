@@ -26,7 +26,7 @@ public class QuestionControl {
         double answerMultiplication = (var1 * var2 * var3);  
         double result = (answerAddition / answerMultiplication);
         if (result != 1)
-            throw new WizardControlException("The numbers you entered do not equal 1. Try Again!");
+            throw new WizardControlException("The numbers you entered do not equal 1. Try Again!" + var1 + var2 + var3);
         return result;
     }
     
