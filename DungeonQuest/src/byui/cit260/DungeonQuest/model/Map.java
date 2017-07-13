@@ -5,7 +5,7 @@
  */
 package byui.cit260.DungeonQuest.model;
 
-import byui.cit260.DungeonQuest.view.ErrorView;
+import byui.cit260.DungeonQuest.views.ErrorView;
 import java.io.Serializable;
 import java.util.Objects;
 /**

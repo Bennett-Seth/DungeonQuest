@@ -13,7 +13,7 @@ import byui.cit260.DungeonQuest.model.Map;
 import byui.cit260.DungeonQuest.model.Location;
 import byui.cit260.DungeonQuest.model.Questions;
 import byui.cit260.DungeonQuest.model.Scene;
-import byui.cit260.DungeonQuest.view.StartProgramView;
+import byui.cit260.DungeonQuest.views.StartProgramView;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
