@@ -105,45 +105,115 @@ public class GameControl{
         return starNewGame;
         }
     public static Actor[] createActorList(){
-       Actor[] actors = new Actor[5]; 
+       Actor[] actors = new Actor[15]; 
         
         Actor newActor = new Actor();
         
         newActor.setName("Fairie");
-        newActor.setDescription("bright");
-        newActor.setStrength(50.0);
+        newActor.setDescription("Bright");
+        newActor.setStrength(100.0);
         newActor.setEnemy(false);
         actors[0] = newActor;
         
         newActor = new Actor();
-        newActor.setName("Vanpire");
-        newActor.setDescription("Dark");
-        newActor.setStrength(50.0);
+        newActor.setName("Draco");
+        newActor.setDescription("Vampire");
+        newActor.setStrength(40.0);
         newActor.setEnemy(true);
         actors[1] = newActor;
         
         newActor = new Actor();
-        newActor.setName("Zombie");
-        newActor.setDescription("Ugly Guy");
-        newActor.setStrength(25.0);
+        newActor.setName("Seth");
+        newActor.setDescription("Zombie");
+        newActor.setStrength(22.0);
         newActor.setEnemy(true);
         actors[2] = newActor;
         
         newActor = new Actor();
-        newActor.setName("Blue Wizard");
+        newActor.setName("White Wizard");
         newActor.setDescription("Old");
         newActor.setStrength(100.0);
         newActor.setEnemy(false);
         actors[3] = newActor;
         
         newActor = new Actor();
-        newActor.setName("Globin");
-        newActor.setDescription("Nasty");
-        newActor.setStrength(25.0);
+        newActor.setName("Agor");
+        newActor.setDescription("Goblin");
+        newActor.setStrength(35.0);
         newActor.setEnemy(true);
         actors[4] = newActor;
-        return actors;
+                
+        newActor = new Actor();
+        newActor.setName("Dragon");
+        newActor.setDescription("Beast");
+        newActor.setStrength(50.0);
+        newActor.setEnemy(true);
+        actors[5] = newActor;
         
+        newActor = new Actor();
+        newActor.setName("Diane");
+        newActor.setDescription("Zombie");
+        newActor.setStrength(18.0);
+        newActor.setEnemy(true);
+        actors[6] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Grog");
+        newActor.setDescription("Goblin");
+        newActor.setStrength(20.0);
+        newActor.setEnemy(true);
+        actors[7] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Troth");
+        newActor.setDescription("Goblin");
+        newActor.setStrength(25.0);
+        newActor.setEnemy(true);
+        actors[8] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Bulth");
+        newActor.setDescription("Goblin");
+        newActor.setStrength(28.0);
+        newActor.setEnemy(true);
+        actors[9] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Calgor");
+        newActor.setDescription("Goblin");
+        newActor.setStrength(30.0);
+        newActor.setEnemy(true);
+        actors[10] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Draco");
+        newActor.setDescription("Vampire");
+        newActor.setStrength(45.0);
+        newActor.setEnemy(true);
+        actors[11] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Katrina");
+        newActor.setDescription("Vampire");
+        newActor.setStrength(35.0);
+        newActor.setEnemy(true);
+        actors[12] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Katelina");
+        newActor.setDescription("Vampire");
+        newActor.setStrength(38.0);
+        newActor.setEnemy(true);
+        actors[13] = newActor;
+        
+        newActor = new Actor();
+        newActor.setName("Junior");
+        newActor.setDescription("Vampire");
+        newActor.setStrength(30.0);
+        newActor.setEnemy(true);
+        actors[14] = newActor;
+        
+        return actors;
     }
 
     public static void assignScenesToLocations(Map map, Scene[] scenes) {
@@ -152,31 +222,31 @@ public class GameControl{
         //start point
         locations[0][0].setScene(scenes[MapControl.SceneType.start.ordinal()]);
         locations[0][1].setScene(scenes[MapControl.SceneType.instructions.ordinal()]);
-        locations[0][2].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[0][2].setScene(scenes[MapControl.SceneType.goblin1.ordinal()]);
         locations[0][3].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
-        locations[0][4].setScene(scenes[MapControl.SceneType.vampire.ordinal()]);
+        locations[0][4].setScene(scenes[MapControl.SceneType.vampire2.ordinal()]);
         
-        locations[1][0].setScene(scenes[MapControl.SceneType.zombie.ordinal()]);
-        locations[1][1].setScene(scenes[MapControl.SceneType.vampire.ordinal()]);
+        locations[1][0].setScene(scenes[MapControl.SceneType.zombie2.ordinal()]);
+        locations[1][1].setScene(scenes[MapControl.SceneType.vampire4.ordinal()]);
         locations[1][2].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
-        locations[1][3].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[1][3].setScene(scenes[MapControl.SceneType.goblin2.ordinal()]);
         locations[1][4].setScene(scenes[MapControl.SceneType.trap.ordinal()]);
         
         locations[2][0].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
         locations[2][1].setScene(scenes[MapControl.SceneType.wizard.ordinal()]);
-        locations[2][2].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[2][2].setScene(scenes[MapControl.SceneType.goblin3.ordinal()]);
         locations[2][3].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
-        locations[2][4].setScene(scenes[MapControl.SceneType.vampire.ordinal()]);
+        locations[2][4].setScene(scenes[MapControl.SceneType.vampire3.ordinal()]);
         
-        locations[3][0].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
-        locations[3][1].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
-        locations[3][2].setScene(scenes[MapControl.SceneType.zombie.ordinal()]);
+        locations[3][0].setScene(scenes[MapControl.SceneType.goblin4.ordinal()]);
+        locations[3][1].setScene(scenes[MapControl.SceneType.dragon.ordinal()]);
+        locations[3][2].setScene(scenes[MapControl.SceneType.zombie1.ordinal()]);
         locations[3][3].setScene(scenes[MapControl.SceneType.fairies.ordinal()]);
         locations[3][4].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
         
-        locations[4][0].setScene(scenes[MapControl.SceneType.vampire.ordinal()]);
+        locations[4][0].setScene(scenes[MapControl.SceneType.vampire1.ordinal()]);
         locations[4][1].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
-        locations[4][2].setScene(scenes[MapControl.SceneType.goblin.ordinal()]);
+        locations[4][2].setScene(scenes[MapControl.SceneType.goblin5.ordinal()]);
         locations[4][3].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
         locations[4][4].setScene(scenes[MapControl.SceneType.finish.ordinal()]);               
     }

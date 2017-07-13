@@ -34,16 +34,14 @@ public class InventoryView extends View{
            super(
             "\n"
             + "\n--------------------------------"
-            +"\nI - View Your Inventory and Player Strength"
-//            +"\nS - Get Your Player Strength"
-            +"\nF - Find the Item with the greatest strength"
-//            +"\nD - Drop an Item"
+            +"\nI - View Your Inventory"
+            +"\nS - Get Your Player Strength"
             +"\nP- Print The Inventory List"
-            + "\n--------------------------------"
-            + "\nR - Return to Main Menu"
-            + "\nM - Return to Map Menu"
-            + "\nH - Get help on how to play the game"
-            + "\nG - Save game"
+//            + "\n--------------------------------"
+//            + "\nR - Return to Main Menu"
+//            + "\nM - Return to Map Menu"
+//            + "\nH - Get help on how to play the game"
+//            + "\nG - Save game"
             + "\nQ - Quit"
             + "\n--------------------------------");
     }
@@ -57,33 +55,30 @@ public class InventoryView extends View{
             case "I":
                 this.viewPlayerInventory();
                 break;
-//            case "S":
-//                this.calcStrength();
-//                break;
-//            case "D":
-//                this.dropItem();
-//                break;    
-            case "F"://Display the inventory item with the greatest strength
-                  this.displayInventoryStrength();
-                  break;
+            case "S":
+                this.calcStrength();
+                break;   
+//            case "F"://Display the inventory item with the greatest strength
+//                  this.displayInventoryStrength();
+//                  break;
 //            case "N": //View the Inventory Menu
 //                this.InventoryView();
 //                break;
             case "P":
                 this.printInventory(InventoryControl.createInventoryList());
                 break; 
-            case "R":
-                this.displayMainMenuView();
-                break;
-            case "M":
-                this.mapMenu();
-                break;
-            case "H":
-                this.displayHelpMenu();
-                break;
-            case "G":
-                this.saveGame();
-                break;
+//            case "R":
+//                this.displayMainMenuView();
+//                break;
+//            case "M":
+//                this.mapMenu();
+//                break;
+//            case "H":
+//                this.displayHelpMenu();
+//                break;
+//            case "G":
+//                this.saveGame();
+//                break;
             default:
                 ErrorView.display(this.getClass().getName(),
                         "\n*** Invalid selection *** Try again");
@@ -111,6 +106,51 @@ public class InventoryView extends View{
         
         /* Don't forget to calculate the player's strength */
             
+//            int playerWEP = 0;
+//            int playerARM = 0;
+//            int playerSTR = 0;
+//        
+//            for (int i = 0; i <= 9; i++){
+//                if (inventory[i].getAmount() != 0) {
+//                    playerWEP = inventory[i].getItemLevel();
+//                } 
+//        
+//                    if (playerWEP < inventory[i].getItemLevel()) {
+//                        playerWEP = inventory[i].getItemLevel();
+//                    }
+//        
+//                    if (playerWEP > inventory[i].getItemLevel()) {
+//                        playerWEP = playerWEP;
+//                    }
+//        
+//                else {
+//                    playerWEP = 0;
+//                }
+//                
+//            for (i = 10; i < inventory.length; i++){
+//                if (inventory[i].getAmount() != 0) {
+//                    playerARM = inventory[i].getItemLevel();
+//                }
+//        
+//                    if (playerARM < inventory[i].getItemLevel()) {
+//                        playerARM = inventory[i].getItemLevel();
+//                    }
+//        
+//                    if (playerARM > inventory[i].getItemLevel()) {
+//                        playerARM = playerWEP;
+//                    }
+//                else {
+//                    playerARM = 0;
+//                }
+//        
+//            playerSTR = playerWEP + playerARM;
+//
+//        
+//  
+//        
+//    }
+//    }
+//            this.console.println("\nYour Player Strength is " + playerSTR);
             int playerWEP = 0;
             int playerARM = 0;
             int playerSTR = 0;
@@ -155,9 +195,53 @@ public class InventoryView extends View{
             }
     }
     
-//    private void calcStrength() {
-//        this.console.println("*** calcStrength function called ***");
-//    }
+    private void calcStrength() {
+        Game game = DungeonQuest.getCurrentGame();
+        Inventory[] inventory = game.getInventory();
+        
+            int playerWEP = 0;
+            int playerARM = 0;
+            int playerSTR = 0;
+        
+            for (int i = 0; i <= 9; i++){
+                if (inventory[i].getAmount() != 0) {
+                    playerWEP = inventory[i].getItemLevel();
+                } 
+        
+                    if (playerWEP < inventory[i].getItemLevel()) {
+                        playerWEP = inventory[i].getItemLevel();
+                    }
+        
+                    if (playerWEP > inventory[i].getItemLevel()) {
+                        playerWEP = playerWEP;
+                    }
+        
+                else {
+                    playerWEP = 0;
+                }
+                
+            for (i = 10; i < inventory.length; i++){
+                if (inventory[i].getAmount() != 0) {
+                    playerARM = inventory[i].getItemLevel();
+                }
+        
+                    if (playerARM < inventory[i].getItemLevel()) {
+                        playerARM = inventory[i].getItemLevel();
+                    }
+        
+                    if (playerARM > inventory[i].getItemLevel()) {
+                        playerARM = playerWEP;
+                    }
+                else {
+                    playerARM = 0;
+                }
+        
+            playerSTR = playerWEP + playerARM;
+
+    }
+    }
+            this.console.println("\nYour Player Strength is " + playerSTR);
+    }
 
 //    private void dropItem() {
 //        this.console.println("*** dropItem function called ***");
@@ -194,48 +278,4 @@ public class InventoryView extends View{
             return;
         }
     }
-    
-    private void displayInventoryStrength() {
-       InventoryStrengthView StrengthView = new InventoryStrengthView();
-       StrengthView.display();
-    }
-    
-//    private void InventoryView() {
-//        InventoryView inventoryView = new InventoryView();
-//        inventoryView.display();
-//    }
-    
-    private void displayMainMenuView() {
-        this.console.println("*** displayMainMenu function called ***");
-    }
-
-    private void mapMenu() {
-        this.console.println("*** mapMenu function called ***");
-    }
-    
-    private void displayHelpMenu() {
-         HelpMenuView helpView = new HelpMenuView();
-         helpView.display();
-    }
-
-    private void saveGame() {
-         // prompt for and get the name of the file to save the game in 
-        this.console.println("\n\nEnter the file path for the file where the game "
-                            + "is to be saved.");
-        String filePath = this.getInput();
- 
-        try{
-            // save the game to the specified file
-            GameControl.saveGame(DungeonQuest.getCurrentGame(), filePath);
-            this.console.println("Your game was saved successfully.");
-            
-        } catch (Exception ex) {
-            ErrorView.display("MainMenuView", ex.getMessage());
-        }
-        
-    }
-
-    
-
 }
-
