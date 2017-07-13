@@ -87,7 +87,7 @@ public class InventoryControl {
          Inventory holySpear = new Inventory();
          holySpear.setInventoryItem("Holy Spear");
          holySpear.setItemDescription("God blessed for destroying monsters.");
-         holySpear.setItemLevel(17);
+         holySpear.setItemLevel(30);
          holySpear.setAmount(0);
          inventory[Item.holySpear.ordinal()] = holySpear;
          
@@ -157,7 +157,7 @@ public class InventoryControl {
          Inventory cloakOfLight = new Inventory();
          cloakOfLight.setInventoryItem("Cloak of Light");
          cloakOfLight.setItemDescription("The best protection comes from the Gods");
-         cloakOfLight.setItemLevel(18);
+         cloakOfLight.setItemLevel(25);
          cloakOfLight.setAmount(0);
          inventory[Item.cloakOfLight.ordinal()] = cloakOfLight;
  

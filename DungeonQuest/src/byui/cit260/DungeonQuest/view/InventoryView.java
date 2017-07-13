@@ -5,6 +5,7 @@
  */
 package byui.cit260.DungeonQuest.view;
 
+import byui.cit260.DungeonQuest.control.GameControl;
 import byui.cit260.DungeonQuest.control.InventoryControl;
 import byui.cit260.DungeonQuest.model.Actor;
 import byui.cit260.DungeonQuest.model.Game;
@@ -80,7 +81,6 @@ public class InventoryView extends View{
         
         this.console.println("Your pack is empty, time to go hunting!");
     }
-    
     private void calcStrength() {
         Game game = DungeonQuest.getCurrentGame();
         Inventory[] inventory = game.getInventory();
@@ -124,9 +124,6 @@ public class InventoryView extends View{
         
             playerSTR = playerWEP + playerARM;
 
-        
-  
-        
     }
     }
             this.console.println("\nYour Player Strength is " + playerSTR);
@@ -149,7 +146,7 @@ public class InventoryView extends View{
             
             //print the description and strength of each item
             for (Inventory inventory : inventoryList) {
-                out.printf("%n%-25s%-45s%-10d"        , inventory.getInventoryItem()
+                out.printf("%n%-25s%-45s%-10d"    , inventory.getInventoryItem()
                                                   , inventory.getItemDescription()
                                                   , inventory.getItemLevel());
             }
@@ -165,4 +162,3 @@ public class InventoryView extends View{
         }
     }
 }
-
