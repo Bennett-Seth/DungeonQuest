@@ -135,7 +135,7 @@ public class GoblinAgorView extends View{
                     System.out.println("Error reading input: " + e.getMessage());
                 }
             else
-                this.console.println("You have lost! Game over"); 
+                this.loseScreen(); 
     }    
 
     public void displayInventory() {
@@ -147,5 +147,8 @@ public class GoblinAgorView extends View{
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }
-
+    private void loseScreen() {
+        LosingView losingView = new LosingView();
+        losingView.display();
+    }
 }

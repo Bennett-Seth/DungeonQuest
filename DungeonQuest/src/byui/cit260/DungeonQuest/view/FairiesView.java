@@ -99,7 +99,9 @@ public class FairiesView extends View{
             
         try {
             GameControl.fairyQuestion(exploredRooms);
-            this.console.println("You are worthy of our aid!");
+            this.console.println("You are worthy of our aid! The two weapons are"
+                    + "with the Draco and Agor. Defeat them and you can beat the "
+                    + "game.");
                 return true; 
         } catch (FairiesControlException fce) {
             ErrorView.display(this.getClass().getName(),

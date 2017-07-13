@@ -90,49 +90,49 @@ public class DragonView extends View{
             int playerSTR = 0;
         
             for (int i = 0; i <= 9; i++){
+                inventory[i].getAmount();
                 if (inventory[i].getAmount() != 0) {
+//                this.console.println(inventory[i].getInventoryItem());    
                     playerWEP = inventory[i].getItemLevel();
                 } 
-        
-                    if (playerWEP < inventory[i].getItemLevel()) {
-                        playerWEP = inventory[i].getItemLevel();
-                    }
-        
-                    if (playerWEP > inventory[i].getItemLevel()) {
-                        playerWEP = playerWEP;
-                    }
-        
-                else {
-                    playerWEP = 0;
+//                    if (playerWEP < inventory[i].getItemLevel()) {
+//                        playerWEP = inventory[i].getItemLevel();
+//                        this.console.println(inventory[i].getItemLevel());
+//                    }
+//                    else {
+//                        playerWEP = playerWEP;
+//                    }
                 }
                 
-            for (i = 10; i < inventory.length; i++){
+            for (int i = 10; i < inventory.length; i++){
+                inventory[i].getAmount();
                 if (inventory[i].getAmount() != 0) {
+//                    this.console.println(inventory[i].getInventoryItem());
                     playerARM = inventory[i].getItemLevel();
                 }
-        
-                    if (playerARM < inventory[i].getItemLevel()) {
-                        playerARM = inventory[i].getItemLevel();
-                    }
-        
-                    if (playerARM > inventory[i].getItemLevel()) {
-                        playerARM = playerWEP;
-                    }
-                else {
-                    playerARM = 0;
-                }
-        
-            playerSTR = playerWEP + playerARM;
+//                    if (playerARM < inventory[i].getItemLevel()) {
+//                        playerARM = inventory[i].getItemLevel();
+//                        this.console.println(inventory[i].getItemLevel());
+//                    }
+//                    else {
+//                    playerARM = playerARM;
+//                    }
+            }
+        playerSTR = playerWEP + playerARM;
 
-        
-  
-        
-    }
-    }
             if(playerSTR>50) 
-                this.console.println("You have beat the dragon! You have beat the game");
+                this.winGame();
             else
-                this.console.println("You have lost. Game Over.");
+                this.loseScreen();
+    }
+    private void loseScreen() {
+        LosingView losingView = new LosingView();
+        losingView.display();
+    }
+
+    private void winGame() {
+       WinView winView = new WinView();
+       winView.display();
     }
  }
 
