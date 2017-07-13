@@ -136,6 +136,9 @@ public class MapMenuView extends View{
                 GoblinAgorView goblinView = new GoblinAgorView();
                 goblinView.display();
                 break;
+            case "GR":
+                GoblinGrogView goblinGrog = new GoblinGrogView();
+                goblinGrog.display();
             case "TR":
                 InteractWithTheTrapView trapView = new InteractWithTheTrapView();
                 trapView.display();

@@ -60,7 +60,7 @@ public class MapControl {
         
         Scene goblinScene1 = new Scene();
         goblinScene1.setDescription("Home to the goblin Grog.");
-        goblinScene1.setSymbol("GB");
+        goblinScene1.setSymbol("GR");
         goblinScene1.setName("Monster Room");
         scenes[SceneType.goblin1.ordinal()] = goblinScene1;
 
