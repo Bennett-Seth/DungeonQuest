@@ -5,6 +5,7 @@
  */
 package byui.cit260.DungeonQuest.view;
 
+import byui.cit260.DungeonQuest.Exceptions.GoblinControlException;
 import byui.cit260.DungeonQuest.control.InventoryControl;
 import byui.cit260.DungeonQuest.model.Game;
 import byui.cit260.DungeonQuest.model.Inventory;
@@ -108,37 +109,39 @@ public class GoblinAgorView extends View{
     }
     }
             if(playerSTR>35) 
-                this.console.println("You have beat Agor!");
-            else
-                this.console.println("You have lost. Game Over.");
-    
-            this.console.println("But wait! Agor has dropped "
+                try{
+                    this.console.println("You have beat Agor!"
+                        + "But wait! Agor has dropped "
                         + "the Cloak of Light. Do you want to "
                         + "pick up this powerful item?"
                         + "-----------------------------------"
                         + "Y - Yes "
                         + "N - No ");
-            
-                try {    
-                    result = keyboard.readLine();
-                
-                    if ("Y" != result) {
-                        this.console.println("You did not pick up the "
-                                + " Cloak of Light. Move on to the "
-                                + "next room.");           
-                    } else {
-                       
-                    inventory[19].setAmount(1);
-                    this.console.println("You have picked up the "
-                            + "Cloak of Light. May the Gods bless"
-                            + "your skin with holy strength");
-                    }
+                     try {    
+                        result = keyboard.readLine();
+                        result = result.toUpperCase();
+                        switch(result){
+                            case "Y":
+                                this.console.println("You have picked up the "
+                                    + "Cloak of Light. May the Gods bless"
+                                    + "your skin with holy strength");  
+                                inventory[19].setAmount(1);
+                            break;
+                            case "N":
+                                this.console.println("You did not pick up the "
+                                    + " Cloak of Light. Move on to the "
+                                    + "next room.");
+                        }
 
-                } catch (IOException ex) {
-                    ErrorView.display(this.getClass().getName(),
-                                    "\nYou must enter a 'Y' or an 'N'.");
+                    } catch (IOException ex) {
+                        ErrorView.display(this.getClass().getName(),
+                                        "\nYou must enter a 'Y' or an 'N'.");
+                    }
+                } catch (Exception e){
+                    System.out.println("Error reading input: " + e.getMessage());
                 }
-                    
+            else
+                this.console.println("You have lost! Game over"); 
     }    
 
     public void displayInventory() {
@@ -151,15 +154,4 @@ public class GoblinAgorView extends View{
         helpMenu.display();
     }
 
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }

@@ -184,6 +184,10 @@ public class MapMenuView extends View{
                 break;
             case "FN":
                 break;
+            default:
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
+                break;
         }
         showMap();
         
