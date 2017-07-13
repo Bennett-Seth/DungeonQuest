@@ -100,7 +100,7 @@ public class GoblinCalgorView extends View {
                 try{
                 this.console.println("You have beat Calgor!"
                                     + "But wait! Calgor has dropped "
-                                    + "the Tattered Scale Mail. Do you want to "
+                                    + "the Polished Plate Mail. Do you want to "
                                     + "pick up this powerful item?"
                                     + "-----------------------------------"
                                     + "Y - Yes "
@@ -111,13 +111,13 @@ public class GoblinCalgorView extends View {
                     switch(result){
                             case "Y":
                                 this.console.println("You have picked up the "
-                                + "Tattered Scale Mail. Move on to the "
+                                + "Polished Plate Mail. Move on to the "
                                 + "next room.");   
-                                inventory[12].setAmount(1);
+                                inventory[18].setAmount(1);
                                 break;
                             case "N":
                                 this.console.println("You did not pick up the"
-                                        + "Tattered Scale Mail. Move on to the"
+                                        + "Polished Plate Mail. Move on to the"
                                         + "next room.");
                                 break;
                     }

@@ -94,7 +94,7 @@ public class VampireKatrinaView extends View{
 //                    }
             }
         playerSTR = playerWEP + playerARM;  
-            if(playerSTR>35) 
+            if(playerSTR>33) 
                 try{
                     this.console.println("You have beat Katrina!"
                         + "But wait! Katrina has dropped "
@@ -110,7 +110,7 @@ public class VampireKatrinaView extends View{
                             case "Y":
                                 this.console.println("You have picked up the "
                                     + "Viking Axe. Great job!");  
-                                inventory[18].setAmount(1);
+                                inventory[8].setAmount(1);
                             break;
                             case "N":
                                 this.console.println("You did not pick up the "
