@@ -123,7 +123,7 @@ public class GameControl{
         actors[1] = newActor;
         
         newActor = new Actor();
-        newActor.setName("Seth");
+        newActor.setName("Steven");
         newActor.setDescription("Zombie");
         newActor.setStrength(22.0);
         newActor.setEnemy(true);

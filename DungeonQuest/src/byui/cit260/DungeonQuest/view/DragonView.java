@@ -5,6 +5,10 @@
  */
 package byui.cit260.DungeonQuest.view;
 
+import byui.cit260.DungeonQuest.model.Game;
+import byui.cit260.DungeonQuest.model.Inventory;
+import dungeonquest.DungeonQuest;
+
 /**
  *
  * @author parrdyl
@@ -17,11 +21,9 @@ public class DragonView extends View{
             + "\nYou have discovered and awoken the dragon. He has"
             + "\nhas a strength of 50. You can run away or you can fight."
             + "\nF - Fight"
-            + "\nI - View Strength and Inventory"
-            + "\nM - View Map"
-            + "\nH - View the Help Menu"
-            + "\nR - Flee"    
-            + "\nQ - Quit to Main Menu"
+            + "\nI - View Inventory"
+            + "\nH - View the Help Menu"   
+            + "\nQ - Flee to previous menu"
             + "\n--------------------------------");
     }
     
@@ -31,9 +33,6 @@ public class DragonView extends View{
         value = value.toUpperCase();
         
         switch (value){
-            case "R": 
-                this.fleeRoom();
-                break;
             case "I": 
                 this.displayInventory();
                 break;
@@ -46,9 +45,6 @@ public class DragonView extends View{
             case "F":
                 this.displayDragonFight();
                 break;
-            case "Q":
-                this.quitGame();
-                break;
             default:
                 ErrorView.display(this.getClass().getName(),
                         "\n*** Invalid selection *** Try again");
@@ -57,12 +53,22 @@ public class DragonView extends View{
         return false;
     }
     
-    public void fleeRoom() {
-         this.console.println("\n*** fleeRoom() function called ***");
-    }
-    
     public void displayInventory() {
-        this.console.println("\n*** displayInventory() function called ***");
+        Game game = DungeonQuest.getCurrentGame();
+        Inventory[] inventory = game.getInventory();
+        
+        this.console.println("\n      LIST OF INVENTORY ITEMS");
+
+        /* Note - removing the .getAmount != 0 limit results in everything
+        getting published to the viewer. A chunk of ugly details*/
+        
+        for (int i = 0; i < inventory.length; i++){
+            if (inventory[i].getAmount() != 0) {
+            this.console.println(inventory[i]);    
+            }    
+        }
+        
+        this.console.println("Your pack is empty, time to go hunting!");
     }
     
     public void displayMap() {
@@ -75,11 +81,58 @@ public class DragonView extends View{
         helpView.display();
     }
 
-    public void quitGame() {
-        this.console.println("\n*** quitGame() function called ***");
-    }
-
     private void displayDragonFight() {
-        this.console.println("\n*** displayDragonFight is called***");
+        Game game = DungeonQuest.getCurrentGame();
+        Inventory[] inventory = game.getInventory();
+        
+            int playerWEP = 0;
+            int playerARM = 0;
+            int playerSTR = 0;
+        
+            for (int i = 0; i <= 9; i++){
+                if (inventory[i].getAmount() != 0) {
+                    playerWEP = inventory[i].getItemLevel();
+                } 
+        
+                    if (playerWEP < inventory[i].getItemLevel()) {
+                        playerWEP = inventory[i].getItemLevel();
+                    }
+        
+                    if (playerWEP > inventory[i].getItemLevel()) {
+                        playerWEP = playerWEP;
+                    }
+        
+                else {
+                    playerWEP = 0;
+                }
+                
+            for (i = 10; i < inventory.length; i++){
+                if (inventory[i].getAmount() != 0) {
+                    playerARM = inventory[i].getItemLevel();
+                }
+        
+                    if (playerARM < inventory[i].getItemLevel()) {
+                        playerARM = inventory[i].getItemLevel();
+                    }
+        
+                    if (playerARM > inventory[i].getItemLevel()) {
+                        playerARM = playerWEP;
+                    }
+                else {
+                    playerARM = 0;
+                }
+        
+            playerSTR = playerWEP + playerARM;
+
+        
+  
+        
     }
-}
+    }
+            if(playerSTR>50) 
+                this.console.println("You have beat the dragon! You have beat the game");
+            else
+                this.console.println("You have lost. Game Over.");
+    }
+ }
+

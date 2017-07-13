@@ -13,19 +13,17 @@ import dungeonquest.DungeonQuest;
  *
  * @author parrdyl
  */
-public class GoblinGrogView extends View{
-    
-    
-    public GoblinGrogView (){
+public class VampireKatrinaView extends View{
+    public VampireKatrinaView (){
         super( "\n"
-            + "\nGrog: Ahhh! I will destroy you."
-            + "\nGrog has a strength of 20."
+            + "\nKatrina: It seems a nice snack has entered my room."
+            + "\nKatrina has a strength of 35."
             + "\nWhat would you like to do?"
             + "\n--------------------------------"
             +"\n| Combat Menu"
             + "\n--------------------------------"
             + "\nQ - Run away"
-            + "\nF - Fight the Goblin"
+            + "\nF - Fight the Vampire"
             + "\nI - Review Your Character’s Inventory and Player Level"
             + "\nH - View the Help Menu"
             + "\n--------------------------------");
@@ -103,8 +101,8 @@ public class GoblinGrogView extends View{
         
     }
     }
-            if(playerSTR>20) 
-                this.console.println("You have beat Grog!");
+            if(playerSTR>35) 
+                this.console.println("You have beat Katrina!");
             else
                 this.console.println("You have lost. Game Over.");
     }
