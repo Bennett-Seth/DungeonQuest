@@ -64,7 +64,7 @@ public class GoblinAgorView extends View{
         
         String result;
         
-        Game game = DungeonQuest.getCurrentGame();
+              Game game = DungeonQuest.getCurrentGame();
         Inventory[] inventory = game.getInventory();
         
             int playerWEP = 0;
@@ -72,42 +72,36 @@ public class GoblinAgorView extends View{
             int playerSTR = 0;
         
             for (int i = 0; i <= 9; i++){
+                inventory[i].getAmount();
                 if (inventory[i].getAmount() != 0) {
+//                this.console.println(inventory[i].getInventoryItem());    
                     playerWEP = inventory[i].getItemLevel();
                 } 
-        
-                    if (playerWEP < inventory[i].getItemLevel()) {
-                        playerWEP = inventory[i].getItemLevel();
-                    }
-        
-                    if (playerWEP > inventory[i].getItemLevel()) {
-                        playerWEP = playerWEP;
-                    }
-        
-                else {
-                    playerWEP = 0;
+//                    if (playerWEP < inventory[i].getItemLevel()) {
+//                        playerWEP = inventory[i].getItemLevel();
+//                        this.console.println(inventory[i].getItemLevel());
+//                    }
+//                    else {
+//                        playerWEP = playerWEP;
+//                    }
                 }
                 
-            for (i = 10; i < inventory.length; i++){
+            for (int i = 10; i < inventory.length; i++){
+                inventory[i].getAmount();
                 if (inventory[i].getAmount() != 0) {
+//                    this.console.println(inventory[i].getInventoryItem());
                     playerARM = inventory[i].getItemLevel();
                 }
+//                    if (playerARM < inventory[i].getItemLevel()) {
+//                        playerARM = inventory[i].getItemLevel();
+//                        this.console.println(inventory[i].getItemLevel());
+//                    }
+//                    else {
+//                    playerARM = playerARM;
+//                    }
+            }
+        playerSTR = playerWEP + playerARM;
         
-                    if (playerARM < inventory[i].getItemLevel()) {
-                        playerARM = inventory[i].getItemLevel();
-                    }
-        
-                    if (playerARM > inventory[i].getItemLevel()) {
-                        playerARM = playerWEP;
-                    }
-                else {
-                    playerARM = 0;
-                }
-        
-            playerSTR = playerWEP + playerARM;
-
-    }
-    }
             if(playerSTR>35) 
                 try{
                     this.console.println("You have beat Agor!"
@@ -126,7 +120,7 @@ public class GoblinAgorView extends View{
                                     + "Cloak of Light. May the Gods bless"
                                     + "your skin with holy strength");  
                                 inventory[19].setAmount(1);
-                            break;
+                                break;
                             case "N":
                                 this.console.println("You did not pick up the "
                                     + " Cloak of Light. Move on to the "
