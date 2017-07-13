@@ -47,14 +47,14 @@ public class MapControl {
         scenes[SceneType.wizard.ordinal()] = wizardScene;
 
         Scene zombie1Scene = new Scene();
-        zombie1Scene.setDescription("Home to Seth, who is now a zombie.");
-        zombie1Scene.setSymbol("ZM");
+        zombie1Scene.setDescription("Home to Steven, who is now a zombie.");
+        zombie1Scene.setSymbol("SE");
         zombie1Scene.setName("Monster Room");
         scenes[SceneType.zombie1.ordinal()] = zombie1Scene;
         
         Scene zombie2Scene = new Scene();
         zombie2Scene.setDescription("Home to Diane, Seth's wife, who is now a zombie.");
-        zombie2Scene.setSymbol("ZM");
+        zombie2Scene.setSymbol("DI");
         zombie2Scene.setName("Monster Room");
         scenes[SceneType.zombie2.ordinal()] = zombie2Scene; 
         
@@ -66,13 +66,13 @@ public class MapControl {
 
         Scene goblinScene2 = new Scene();
         goblinScene2.setDescription("Home to the goblin Troth. Cousin to Grog.");
-        goblinScene2.setSymbol("GB");
+        goblinScene2.setSymbol("TO");
         goblinScene2.setName("Monster Room");
         scenes[SceneType.goblin2.ordinal()] = goblinScene2;
         
         Scene goblinScene3 = new Scene();
         goblinScene3.setDescription("Home to the goblin Bulth.");
-        goblinScene3.setSymbol("GB");
+        goblinScene3.setSymbol("BU");
         goblinScene3.setName("Monster Room");
         scenes[SceneType.goblin3.ordinal()] = goblinScene3;
         
@@ -84,7 +84,7 @@ public class MapControl {
         
         Scene goblinScene5 = new Scene();
         goblinScene5.setDescription("Home to the goblin Calgor.");
-        goblinScene5.setSymbol("GB");
+        goblinScene5.setSymbol("CR");
         goblinScene5.setName("Monster Room");
         scenes[SceneType.goblin5.ordinal()] = goblinScene5;
         
@@ -96,25 +96,25 @@ public class MapControl {
 
         Scene vampire1Scene = new Scene();
         vampire1Scene.setDescription("This is home to Draco, King of the Vampires.");
-        vampire1Scene.setSymbol("VP");
+        vampire1Scene.setSymbol("DO");
         vampire1Scene.setName("Monster Room");
         scenes[SceneType.vampire1.ordinal()] = vampire1Scene;
         
         Scene vampire2Scene = new Scene();
         vampire2Scene.setDescription("This is home to the vampire Katrina.");
-        vampire2Scene.setSymbol("VP");
+        vampire2Scene.setSymbol("KT");
         vampire2Scene.setName("Monster Room");
         scenes[SceneType.vampire2.ordinal()] = vampire2Scene;
         
         Scene vampire3Scene = new Scene();
         vampire3Scene.setDescription("This is home to the vampire Katelina, wife of Draco and Queen of the Vampires.");
-        vampire3Scene.setSymbol("VP");
+        vampire3Scene.setSymbol("KA");
         vampire3Scene.setName("Monster Room");
         scenes[SceneType.vampire3.ordinal()] = vampire3Scene;
         
         Scene vampire4Scene = new Scene();
         vampire4Scene.setDescription("This is home to Junior, son of Draco and Katelina.");
-        vampire4Scene.setSymbol("VP");
+        vampire4Scene.setSymbol("JR");
         vampire4Scene.setName("Monster Room");
         scenes[SceneType.vampire4.ordinal()] = vampire4Scene;
 
