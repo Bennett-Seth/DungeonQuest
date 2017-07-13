@@ -13,7 +13,8 @@ public class LosingView extends View {
     public LosingView (){
         super("\n"
                 + "\n---------------------------------------  "
-                + "\n|  Sorry, You lost! Game Over!           "
+                + "\n           GAME OVER!                    "
+                + "\n|        Sorry, You lost!                "
             );
     }
     
@@ -22,5 +23,5 @@ public class LosingView extends View {
         return true;
         
     }
-     
+  
 }
