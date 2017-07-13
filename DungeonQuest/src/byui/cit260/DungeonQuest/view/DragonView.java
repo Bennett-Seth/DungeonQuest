@@ -23,7 +23,7 @@ public class DragonView extends View{
             + "\nF - Fight"
             + "\nI - View Inventory"
             + "\nH - View the Help Menu"   
-            + "\nQ - Flee to previous menu"
+            + "\nR - Flee to previous menu"
             + "\n--------------------------------");
     }
     
@@ -44,6 +44,9 @@ public class DragonView extends View{
                 break;
             case "F":
                 this.displayDragonFight();
+                break;
+            case "R":
+                this.previousMenu();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),
@@ -134,5 +137,10 @@ public class DragonView extends View{
        WinView winView = new WinView();
        winView.display();
     }
- }
+    private void previousMenu() {
+        MapMenuView mapMenu = new MapMenuView();
+        mapMenu.display();
+    }
+
+}
 
