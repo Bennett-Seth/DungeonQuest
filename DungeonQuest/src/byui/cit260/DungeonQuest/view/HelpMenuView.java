@@ -26,9 +26,8 @@ public class HelpMenuView extends View {
         + "\n--------------------------------"
         + "\nG - What is the goal of the game?"
         + "\nM - How to move to a new room"
-        + "\nE - Hot to explore a room"
+        + "\nE - How to explore a room"
         + "\nV - How to view gear in inventory"
-        + "\nA - How to add gear to inventory"
         + "\nF - Fighting enemies"
         + "\nI - Game interactions"
         + "\nQ - Quit Help Menu"
@@ -54,9 +53,6 @@ public class HelpMenuView extends View {
             case "V":
                 this.openInventory();
                 break;
-            case "A":
-                this.openAddGear();
-                break;
             case "F":
                 this.openFighting();
                 break;
@@ -72,31 +68,54 @@ public class HelpMenuView extends View {
     }
 
         private void openGoal() {
-            this.console.println("*** open Goal function called ***");
+            this.console.println("There are two ways to beat this dungeon. "
+                    + "You can either slay enough monsters to safely escape, "
+                    + "Or you can defeat the Black Dragon. "
+                    + "The choice is yours.");
         }
 
         private void openMove() {
-            this.console.println("*** openMove function called ***");
+            this.console.println("From the Game Menu, select the " 
+                    + "'Go to new location' option. "
+                    + "Next, input the row you wish to move to. "
+                    + "Then, input the column you wish to move to. "
+                    + "Both will be numbers between 0 and 4.");
         }
 
         private void openExplore() {
-           this.console.println("*** openExplore function called ***");
+           this.console.println("When you reach a room, you can peak "
+                   + "inside. You will see what kind of monster waits "
+                   + "within, and can then decide to enter or move "
+                   + "to a different location instead.");
         }
 
         private void openInventory() {
-           this.console.println("*** openInventory function called ***");
-        }
-
-        private void openAddGear() {
-            this.console.println("*** openAddGear function called ***");
+           this.console.println("From the Game Menu, select the 'View Inventory' "
+                   + "option. From here you can examine your inventory and  "
+                   + "assess your player strength. You will automatically "
+                   + "use the strongest weapon and armor in your pack. From the "
+                   + "Inventory Menu, select 'display inventory' to see the "
+                   + "readout of your inventory and total player strength.");
         }
 
         private void openFighting() {
-           this.console.println("*** openFighting function called ***");
+           this.console.println("Once you've decided to enter a room occupied"
+                   + "by a monster, your player level will automatically "
+                   + "face off against their monster level. If the total "
+                   + "strength of your weapon and armor is greater than "
+                   + "the monster's level, you will win the battle! Be "
+                   + "careful though, because if you don't have enough "
+                   + "strength, the monster will win. This dungeon could "
+                   + "become your tomb.");
         }
 
         private void openInteractions() {
-            this.console.println("*** openInteraction function called ***");
+            this.console.println("Not everyone you meet in this Dungeon is "
+                    + "a monster. There are a few wayward souls who might "
+                    + "be willing to help you, if you answer their questions "
+                    + "appropriately. There is also a nasty trap to watch out "
+                    + "for. If you seek to defeat the Black Dragon, you would "
+                    + "be wise to seek the council of the White Wizard.");
         }
  }
 

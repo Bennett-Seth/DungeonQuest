@@ -5,9 +5,12 @@
  */
 package byui.cit260.DungeonQuest.view;
 
+import byui.cit260.DungeonQuest.control.GameControl;
 import byui.cit260.DungeonQuest.control.InventoryControl;
 import byui.cit260.DungeonQuest.model.Actor;
+import byui.cit260.DungeonQuest.model.Game;
 import byui.cit260.DungeonQuest.model.Inventory;
+import dungeonquest.DungeonQuest;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -31,9 +34,10 @@ public class InventoryView extends View{
            super(
             "\n"
             + "\n--------------------------------"
-            +"\nI - View Your Inventory"
-            +"\nS - Get Your Player Strength"
-            +"\nD - Drop an Item"
+            +"\nI - View Your Inventory and Player Strength"
+//            +"\nS - Get Your Player Strength"
+            +"\nF - Find the Item with the greatest strength"
+//            +"\nD - Drop an Item"
             +"\nP- Print The Inventory List"
             + "\n--------------------------------"
             + "\nR - Return to Main Menu"
@@ -53,12 +57,18 @@ public class InventoryView extends View{
             case "I":
                 this.viewPlayerInventory();
                 break;
-            case "S":
-                this.calcStrength();
-                break;
-            case "D":
-                this.dropItem();
-                break;    
+//            case "S":
+//                this.calcStrength();
+//                break;
+//            case "D":
+//                this.dropItem();
+//                break;    
+            case "F"://Display the inventory item with the greatest strength
+                  this.displayInventoryStrength();
+                  break;
+//            case "N": //View the Inventory Menu
+//                this.InventoryView();
+//                break;
             case "P":
                 this.printInventory(InventoryControl.createInventoryList());
                 break; 
@@ -83,16 +93,75 @@ public class InventoryView extends View{
     }
 
     private void viewPlayerInventory() {
-        this.console.println("*** viewPlayerInventory function called ***");
+        Game game = DungeonQuest.getCurrentGame();
+        Inventory[] inventory = game.getInventory();
+        
+        this.console.println("\n      LIST OF INVENTORY ITEMS");
+
+        /* Note - removing the .getAmount != 0 limit results in everything
+        getting published to the viewer. A chunk of ugly details*/
+        
+        for (int i = 0; i < inventory.length; i++){
+            if (inventory[i].getAmount() != 0) {
+            this.console.println(inventory[i]);    
+            }    
+        }
+        
+        this.console.println("Your pack is empty, time to go hunting!");
+        
+        /* Don't forget to calculate the player's strength */
+            
+            int playerWEP = 0;
+            int playerARM = 0;
+            int playerSTR = 0;
+        
+            for (int i = 0; i <= 9; i++){
+                if (inventory[i].getAmount() != 0) {
+                    playerWEP = inventory[i].getItemLevel();
+                } 
+        
+                    if (playerWEP < inventory[i].getItemLevel()) {
+                        playerWEP = inventory[i].getItemLevel();
+                    }
+        
+                    if (playerWEP > inventory[i].getItemLevel()) {
+                        playerWEP = playerWEP;
+                    }
+        
+                else {
+                    playerWEP = 0;
+                }
+                
+            for (i = 10; i < inventory.length; i++){
+                if (inventory[i].getAmount() != 0) {
+                    playerARM = inventory[i].getItemLevel();
+                }
+        
+                    if (playerARM < inventory[i].getItemLevel()) {
+                        playerARM = inventory[i].getItemLevel();
+                    }
+        
+                    if (playerARM > inventory[i].getItemLevel()) {
+                        playerARM = playerWEP;
+                    }
+                else {
+                    playerARM = 0;
+                }
+        
+            playerSTR = playerWEP + playerARM;
+
+        this.console.println("\nYour Player Strength is " + playerSTR);
+                }
+            }
     }
     
-    private void calcStrength() {
-        this.console.println("*** calcStrength function called ***");
-    }
+//    private void calcStrength() {
+//        this.console.println("*** calcStrength function called ***");
+//    }
 
-    private void dropItem() {
-        this.console.println("*** dropItem function called ***");
-    }
+//    private void dropItem() {
+//        this.console.println("*** dropItem function called ***");
+//    }
     
     private void printInventory(Inventory[] inventoryList) {
         this.console.println("\nGive the file a name:");
@@ -110,7 +179,7 @@ public class InventoryView extends View{
             
             //print the description and strength of each item
             for (Inventory inventory : inventoryList) {
-                out.printf("%n%-25s%-45s%-10d"        , inventory.getInventoryItem()
+                out.printf("%n%-25s%-45s%-10d"    , inventory.getInventoryItem()
                                                   , inventory.getItemDescription()
                                                   , inventory.getItemLevel());
             }
@@ -125,7 +194,17 @@ public class InventoryView extends View{
             return;
         }
     }
-          
+    
+    private void displayInventoryStrength() {
+       InventoryStrengthView StrengthView = new InventoryStrengthView();
+       StrengthView.display();
+    }
+    
+//    private void InventoryView() {
+//        InventoryView inventoryView = new InventoryView();
+//        inventoryView.display();
+//    }
+    
     private void displayMainMenuView() {
         this.console.println("*** displayMainMenu function called ***");
     }
@@ -135,11 +214,25 @@ public class InventoryView extends View{
     }
     
     private void displayHelpMenu() {
-         this.console.println("*** displayHelpMenu function called ***");
+         HelpMenuView helpView = new HelpMenuView();
+         helpView.display();
     }
 
     private void saveGame() {
-         this.console.println("*** startExistingGame function called ***");
+         // prompt for and get the name of the file to save the game in 
+        this.console.println("\n\nEnter the file path for the file where the game "
+                            + "is to be saved.");
+        String filePath = this.getInput();
+ 
+        try{
+            // save the game to the specified file
+            GameControl.saveGame(DungeonQuest.getCurrentGame(), filePath);
+            this.console.println("Your game was saved successfully.");
+            
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
     }
 
     
