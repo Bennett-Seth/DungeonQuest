@@ -19,7 +19,7 @@ public class DragonView extends View{
     public DragonView (){
         super( "\n"
             + "\nYou have discovered and awoken the dragon. He has"
-            + "\nhas a strength of 50. You can run away or you can fight."
+            + "\n a strength of 50. You can run away or you can fight."
             + "\nF - Fight"
             + "\nI - View Inventory"
             + "\nH - View the Help Menu"   

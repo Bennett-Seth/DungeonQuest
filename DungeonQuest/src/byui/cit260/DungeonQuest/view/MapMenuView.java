@@ -128,10 +128,6 @@ public class MapMenuView extends View{
                 WhiteWizardView whiteWizard = new WhiteWizardView();
                 whiteWizard.display();
                 break; 
-            case "ZM":
-                ZombiesRoomView zombieView = new ZombiesRoomView();
-                zombieView.display();
-                break;
             case "AG":
                 GoblinAgorView goblinView = new GoblinAgorView();
                 goblinView.display();
@@ -139,6 +135,33 @@ public class MapMenuView extends View{
             case "GR":
                 GoblinGrogView goblinGrog = new GoblinGrogView();
                 goblinGrog.display();
+            case "TO":
+                GoblinTrothView goblinTroth = new GoblinTrothView();
+                goblinTroth.display();
+            case "CR":
+                GoblinCalgorView goblinCalgor = new GoblinCalgorView();
+                goblinCalgor.display();
+            case "BU":
+                GoblinBulthView goblinBulth = new GoblinBulthView();
+                goblinBulth.display();
+            case "SE":
+                ZombieStevenView zombieSteven = new ZombieStevenView();
+                zombieSteven.display();
+            case "DI":
+                ZombieDianeView zombieDiane = new ZombieDianeView();
+                zombieDiane.display();
+            case "DO":
+                VampireDracoView vampireDraco = new VampireDracoView();
+                vampireDraco.display();
+            case "KT":
+                VampireKatrinaView  vampireKatrina = new VampireKatrinaView();
+                vampireKatrina.display();
+            case "KA":
+                VampireKatelinaView vampireKatelina = new VampireKatelinaView();
+                vampireKatelina.display();
+            case "JR":
+                VampireJuniorView vampireJunior = new VampireJuniorView();
+                vampireJunior.display();
             case "TR":
                 InteractWithTheTrapView trapView = new InteractWithTheTrapView();
                 trapView.display();
