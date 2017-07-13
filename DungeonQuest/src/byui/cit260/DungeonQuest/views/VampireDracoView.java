@@ -116,11 +116,14 @@ public VampireDracoView (){
                                     + "Holy Spear. May the Gods blesss you "
                                     + "with all their sacred might.");  
                                 inventory[9].setAmount(1);
+                                this.previousMenu();
                             break;
                             case "N":
                                 this.console.println("You did not pick up the "
                                     + "Holy Spear. Move on to the "
                                     + "next room.");
+                                this.previousMenu();
+                                break;
                         }
 
                     } catch (IOException ex) {

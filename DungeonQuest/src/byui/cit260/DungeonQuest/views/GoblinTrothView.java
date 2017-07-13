@@ -115,11 +115,14 @@ public class GoblinTrothView extends View {
                                     + "Tattered Plate Mail. This should keep "
                                     + "your vitals safe in combat.");  
                                 inventory[16].setAmount(1);
+                                this.previousMenu();
                             break;
                             case "N":
                                 this.console.println("You did not pick up the "
                                     + "Tattered Plate Mail. Move on to the "
                                     + "next room.");
+                                this.previousMenu();
+                                break;
                         }
 
                     } catch (IOException ex) {

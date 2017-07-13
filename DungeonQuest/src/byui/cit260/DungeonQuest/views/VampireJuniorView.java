@@ -116,11 +116,14 @@ public class VampireJuniorView extends View {
                                     + "than what you were wearing when "
                                     + "you entered the dungeon!");  
                                 inventory[7].setAmount(1);
+                                this.previousMenu();
                             break;
                             case "N":
                                 this.console.println("You did not pick up the "
                                     + "Weathered Axe. Move on to the "
                                     + "next room.");
+                                this.previousMenu();
+                                break;
                         }
 
                     } catch (IOException ex) {

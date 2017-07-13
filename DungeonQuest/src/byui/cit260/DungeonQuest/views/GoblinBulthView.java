@@ -114,11 +114,14 @@ public class GoblinBulthView extends View {
                                 this.console.println("You have picked up the "
                                 + "Sturdy Leather Armor. Good luck!");
                                  inventory[11].setAmount(1);
+                                 this.previousMenu();
                                 break;
                             case "N":
                                 this.console.println("You did not pick up the"
                                 + " Sturdy Leather Armor. Move on to the "
                                 + "next room.");
+                                this.previousMenu();
+                                break;
                         }
                      } catch (IOException ex) {
                         ErrorView.display(this.getClass().getName(),

@@ -119,11 +119,13 @@ public class GoblinGrogView extends View{
                                 + "Polished Sword. Move on to the "
                                 + "next room.");   
                                 inventory[4].setAmount(1);
+                                this.previousMenu();
                                 break;
                             case "N":
                                 this.console.println("You did not pick up the"
                                         + "Polished Sword. Move on to the"
                                         + "next room.");
+                                this.previousMenu();
                                 break;
                     }
                 } catch (IOException ex) {

@@ -100,13 +100,13 @@ public class ZombieDianeView extends View{
             
         if(playerSTR>18) 
                 try{
-                    this.console.println("You have beat Diane!"
-                        + "But wait! Diane has dropped "
-                        + "Polished Scale Mail. Do you want to "
-                        + "pick up this powerful item?"
-                        + "-----------------------------------"
-                        + "Y - Yes "
-                        + "N - No ");
+                    this.console.println("\nYou have beat Diane!"
+                        + "\nBut wait! Diane has dropped "
+                        + "\nPolished Scale Mail. Do you want to "
+                        + "\npick up this powerful item?"
+                        + "\n-----------------------------------"
+                        + "\nY - Yes "
+                        + "\nN - No ");
                      try {    
                         result = keyboard.readLine();
                         result = result.toUpperCase();
@@ -115,11 +115,14 @@ public class ZombieDianeView extends View{
                                 this.console.println("You have picked up the "
                                     + "Polished Scale Mail. Good stuff.");  
                                 inventory[15].setAmount(1);
+                                this.previousMenu();
                             break;
                             case "N":
                                 this.console.println("You did not pick up the "
                                     + "Polished Scale Mail. Move on to the "
                                     + "next room.");
+                                this.previousMenu();
+                                break;
                         }
 
                     } catch (IOException ex) {
