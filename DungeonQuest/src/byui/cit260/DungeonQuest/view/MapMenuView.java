@@ -183,6 +183,7 @@ public class MapMenuView extends View{
             case "ST":
                 break;
             case "FN":
+                this.finalRoomView();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),
@@ -198,6 +199,11 @@ public class MapMenuView extends View{
     private void showVisitedRooms() {
         MapListView mapView = new MapListView();
         mapView.display();
+    }
+
+    private void finalRoomView() {
+        FinalRoomView finalRoom = new FinalRoomView();
+        finalRoom.display();
     }
 
 }

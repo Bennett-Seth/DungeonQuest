@@ -126,7 +126,7 @@ public class GoblinBulthView extends View {
                 }
                         
             else
-                this.console.println("You have lost. Game Over.");   
+                this.loseScreen();   
     }
 
     public void displayInventory() {
@@ -137,7 +137,11 @@ public class GoblinBulthView extends View {
     public void displayHelpMenu() {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
-    }   
+    }  
+    private void loseScreen() {
+        LosingView losingView = new LosingView();
+        losingView.display();
+    }
     
 }
 

@@ -130,7 +130,7 @@ public class GoblinCalgorView extends View {
                   }
                                     
             else
-                this.console.println("You have lost. Game Over.");
+                this.loseScreen();
     }
 
     public void displayInventory() {
@@ -142,5 +142,9 @@ public class GoblinCalgorView extends View {
         HelpMenuView helpMenu = new HelpMenuView();
         helpMenu.display();
     }   
+    private void loseScreen() {
+        LosingView losingView = new LosingView();
+        losingView.display();
+    }
     
 }
