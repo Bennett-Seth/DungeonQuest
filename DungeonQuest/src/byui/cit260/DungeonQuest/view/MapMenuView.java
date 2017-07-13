@@ -132,8 +132,8 @@ public class MapMenuView extends View{
                 ZombiesRoomView zombieView = new ZombiesRoomView();
                 zombieView.display();
                 break;
-            case "GB":
-                GoblinView goblinView = new GoblinView();
+            case "AG":
+                GoblinAgorView goblinView = new GoblinAgorView();
                 goblinView.display();
                 break;
             case "TR":

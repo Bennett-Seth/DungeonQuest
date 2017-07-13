@@ -78,7 +78,7 @@ public class MapControl {
         
         Scene goblinScene4 = new Scene();
         goblinScene4.setDescription("Home to the goblin Agor, leader of the Goblins.");
-        goblinScene4.setSymbol("GB");
+        goblinScene4.setSymbol("AG");
         goblinScene4.setName("Monster Room");
         scenes[SceneType.goblin4.ordinal()] = goblinScene4;
         
