@@ -23,7 +23,7 @@ public class VampireKatelinaView extends View {
             + "\n--------------------------------"
             +"\n| Combat Menu"
             + "\n--------------------------------"
-            + "\nQ - Run away"
+            + "\nR - Run away"
             + "\nF - Fight the Vampire"
             + "\nI - Review Your Character’s Inventory and Player Level"
             + "\nH - View the Help Menu"
@@ -45,6 +45,9 @@ public class VampireKatelinaView extends View {
                 break;
             case "H": //View the Help Menu
                 this.displayHelpMenu();
+                break;
+            case "R":
+                this.previousMenu();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),
@@ -144,6 +147,9 @@ public class VampireKatelinaView extends View {
         LosingView losingView = new LosingView();
         losingView.display();
     }
-    
+    private void previousMenu() {
+        MapMenuView mapMenu = new MapMenuView();
+        mapMenu.display();
+    } 
 }
 
