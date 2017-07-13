@@ -48,6 +48,7 @@ public class ZombieDianeView extends View{
                 break;
             case "R":
                 this.previousMenu();
+                break;
             default:
                 ErrorView.display(this.getClass().getName(),
                         "\n*** Invalid selection *** Try again");
