@@ -13,7 +13,8 @@ public class WinView extends View{
     public WinView (){
         super("\n"
                 + "\n----------------------------------------------  "
-                + "\n|  Congratulations! You won the Game!           "
+                + "\n              CONGRATULATIONS!                  "
+                + "\n|             You won the Game!                 "
             );
     }
     
