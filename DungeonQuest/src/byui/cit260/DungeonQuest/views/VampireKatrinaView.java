@@ -18,7 +18,7 @@ public class VampireKatrinaView extends View{
     public VampireKatrinaView (){
         super( "\n"
             + "\nKatrina: It seems a nice snack has entered my room."
-            + "\nKatrina has a strength of 35."
+            + "\nKatrina has a strength of 33."
             + "\nWhat would you like to do?"
             + "\n--------------------------------"
             +"\n| Combat Menu"

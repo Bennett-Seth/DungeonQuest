@@ -99,13 +99,13 @@ public class GoblinTrothView extends View {
         playerSTR = playerWEP + playerARM;
             if(playerSTR>25) 
                 try{
-                    this.console.println("You have beat Troth!"
-                        + "But wait! Troth has dropped "
-                        + "Tattered Plate Mail. Do you want to "
-                        + "pick up this armor?"
-                        + "-----------------------------------"
-                        + "Y - Yes "
-                        + "N - No ");
+                    this.console.println("\nYou have beat Troth!"
+                        + "\nBut wait! Troth has dropped "
+                        + "\nTattered Plate Mail. Do you want to "
+                        + "\npick up this armor?"
+                        + "\n-----------------------------------"
+                        + "\nY - Yes "
+                        + "\nN - No ");
                      try {    
                         result = keyboard.readLine();
                         result = result.toUpperCase();

@@ -107,13 +107,13 @@ public class GoblinAgorView extends View{
         
             if(playerSTR>35) 
                 try{
-                    this.console.println("You have beat Agor!"
-                        + "But wait! Agor has dropped "
-                        + "the Cloak of Light. Do you want to "
-                        + "pick up this powerful item?"
-                        + "-----------------------------------"
-                        + "Y - Yes "
-                        + "N - No ");
+                    this.console.println("\nYou have beat Agor!"
+                        + "\nBut wait! Agor has dropped "
+                        + "\nthe Cloak of Light. Do you want to "
+                        + "\npick up this powerful item?"
+                        + "\n-----------------------------------"
+                        + "\nY - Yes "
+                        + "\nN - No ");
                      try {    
                         result = keyboard.readLine();
                         result = result.toUpperCase();

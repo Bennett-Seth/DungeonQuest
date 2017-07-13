@@ -101,13 +101,13 @@ public class GoblinCalgorView extends View {
         
             if(playerSTR>30) 
                 try{
-                this.console.println("You have beat Calgor!"
-                                    + "But wait! Calgor has dropped "
-                                    + "the Polished Plate Mail. Do you want to "
-                                    + "pick up this powerful item?"
-                                    + "-----------------------------------"
-                                    + "Y - Yes "
-                                    + "N - No ");    
+                this.console.println("\nYou have beat Calgor!"
+                                    + "\nBut wait! Calgor has dropped "
+                                    + "\nthe Polished Plate Mail. Do you want to "
+                                    + "\npick up this powerful item?"
+                                    + "\n-----------------------------------"
+                                    + "\nY - Yes "
+                                    + "\nN - No ");    
                 try {    
                     result = keyboard.readLine();
                     result = result.toUpperCase();

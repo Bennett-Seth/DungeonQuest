@@ -17,8 +17,8 @@ import java.io.IOException;
 public class VampireKatelinaView extends View {
     public VampireKatelinaView (){
         super( "\n"
-            + "\nAgor: I haven't seen the likes of you humans in a century. I'm hungry"
-            + "\nAgor has a strength of 38."
+            + "\nKatelina: I haven't seen the likes of you humans in a century. I'm hungry"
+            + "\nKatelina has a strength of 38."
             + "\nWhat would you like to do?"
             + "\n--------------------------------"
             +"\n| Combat Menu"
@@ -99,13 +99,13 @@ public class VampireKatelinaView extends View {
         playerSTR = playerWEP + playerARM;  
             if(playerSTR>38) 
                 try{
-                    this.console.println("You have beat Katelina!"
-                        + "But wait! Katelina has dropped "
-                        + "Polished Leather Armor. Do you want to "
-                        + "pick up this armor?"
-                        + "-----------------------------------"
-                        + "Y - Yes "
-                        + "N - No ");
+                    this.console.println("\nYou have beat Katelina!"
+                        + "\nBut wait! Katelina has dropped "
+                        + "\nPolished Leather Armor. Do you want to "
+                        + "\npick up this armor?"
+                        + "\n-----------------------------------"
+                        + "\nY - Yes "
+                        + "\nN - No ");
                      try {    
                         result = keyboard.readLine();
                         result = result.toUpperCase();

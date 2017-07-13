@@ -103,13 +103,13 @@ public class GoblinGrogView extends View{
 
             if(playerSTR>20) 
                 try{
-                this.console.println("You have beat Calgor!"
-                                    + "But wait! Grog has dropped "
-                                    + "the Polished Sword. Do you want to "
-                                    + "pick up this weapon?"
-                                    + "-----------------------------------"
-                                    + "Y - Yes "
-                                    + "N - No ");    
+                this.console.println("\nYou have beat Grog!"
+                                    + "\nBut wait! Grog has dropped "
+                                    + "\nthe Polished Sword. Do you want to "
+                                    + "\npick up this weapon?"
+                                    + "\n-----------------------------------"
+                                    + "\nY - Yes "
+                                    + "\nN - No ");    
                 try {    
                     result = keyboard.readLine();
                     result = result.toUpperCase();

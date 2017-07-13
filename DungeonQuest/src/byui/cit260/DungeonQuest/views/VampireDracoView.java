@@ -100,13 +100,13 @@ public VampireDracoView (){
         playerSTR = playerWEP + playerARM;
             if(playerSTR>45) 
                 try{
-                    this.console.println("You have beat Draco!"
-                        + "But wait! Draco has dropped "
-                        + "the Holy Spear. Do you want to "
-                        + "pick up this powerful weapon?"
-                        + "-----------------------------------"
-                        + "Y - Yes "
-                        + "N - No ");
+                    this.console.println("\nYou have beat Draco!"
+                        + "\nBut wait! Draco has dropped "
+                        + "\nthe Holy Spear. Do you want to "
+                        + "\npick up this powerful weapon?"
+                        + "\n-----------------------------------"
+                        + "\nY - Yes "
+                        + "\nN - No ");
                      try {    
                         result = keyboard.readLine();
                         result = result.toUpperCase();

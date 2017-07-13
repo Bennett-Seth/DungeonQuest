@@ -99,13 +99,13 @@ public class GoblinBulthView extends View {
         playerSTR = playerWEP + playerARM;
             if(playerSTR>28) 
                 try{
-                    this.console.println("You have beat Bulth!"
-                        + "But wait! Bluth has dropped "
-                        + "Sturdy Leather Armor. Do you want to "
-                        + "pick up this powerful item?"
-                        + "-----------------------------------"
-                        + "Y - Yes "
-                        + "N - No ");
+                    this.console.println("\nYou have beat Bulth!"
+                        + "\nBut wait! Bluth has dropped "
+                        + "\nSturdy Leather Armor. Do you want to "
+                        + "\npick up this powerful item?"
+                        + "\n-----------------------------------"
+                        + "\nY - Yes "
+                        + "\nN - No ");
                      try {    
                         result = keyboard.readLine();
                         result = result.toUpperCase();
