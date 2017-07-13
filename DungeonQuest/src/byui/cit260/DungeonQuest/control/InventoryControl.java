@@ -27,6 +27,7 @@ public class InventoryControl {
          bronzeDagger.setItemLevel(10);
          bronzeDagger.setAmount(1);
          inventory[Item.bronzeDagger.ordinal()] = bronzeDagger;
+         inventory[0] = bronzeDagger;
          
          Inventory steelDagger = new Inventory();
          steelDagger.setInventoryItem("Steel Dagger");
@@ -34,6 +35,7 @@ public class InventoryControl {
          steelDagger.setItemLevel(11);
          steelDagger.setAmount(0);
          inventory[Item.steelDagger.ordinal()] = steelDagger;
+         inventory[1] = steelDagger;
          
          Inventory mithrilDagger = new Inventory();
          mithrilDagger.setInventoryItem("Mithril Dagger");
@@ -41,6 +43,7 @@ public class InventoryControl {
          mithrilDagger.setItemLevel(12);
          mithrilDagger.setAmount(0);
          inventory[Item.mithrilDagger.ordinal()] = mithrilDagger;
+         inventory[2] = mithrilDagger;
          
          Inventory rustySword = new Inventory();
          rustySword.setInventoryItem("Rusty Sword");
@@ -48,6 +51,7 @@ public class InventoryControl {
          rustySword.setItemLevel(13);
          rustySword.setAmount(0);
          inventory[Item.rustySword.ordinal()] = rustySword;
+         inventory[3] = rustySword;
          
          Inventory polishedSword = new Inventory();
          polishedSword.setInventoryItem("Polished Sword");
@@ -55,6 +59,7 @@ public class InventoryControl {
          polishedSword.setItemLevel(14);
          polishedSword.setAmount(0);
          inventory[Item.polishedSword.ordinal()] = polishedSword;
+         inventory[4] = polishedSword;
          
          Inventory mithrilSword = new Inventory();
          mithrilSword.setInventoryItem("Mitril Sword");
@@ -62,6 +67,7 @@ public class InventoryControl {
          mithrilSword.setItemLevel(15);
          mithrilSword.setAmount(0);
          inventory[Item.mithrilSword.ordinal()] = mithrilSword;
+         inventory[5] = mithrilSword;
          
          Inventory weatheredAxe = new Inventory();
          weatheredAxe.setInventoryItem("weathered Axe");
@@ -69,6 +75,7 @@ public class InventoryControl {
          weatheredAxe.setItemLevel(16);
          weatheredAxe.setAmount(0);
          inventory[Item.weatheredAxe.ordinal()] = weatheredAxe;
+         inventory[6] = weatheredAxe;
          
          Inventory sturdyAxe = new Inventory();
          sturdyAxe.setInventoryItem("Sturdy Axe");
@@ -76,6 +83,7 @@ public class InventoryControl {
          sturdyAxe.setItemLevel(17);
          sturdyAxe.setAmount(0);
          inventory[Item.sturdyAxe.ordinal()] = sturdyAxe;
+         inventory[7] = sturdyAxe;
          
          Inventory vikingAxe = new Inventory();
          vikingAxe.setInventoryItem("Viking Axe");
@@ -83,6 +91,7 @@ public class InventoryControl {
          vikingAxe.setItemLevel(18);
          vikingAxe.setAmount(0);
          inventory[Item.vikingAxe.ordinal()] = vikingAxe;
+         inventory[8] = vikingAxe;
          
          Inventory holySpear = new Inventory();
          holySpear.setInventoryItem("Holy Spear");
@@ -90,6 +99,7 @@ public class InventoryControl {
          holySpear.setItemLevel(35);
          holySpear.setAmount(0);
          inventory[Item.holySpear.ordinal()] = holySpear;
+         inventory[9] = holySpear;
          
          Inventory tatteredLeatherArmor = new Inventory();
          tatteredLeatherArmor.setInventoryItem("Tattered Leather Armor");
@@ -97,6 +107,7 @@ public class InventoryControl {
          tatteredLeatherArmor.setItemLevel(10);
          tatteredLeatherArmor.setAmount(1);
          inventory[Item.tatteredLeatherArmor.ordinal()] = tatteredLeatherArmor;
+         inventory[10] = tatteredLeatherArmor;
          
          Inventory sturdyLeatherArmor = new Inventory();
          sturdyLeatherArmor.setInventoryItem("Sturdy Leather Armor");
@@ -104,6 +115,7 @@ public class InventoryControl {
          sturdyLeatherArmor.setItemLevel(11);
          sturdyLeatherArmor.setAmount(0);
          inventory[Item.sturdyLeatherArmor.ordinal()] = sturdyLeatherArmor;
+         inventory[11] = sturdyLeatherArmor;
          
          Inventory polishedLeatherArmor = new Inventory();
          polishedLeatherArmor.setInventoryItem("Polished Leather Armor");
@@ -111,6 +123,7 @@ public class InventoryControl {
          polishedLeatherArmor.setItemLevel(12);
          polishedLeatherArmor.setAmount(0);
          inventory[Item.polishedLeatherArmor.ordinal()] = polishedLeatherArmor;
+         inventory[12] = polishedLeatherArmor;
          
          Inventory tatteredScaleMail = new Inventory();
          tatteredScaleMail.setInventoryItem("Tattered Scale Mail");
@@ -118,6 +131,7 @@ public class InventoryControl {
          tatteredScaleMail.setItemLevel(13);
          tatteredScaleMail.setAmount(0);
          inventory[Item.tatteredScaleMail.ordinal()] = tatteredScaleMail;
+         inventory[13] = tatteredScaleMail;
          
          Inventory sturdyScaleMail = new Inventory();
          sturdyScaleMail.setInventoryItem("Sturdy Scale Mail");
@@ -125,6 +139,7 @@ public class InventoryControl {
          sturdyScaleMail.setItemLevel(14);
          sturdyScaleMail.setAmount(0);
          inventory[Item.sturdyScaleMail.ordinal()] = sturdyScaleMail;
+         inventory[14] = sturdyScaleMail;
          
          Inventory polishedScaleMail = new Inventory();
          polishedScaleMail.setInventoryItem("Polished Scale Mail");
@@ -132,6 +147,7 @@ public class InventoryControl {
          polishedScaleMail.setItemLevel(15);
          polishedScaleMail.setAmount(0);
          inventory[Item.polishedScaleMail.ordinal()] = polishedLeatherArmor;
+         inventory[15] = polishedScaleMail;
          
          Inventory tatteredPlateMail = new Inventory();
          tatteredPlateMail.setInventoryItem("Tattered Plate Mail");
@@ -139,6 +155,7 @@ public class InventoryControl {
          tatteredPlateMail.setItemLevel(16);
          tatteredPlateMail.setAmount(0);
          inventory[Item.tatteredPlateMail.ordinal()] = tatteredPlateMail;
+         inventory[16] = tatteredPlateMail;
          
          Inventory sturdyPlateMail = new Inventory();
          sturdyPlateMail.setInventoryItem("Sturdy Plate Mail");
@@ -146,6 +163,7 @@ public class InventoryControl {
          sturdyPlateMail.setItemLevel(17);
          sturdyPlateMail.setAmount(0);
          inventory[Item.sturdyPlateMail.ordinal()] = sturdyPlateMail;
+         inventory[17] = sturdyPlateMail;
          
          Inventory polishedPlateMail = new Inventory();
          polishedPlateMail.setInventoryItem("Polished Plate Mail");
@@ -153,6 +171,7 @@ public class InventoryControl {
          polishedPlateMail.setItemLevel(18);
          polishedPlateMail.setAmount(0);
          inventory[Item.polishedPlateMail.ordinal()] = polishedPlateMail;
+         inventory[18] = polishedPlateMail;
          
          Inventory cloakOfLight = new Inventory();
          cloakOfLight.setInventoryItem("Cloak of Light");
@@ -160,7 +179,8 @@ public class InventoryControl {
          cloakOfLight.setItemLevel(30);
          cloakOfLight.setAmount(0);
          inventory[Item.cloakOfLight.ordinal()] = cloakOfLight;
- 
+         inventory[19] = cloakOfLight;
+         
          return inventory;
     }
     public enum Item {
