@@ -75,11 +75,11 @@ public class InventoryView extends View{
         
         for (int i = 0; i < inventory.length; i++){
             if (inventory[i].getAmount() != 0) {
-            this.console.println(inventory[i]);    
+            this.console.println(inventory[i].getInventoryItem());
+            this.console.println("     Power Level:" + inventory[i].getItemLevel());
+            this.console.println("     " + inventory[i].getItemDescription());
             }    
         }
-        
-        this.console.println("Your pack is empty, time to go hunting!");
     }
     private void calcStrength() {
         Game game = DungeonQuest.getCurrentGame();
@@ -90,44 +90,37 @@ public class InventoryView extends View{
             int playerSTR = 0;
         
             for (int i = 0; i <= 9; i++){
+                inventory[i].getAmount();
                 if (inventory[i].getAmount() != 0) {
+//                this.console.println(inventory[i].getInventoryItem());    
                     playerWEP = inventory[i].getItemLevel();
                 } 
-        
-                    if (playerWEP < inventory[i].getItemLevel()) {
-                        playerWEP = inventory[i].getItemLevel();
-                    }
-        
-                    if (playerWEP > inventory[i].getItemLevel()) {
-                        playerWEP = playerWEP;
-                    }
-        
-                else {
-                    playerWEP = 0;
+//                    if (playerWEP < inventory[i].getItemLevel()) {
+//                        playerWEP = inventory[i].getItemLevel();
+//                        this.console.println(inventory[i].getItemLevel());
+//                    }
+//                    else {
+//                        playerWEP = playerWEP;
+//                    }
                 }
                 
-            for (i = 10; i < inventory.length; i++){
+            for (int i = 10; i < inventory.length; i++){
+                inventory[i].getAmount();
                 if (inventory[i].getAmount() != 0) {
+//                    this.console.println(inventory[i].getInventoryItem());
                     playerARM = inventory[i].getItemLevel();
                 }
-        
-                    if (playerARM < inventory[i].getItemLevel()) {
-                        playerARM = inventory[i].getItemLevel();
-                    }
-        
-                    if (playerARM > inventory[i].getItemLevel()) {
-                        playerARM = playerWEP;
-                    }
-                else {
-                    playerARM = 0;
-                }
-        
-            playerSTR = playerWEP + playerARM;
-
-    }
-    }
-            this.console.println("\nYour Player Strength is " + playerSTR);
-    }
+//                    if (playerARM < inventory[i].getItemLevel()) {
+//                        playerARM = inventory[i].getItemLevel();
+//                        this.console.println(inventory[i].getItemLevel());
+//                    }
+//                    else {
+//                    playerARM = playerARM;
+//                    }
+            }
+        playerSTR = playerWEP + playerARM;
+        this.console.println("\nYour Player Strength is " + playerSTR);
+    }       
 
     
     private void printInventory(Inventory[] inventoryList) {
