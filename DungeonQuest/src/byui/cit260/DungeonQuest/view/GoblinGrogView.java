@@ -5,6 +5,10 @@
  */
 package byui.cit260.DungeonQuest.view;
 
+import byui.cit260.DungeonQuest.model.Game;
+import byui.cit260.DungeonQuest.model.Inventory;
+import dungeonquest.DungeonQuest;
+
 /**
  *
  * @author parrdyl
@@ -52,7 +56,57 @@ public class GoblinGrogView extends View{
     }
     
     public void fightMoster() {
-        this.console.println("\n*** fightMonster() function called ***");
+        Game game = DungeonQuest.getCurrentGame();
+        Inventory[] inventory = game.getInventory();
+        
+            int playerWEP = 0;
+            int playerARM = 0;
+            int playerSTR = 0;
+        
+            for (int i = 0; i <= 9; i++){
+                if (inventory[i].getAmount() != 0) {
+                    playerWEP = inventory[i].getItemLevel();
+                } 
+        
+                    if (playerWEP < inventory[i].getItemLevel()) {
+                        playerWEP = inventory[i].getItemLevel();
+                    }
+        
+                    if (playerWEP > inventory[i].getItemLevel()) {
+                        playerWEP = playerWEP;
+                    }
+        
+                else {
+                    playerWEP = 0;
+                }
+                
+            for (i = 10; i < inventory.length; i++){
+                if (inventory[i].getAmount() != 0) {
+                    playerARM = inventory[i].getItemLevel();
+                }
+        
+                    if (playerARM < inventory[i].getItemLevel()) {
+                        playerARM = inventory[i].getItemLevel();
+                    }
+        
+                    if (playerARM > inventory[i].getItemLevel()) {
+                        playerARM = playerWEP;
+                    }
+                else {
+                    playerARM = 0;
+                }
+        
+            playerSTR = playerWEP + playerARM;
+
+        
+  
+        
+    }
+    }
+            if(playerSTR>20) 
+                this.console.println("You have beat Agor!");
+            else
+                this.console.println("You have lost. Game Over.");
     }
 
     public void displayInventory() {

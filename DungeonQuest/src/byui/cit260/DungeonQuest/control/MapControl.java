@@ -60,7 +60,7 @@ public class MapControl {
         
         Scene goblinScene1 = new Scene();
         goblinScene1.setDescription("Home to the goblin Grog.");
-        goblinScene1.setSymbol("GB");
+        goblinScene1.setSymbol("GR");
         goblinScene1.setName("Monster Room");
         scenes[SceneType.goblin1.ordinal()] = goblinScene1;
 
@@ -78,7 +78,7 @@ public class MapControl {
         
         Scene goblinScene4 = new Scene();
         goblinScene4.setDescription("Home to the goblin Agor, leader of the Goblins.");
-        goblinScene4.setSymbol("GB");
+        goblinScene4.setSymbol("AG");
         goblinScene4.setName("Monster Room");
         scenes[SceneType.goblin4.ordinal()] = goblinScene4;
         

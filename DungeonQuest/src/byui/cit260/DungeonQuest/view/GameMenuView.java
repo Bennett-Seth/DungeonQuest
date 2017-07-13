@@ -27,12 +27,16 @@ public class GameMenuView extends View{
             + "\n--------------------------------"
             +"\n| Game Menu"
             + "\n--------------------------------"
+            + "\nE - Monster Gallery"
+//            + "\nS - Find the Item with the greatest strength"
+            + "\nM - See the Map of the Dungeon (select a room to explore)"
+            + "\nG - Go to new location"
+//            + "\nI - Review Your Character’s Inventory and Player Level"
             + "\nM - Go to map menu"
             + "\nN - View Inventory Menu"
             + "\nH - View the Help Menu"
             + "\nR - Reports and stats of game"
             + "\nQ - Quit to Main Menu"
-
                 
             + "\n--------------------------------");
     }
@@ -43,7 +47,14 @@ public class GameMenuView extends View{
         value = value.toUpperCase();
         
         switch (value){
-            case "M": //See the Map of the Dungeon(select a room to explore
+            
+//            case "S"://Display the inventory item with the greatest strength
+//                this.displayInventoryStrength();
+//                break;
+//            case "I": //Review your characters's inventory and player levol
+//                this.displayInventory();
+//                break;
+            case "M":  
                 this.displayMapMenu();
                 break;  
             case "N": //View the Inventory Menu
@@ -66,13 +77,17 @@ public class GameMenuView extends View{
     public void displayMapMenu() {
         MapMenuView mapMenu = new MapMenuView();
         mapMenu.display();
-    }
-    
+    } 
 
     public void displayHelpMenu() {
         HelpMenuView helpView = new HelpMenuView();
         helpView.display();
     }
+
+//    private void displayInventoryStrength() {
+//       InventoryStrengthView StrengthView = new InventoryStrengthView();
+//       StrengthView.display();
+//    }
 
     private void InventoryView() {
         InventoryView inventoryView = new InventoryView();

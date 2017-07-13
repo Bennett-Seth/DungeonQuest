@@ -5,6 +5,7 @@
  */
 package byui.cit260.DungeonQuest.view;
 
+import byui.cit260.DungeonQuest.control.GameControl;
 import byui.cit260.DungeonQuest.control.InventoryControl;
 import byui.cit260.DungeonQuest.model.Actor;
 import byui.cit260.DungeonQuest.model.Game;
@@ -32,17 +33,11 @@ public class InventoryView extends View{
     public InventoryView() {
            super(
             "\n"
-            + "\n--------------------------------"
+            +"\n--------------------------------"
             +"\nI - View Your Inventory"
             +"\nS - Get Your Player Strength"
-            +"\nD - Drop an Item"
             +"\nP- Print The Inventory List"
-//            + "\n--------------------------------"
-//            + "\nR - Return to Main Menu"
-//            + "\nM - Return to Map Menu"
-//            + "\nH - Get help on how to play the game"
-//            + "\nG - Save game"
-            + "\nQ - Quit"
+            +"\nQ - Quit"
             + "\n--------------------------------");
     }
     
@@ -57,25 +52,10 @@ public class InventoryView extends View{
                 break;
             case "S":
                 this.calcStrength();
-                break;
-            case "D":
-                this.dropItem();
-                break;    
+                break;  
             case "P":
                 this.printInventory(InventoryControl.createInventoryList());
                 break; 
-//            case "R":
-//                this.displayMainMenuView();
-//                break;
-//            case "M":
-//                this.mapMenu();
-//                break;
-//            case "H":
-//                this.displayHelpMenu();
-//                break;
-//            case "G":
-//                this.saveGame();
-//                break;
             default:
                 ErrorView.display(this.getClass().getName(),
                         "\n*** Invalid selection *** Try again");
@@ -100,56 +80,7 @@ public class InventoryView extends View{
         }
         
         this.console.println("Your pack is empty, time to go hunting!");
-        
-        /* Don't forget to calculate the player's strength */
-            
-//            int playerWEP = 0;
-//            int playerARM = 0;
-//            int playerSTR = 0;
-//        
-//            for (int i = 0; i <= 9; i++){
-//                if (inventory[i].getAmount() != 0) {
-//                    playerWEP = inventory[i].getItemLevel();
-//                } 
-//        
-//                    if (playerWEP < inventory[i].getItemLevel()) {
-//                        playerWEP = inventory[i].getItemLevel();
-//                    }
-//        
-//                    if (playerWEP > inventory[i].getItemLevel()) {
-//                        playerWEP = playerWEP;
-//                    }
-//        
-//                else {
-//                    playerWEP = 0;
-//                }
-//                
-//            for (i = 10; i < inventory.length; i++){
-//                if (inventory[i].getAmount() != 0) {
-//                    playerARM = inventory[i].getItemLevel();
-//                }
-//        
-//                    if (playerARM < inventory[i].getItemLevel()) {
-//                        playerARM = inventory[i].getItemLevel();
-//                    }
-//        
-//                    if (playerARM > inventory[i].getItemLevel()) {
-//                        playerARM = playerWEP;
-//                    }
-//                else {
-//                    playerARM = 0;
-//                }
-//        
-//            playerSTR = playerWEP + playerARM;
-//
-//        
-//  
-//        
-//    }
-//    }
-//            this.console.println("\nYour Player Strength is " + playerSTR);
     }
-    
     private void calcStrength() {
         Game game = DungeonQuest.getCurrentGame();
         Inventory[] inventory = game.getInventory();
@@ -193,17 +124,11 @@ public class InventoryView extends View{
         
             playerSTR = playerWEP + playerARM;
 
-        
-  
-        
     }
     }
             this.console.println("\nYour Player Strength is " + playerSTR);
     }
 
-    private void dropItem() {
-        this.console.println("*** dropItem function called ***");
-    }
     
     private void printInventory(Inventory[] inventoryList) {
         this.console.println("\nGive the file a name:");
@@ -221,7 +146,7 @@ public class InventoryView extends View{
             
             //print the description and strength of each item
             for (Inventory inventory : inventoryList) {
-                out.printf("%n%-25s%-45s%-10d"        , inventory.getInventoryItem()
+                out.printf("%n%-25s%-45s%-10d"    , inventory.getInventoryItem()
                                                   , inventory.getItemDescription()
                                                   , inventory.getItemLevel());
             }
@@ -236,24 +161,4 @@ public class InventoryView extends View{
             return;
         }
     }
-          
-//    private void displayMainMenuView() {
-//        this.console.println("*** displayMainMenu function called ***");
-//    }
-//
-//    private void mapMenu() {
-//        this.console.println("*** mapMenu function called ***");
-//    }
-//    
-//    private void displayHelpMenu() {
-//         this.console.println("*** displayHelpMenu function called ***");
-//    }
-//
-//    private void saveGame() {
-//         this.console.println("*** startExistingGame function called ***");
-//    }
-
-    
-
 }
-
