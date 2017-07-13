@@ -123,11 +123,14 @@ public class GoblinAgorView extends View{
                                     + "Cloak of Light. May the Gods bless"
                                     + "your skin with holy strength");  
                                 inventory[19].setAmount(1);
+                                this.previousMenu();
                                 break;
                             case "N":
                                 this.console.println("You did not pick up the "
                                     + " Cloak of Light. Move on to the "
                                     + "next room.");
+                                this.previousMenu();
+                                break;
                         }
 
                     } catch (IOException ex) {

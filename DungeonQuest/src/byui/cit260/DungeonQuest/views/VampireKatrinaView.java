@@ -114,11 +114,15 @@ public class VampireKatrinaView extends View{
                                 this.console.println("You have picked up the "
                                     + "Viking Axe. Great job!");  
                                 inventory[8].setAmount(1);
+                                this.previousMenu();
+                                        
                             break;
                             case "N":
                                 this.console.println("You did not pick up the "
                                     + "Viking Axe. Move on to the "
                                     + "next room.");
+                                this.previousMenu();
+                                break;
                         }
 
                     } catch (IOException ex) {

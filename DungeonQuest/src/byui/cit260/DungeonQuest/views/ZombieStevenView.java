@@ -101,13 +101,13 @@ public class ZombieStevenView extends View {
         
             if(playerSTR>22) 
                 try{
-                    this.console.println("You have beat Agor!"
-                        + "But wait! Steven has dropped "
-                        + "the Mithril Sword. Do you want to "
-                        + "pick up this powerful item?"
-                        + "-----------------------------------"
-                        + "Y - Yes "
-                        + "N - No ");
+                    this.console.println("\nYou have beat Agor!"
+                        + "\nBut wait! Steven has dropped "
+                        + "\nthe Mithril Sword. Do you want to "
+                        + "\npick up this powerful item?"
+                        + "\n-----------------------------------"
+                        + "\nY - Yes "
+                        + "\nN - No ");
                 try {    
                         result = keyboard.readLine();
                         result = result.toUpperCase();
@@ -117,11 +117,14 @@ public class ZombieStevenView extends View {
                                     + "Mithril Sword. Now you are ready for a"
                                     + "real fight.");  
                                 inventory[5].setAmount(1);
+                                this.previousMenu();
                             break;
                             case "N":
                                 this.console.println("You did not pick up the "
                                     + "Mithril Sword. Move on to the "
                                     + "next room.");
+                                this.previousMenu();
+                                break;
                         }
                 } catch (IOException ex) {
                         ErrorView.display(this.getClass().getName(),

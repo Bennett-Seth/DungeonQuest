@@ -117,11 +117,13 @@ public class GoblinCalgorView extends View {
                                 + "Polished Plate Mail. Move on to the "
                                 + "next room.");   
                                 inventory[18].setAmount(1);
+                                this.previousMenu();
                                 break;
                             case "N":
                                 this.console.println("You did not pick up the"
                                         + "Polished Plate Mail. Move on to the"
                                         + "next room.");
+                                this.previousMenu();
                                 break;
                     }
                 } catch (IOException ex) {

@@ -116,11 +116,14 @@ public class VampireKatelinaView extends View {
                                     + "than what you were wearing when "
                                     + "you entered the dungeon!");  
                                 inventory[12].setAmount(1);
+                                this.previousMenu();
                             break;
                             case "N":
                                 this.console.println("You did not pick up the "
                                     + "Polished Leather Armor. Move on to the "
                                     + "next room.");
+                                this.previousMenu();
+                            break;
                         }
 
                     } catch (IOException ex) {
