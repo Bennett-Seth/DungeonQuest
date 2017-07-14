@@ -221,7 +221,7 @@ public class GameControl{
         
         //start point
         locations[0][0].setScene(scenes[MapControl.SceneType.start.ordinal()]);
-        locations[0][1].setScene(scenes[MapControl.SceneType.instructions.ordinal()]);
+        locations[0][1].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
         locations[0][2].setScene(scenes[MapControl.SceneType.goblin1.ordinal()]);
         locations[0][3].setScene(scenes[MapControl.SceneType.empty.ordinal()]);
         locations[0][4].setScene(scenes[MapControl.SceneType.vampire2.ordinal()]);

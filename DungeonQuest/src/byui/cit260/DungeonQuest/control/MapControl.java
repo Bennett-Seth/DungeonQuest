@@ -118,11 +118,11 @@ public class MapControl {
         vampire4Scene.setName("Monster Room");
         scenes[SceneType.vampire4.ordinal()] = vampire4Scene;
 
-        Scene instructionScene = new Scene();
-        instructionScene.setDescription("This room contains instructions for the game");
-        instructionScene.setSymbol("IN");
-        instructionScene.setName("Instructions Room");
-        scenes[SceneType.instructions.ordinal()] = instructionScene;
+//        Scene instructionScene = new Scene();
+//        instructionScene.setDescription("This room contains instructions for the game");
+//        instructionScene.setSymbol("IN");
+//        instructionScene.setName("Instructions Room");
+//        scenes[SceneType.instructions.ordinal()] = instructionScene;
 
         Scene fairiesScene = new Scene();
         fairiesScene.setDescription("This is home to the Fairies");
@@ -147,7 +147,7 @@ public class MapControl {
 
     public enum SceneType {
         start,
-        instructions,
+//        instructions,
         finish,
         wizard,
         zombie1,
